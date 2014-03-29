@@ -32,7 +32,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
+group :development do
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
