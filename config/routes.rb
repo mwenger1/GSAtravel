@@ -1,4 +1,8 @@
 GSAtravel::Application.routes.draw do
+  get "import/index"
+  get "import/show"
+  get "import/run"
+  get "import/delete_all"
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   root "dashboard#overview"
   get "dashboard/overview"
