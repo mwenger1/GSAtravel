@@ -1,4 +1,10 @@
 GSAtravel::Application.routes.draw do
+  root "dashboard#overview"
+  get "dashboard/overview"
+  get "dashboard/transactions"
+  get "dashboard/budgets"
+  get "dashboard/trends"
+  get "dashboard/ways_to_save"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
