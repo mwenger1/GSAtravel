@@ -5,9 +5,15 @@ function fnFormatDetails ( oTable, tmpTr)
 {
     var aData = oTable.fnGetData( tmpTr );
     var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#ccc;">';
-    sOut += '<tr><td>Transaction Info:</td><td>' + aData[2] + '</td></tr>';
-    sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
-    sOut += '<tr><td>Extra info:</td><td>And any further details here (images etc)</td></tr>';
+    sOut += '<tr><td>Ticket Number:</td><td>' + aData[9] + '</td></tr>';
+    sOut += '<tr><td>Online Indicator:</td><td>' + aData[10] + '</td></tr>';
+    sOut += '<tr><td>Mileage:</td><td>' + aData[11] + '</td></tr>';
+    sOut += '<tr><td>Routing:</td><td>' + aData[12] + '</td></tr>';
+    sOut += '<tr><td>Domestic/International:</td><td>' + aData[13] + '</td></tr>';
+    sOut += '<tr><td>Trip Departure Date:</td><td>' + aData[14] + '</td></tr>';
+    sOut += '<tr><td>Reservation Date:</td><td>' + aData[15] + '</td></tr>';
+    sOut += '<tr><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
+
     sOut += '</table>';
 
     return sOut;
@@ -23,7 +29,7 @@ function fnFormatDetails ( oTable, tmpTr)
         bJQueryUI: true,
         bProcessing: true,
         bServerSide: true,
-        aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false }],
+        aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
         sDom: "T<'clear'>lfrtip",
         oTableTools: {
             "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"

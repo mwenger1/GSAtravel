@@ -38,7 +38,7 @@ class ImportController < ApplicationController
                 f.tax_amount = entry[12].to_f
                 f.total_amount = entry[13].to_f
                 f.benchmark_rate = calculate_benchmark_rate(entry[13])
-                f.mileage = entry[14].to_f
+                f.mileage = entry[14].to_f.round(1)
                 f.exchange_indicator = entry[15]
                 f.exchange_original_ticket_number = entry[16]
                 f.refund_indicator = entry[17]
