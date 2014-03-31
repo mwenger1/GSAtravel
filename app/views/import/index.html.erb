@@ -1,4 +1,9 @@
-<h1>Import#index</h1>
-<p>Find me in app/views/import/index.html.erb</p>
+<h1>Importer Console</h1>
+
+<p>There are <%= @flight_reservations %> reservations</p>
 
 <%= link_to "Run Importer", import_run_path %>
+<br>
+<br>
+
+<%= link_to "Delete All Data", import_delete_all_path %>

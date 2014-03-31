@@ -1,5 +1,6 @@
 class ImportController < ApplicationController
   def index
+    @flight_reservations = FlightReservation.all.count
   end
 
   def show
@@ -40,8 +41,11 @@ class ImportController < ApplicationController
         end
         counter = counter + 1
     end
+    redirect_to import_index_path, notice: "File successfully imported"
   end
 
   def delete_all
+    FlightReservation.delete_all
+    redirect_to import_index_path, notice: "All Items deleted"
   end
 end
