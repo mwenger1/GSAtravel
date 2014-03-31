@@ -23,7 +23,7 @@ private
         flight.gds_record_locator,
         flight.days_in_advance,
         flight.airline_name,
-        flight.cabin_class,
+        flight.fare_category,
         number_to_currency(flight.total_amount)
       ]
     end
@@ -51,7 +51,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator days_in_advance airline_name cabin_class total_amount]
+    columns = %w[gds_record_locator gds_record_locator days_in_advance airline_name fare_category total_amount]
     columns[params[:iSortCol_0].to_i]
   end
 
