@@ -8,7 +8,7 @@ class ImportController < ApplicationController
 
   def run
     require 'csv'
-    csv = File.read("#{Rails.public_path}/flight_reservation1_trimmed.csv")
+    csv = File.read("#{Rails.public_path}/flight_reservation1.csv")
     encoded_csv = csv.encode!('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
     parsed_csv = CSV.parse(encoded_csv)
 
