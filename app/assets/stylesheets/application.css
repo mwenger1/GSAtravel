@@ -12,5 +12,7 @@
  *= require jquery.ui.core
  *= require jquery.ui.theme
  *= require dataTables/jquery.dataTables
+*= require dataTables/src/demo_table_jui
+*= require dataTables/extras/TableTools
  *= require_tree .
  */

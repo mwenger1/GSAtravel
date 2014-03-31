@@ -22,6 +22,10 @@ function fnFormatDetails ( oTable, tmpTr)
         bJQueryUI: true,
         bProcessing: true,
         bServerSide: true,
+        sDom: "T<'clear'>lfrtip",
+        oTableTools: {
+            "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
+        },
         sAjaxSource:$('#flight_reservations').data('source')
     });
 
