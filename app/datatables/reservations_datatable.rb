@@ -37,7 +37,7 @@ private
     flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}")
     flight_reservations = flight_reservations.page(page).per_page(per_page)
     if params[:sSearch].present?
-      flight_reservations = flight_reservations.where("name like :search or category like :search", search: "%#{params[:sSearch]}%")
+      flight_reservations = flight_reservations.where("GDS_Record_Locator like :search or Airline_Name like :search", search: "%#{params[:sSearch]}%")
     end
     flight_reservations
   end
