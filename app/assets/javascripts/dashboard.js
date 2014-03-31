@@ -23,11 +23,24 @@ function fnFormatDetails ( oTable, tmpTr)
         bJQueryUI: true,
         bProcessing: true,
         bServerSide: true,
+        aoColumns:[null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false }],
         sDom: "T<'clear'>lfrtip",
         oTableTools: {
             "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
         },
-        sAjaxSource:$('#flight_reservations').data('source')
+        sAjaxSource:$('#flight_reservations').data('source'),
+        fnRowCallback: function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+            var sDirectionClass;
+            if ( aData[8] > 20 )
+                sDirectionClass = "outlierSaver";
+            else if ( aData[8] < -20 )
+                sDirectionClass = "outlierSpender";
+            else
+                sDirectionClass = "nonOutlier";
+
+            $(nRow).addClass( sDirectionClass );
+            return nRow;
+            }
     });
 
     /* Add event listener for opening and closing details

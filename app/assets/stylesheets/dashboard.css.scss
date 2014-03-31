@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.dataTables_wrapper{
+    width:800px;
+}
+
+#flight_reservations tbody .outlierSaver{
+    background-color:rgba(75,169,10,0.1);
+}
+
+#flight_reservations tbody .outlierSpender{
+    background-color:rgba(255,0,0,0.1)
+}
+#flight_reservations tbody .nonOutlier{
+    background-color:rgba(0,0,0,0.1)
+}
+
 #flight_reservations tr{
     cursor:pointer;
 }
