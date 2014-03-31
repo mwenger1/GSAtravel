@@ -4,7 +4,7 @@ ready = function() {
 function fnFormatDetails ( oTable, tmpTr)
 {
     var aData = oTable.fnGetData( tmpTr );
-    var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#ccc;">';
+    var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#87CEEB;">';
     sOut += '<tr><td>Ticket Number:</td><td>' + aData[9] + '</td></tr>';
     sOut += '<tr><td>Online Indicator:</td><td>' + aData[10] + '</td></tr>';
     sOut += '<tr><td>Mileage:</td><td>' + aData[11] + '</td></tr>';

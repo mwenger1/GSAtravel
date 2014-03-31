@@ -6,15 +6,15 @@
     width:800px;
 }
 
-#flight_reservations tbody .outlierSaver{
+#flight_reservations tbody .outlierSaver td, #flight_reservations tbody .outlierSaver{
     background-color:rgba(75,169,10,0.1);
 }
 
-#flight_reservations tbody .outlierSpender{
-    background-color:rgba(255,0,0,0.1)
+#flight_reservations tbody .outlierSpender, #flight_reservations tbody .outlierSpender td{
+    background-color:rgba(255,0,0,0.1);
 }
-#flight_reservations tbody .nonOutlier{
-    background-color:rgba(0,0,0,0.1)
+#flight_reservations tbody .nonOutlier, #flight_reservations tbody .nonOutlier td{
+    background-color:rgba(0,0,0,0.1);
 }
 
 #flight_reservations tr{
