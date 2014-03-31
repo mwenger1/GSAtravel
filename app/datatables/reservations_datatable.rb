@@ -19,6 +19,7 @@ private
   def data
     flight_reservations.map do |flight|
       [
+        '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.Reservation_Date,
         flight.Airline_Name,
         flight.Cabin_Class,
