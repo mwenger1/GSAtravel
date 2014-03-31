@@ -1,9 +1,9 @@
 var ready;
 ready = function() {
 
-function fnFormatDetails ( oTable, tmpTr )
+function fnFormatDetails ( oTable, tmpTr)
 {
-    var aData = oTable.fnGetData( tmpTr );
+    // var aData = oTable.fnGetData( tmpTr );
     var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#ccc;">';
     sOut += '<tr><td>Transaction Info:</td><td>$1000</td></tr>';
     sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
@@ -11,7 +11,6 @@ function fnFormatDetails ( oTable, tmpTr )
     sOut += '</table>';
 
     return sOut;
-    console.log('function ran');
 }
 
     /*
@@ -19,7 +18,7 @@ function fnFormatDetails ( oTable, tmpTr )
      */
     var oTable = $('#flight_reservations').dataTable( {
         sPaginationType: "full_numbers",
-        iDisplayLength: "200",
+        iDisplayLength: "20",
         bJQueryUI: true,
         bProcessing: true,
         bServerSide: true,
@@ -42,7 +41,6 @@ function fnFormatDetails ( oTable, tmpTr )
         } else{
             oTable.fnOpen(tmpTr, fnFormatDetails(oTable, tmpTr));
             $("td img",tmpTr).attr("src","http://datatables.net/release-datatables/examples/examples_support/details_close.png");
-            console.log('nothing');
         }
 
         // if ( oTable.fnIsOpen(nTr) )
