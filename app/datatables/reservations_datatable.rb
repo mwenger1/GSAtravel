@@ -20,11 +20,11 @@ private
     flight_reservations.map do |flight|
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
-        flight.GDS_Record_Locator,
-        flight.Reservation_Date,
-        flight.Airline_Name,
-        flight.Cabin_Class,
-        number_to_currency(flight.Total_Amount)
+        flight.gds_record_locator,
+        flight.reservation_date,
+        flight.airline_name,
+        flight.cabin_class,
+        number_to_currency(flight.total_amount)
       ]
     end
   end
@@ -37,7 +37,7 @@ private
     flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}")
     flight_reservations = flight_reservations.page(page).per_page(per_page)
     if params[:sSearch].present?
-      flight_reservations = flight_reservations.where("GDS_Record_Locator like :search or Airline_Name like :search", search: "%#{params[:sSearch]}%")
+      flight_reservations = flight_reservations.where("gds_record_locator like :search or airline_name like :search", search: "%#{params[:sSearch]}%")
     end
     flight_reservations
   end
@@ -51,7 +51,7 @@ private
   end
 
   def sort_column
-    columns = %w[GDS_Record_Locator GDS_Record_Locator Reservation_Date Airline_Name Cabin_Class Total_Amount]
+    columns = %w[gds_record_locator gds_record_locator reservation_date airline_name cabin_class total_amount]
     columns[params[:iSortCol_0].to_i]
   end
 
