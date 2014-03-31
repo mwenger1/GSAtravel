@@ -8,7 +8,7 @@ class CreateFlightReservations < ActiveRecord::Migration
       t.string :Ticket_Number
       t.string :Airline_Name
       t.string :Cabin_Class
-      t.string :Domestic_/_International_Indicator
+      t.string :Domestic_International_Indicator
       t.string :Origin_Airport_Code
       t.string :Destination_Airport_Code
       t.string :Routing

@@ -11,7 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330231849) do
+ActiveRecord::Schema.define(version: 20140331003059) do
+
+  create_table "flight_reservations", force: true do |t|
+    t.string   "GDS_Record_Locator"
+    t.date     "Reservation_Date"
+    t.date     "Ticket_Issue_Date"
+    t.date     "Trip_Departure_Date"
+    t.string   "Ticket_Number"
+    t.string   "Airline_Name"
+    t.string   "Cabin_Class"
+    t.string   "Domestic_International_Indicator"
+    t.string   "Origin_Airport_Code"
+    t.string   "Destination_Airport_Code"
+    t.string   "Routing"
+    t.float    "Invoice_Amount"
+    t.float    "Tax_Amount"
+    t.float    "Total_Amount"
+    t.float    "Mileage"
+    t.string   "Exchange_Indicator"
+    t.string   "Exchange_Original_Ticket_Number"
+    t.string   "Refund__Indicator"
+    t.string   "Original_Invoice_Number"
+    t.string   "Online_Indicator"
+    t.string   "Fare_Category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hotel_reservations", force: true do |t|
+    t.string   "GDS_Record_Locator"
+    t.date     "Reservation_Date"
+    t.date     "Check_In_Date"
+    t.date     "Check_Out_Date"
+    t.string   "Hotel_Chain_Code"
+    t.string   "Hotel_Chain_Name"
+    t.string   "Hotel_Property_Name"
+    t.string   "Hotel_Address"
+    t.string   "Hotel_City_Name"
+    t.string   "Hotel_State"
+    t.string   "Hotel_Zip_Code"
+    t.string   "Hotel_Country_Code"
+    t.integer  "Number_of_Room_Nights"
+    t.float    "Daily_Rate"
+    t.string   "Room_Rate_Code"
+    t.boolean  "Online_Indicator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

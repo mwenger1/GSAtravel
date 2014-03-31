@@ -16,7 +16,7 @@ class CreateHotelReservations < ActiveRecord::Migration
       t.integer :Number_of_Room_Nights
       t.float :Daily_Rate
       t.string :Room_Rate_Code
-      t.bool :Online_Indicator
+      t.boolean :Online_Indicator
 
       t.timestamps
     end
