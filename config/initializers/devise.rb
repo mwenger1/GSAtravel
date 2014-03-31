@@ -31,9 +31,9 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [ :email ]
 
-  config.authentication_keys = [ :username ]
-  config.case_insensitive_keys = [ :username ]
-  config.strip_whitespace_keys = [ :username ]
+  # config.authentication_keys = [ :username ]
+  # config.case_insensitive_keys = [ :username ]
+  # config.strip_whitespace_keys = [ :username ]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
