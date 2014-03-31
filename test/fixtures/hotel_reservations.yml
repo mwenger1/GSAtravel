@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  GDS_Record_Locator: MyString
+  Reservation_Date: 2014-03-30
+  Check_In_Date: 2014-03-30
+  Check_Out_Date: 2014-03-30
+  Hotel_Chain_Code: MyString
+  Hotel_Chain_Name: MyString
+  Hotel_Property_Name: MyString
+  Hotel_Address: MyString
+  Hotel_City_Name: MyString
+  Hotel_State: MyString
+  Hotel_Zip_Code: MyString
+  Hotel_Country_Code: MyString
+  Number_of_Room_Nights: 1
+  Daily_Rate: 1.5
+  Room_Rate_Code: MyString
+  Online_Indicator: 
+
+two:
+  GDS_Record_Locator: MyString
+  Reservation_Date: 2014-03-30
+  Check_In_Date: 2014-03-30
+  Check_Out_Date: 2014-03-30
+  Hotel_Chain_Code: MyString
+  Hotel_Chain_Name: MyString
+  Hotel_Property_Name: MyString
+  Hotel_Address: MyString
+  Hotel_City_Name: MyString
+  Hotel_State: MyString
+  Hotel_Zip_Code: MyString
+  Hotel_Country_Code: MyString
+  Number_of_Room_Nights: 1
+  Daily_Rate: 1.5
+  Room_Rate_Code: MyString
+  Online_Indicator: 
