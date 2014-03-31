@@ -12,6 +12,10 @@ class ImportController < ApplicationController
     encoded_csv = csv.encode!('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
     parsed_csv = CSV.parse(encoded_csv)
 
+    def calculate_benchmark_rate rate
+        rate.to_f + rand(-50..400)
+    end
+
     counter = 0
     parsed_csv.each do |entry|
         if counter != 0
@@ -33,6 +37,7 @@ class ImportController < ApplicationController
                 f.invoice_amount = entry[11].to_f
                 f.tax_amount = entry[12].to_f
                 f.total_amount = entry[13].to_f
+                f.benchmark_rate = calculate_benchmark_rate(entry[13])
                 f.mileage = entry[14].to_f
                 f.exchange_indicator = entry[15]
                 f.exchange_original_ticket_number = entry[16]
