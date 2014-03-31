@@ -17,9 +17,9 @@ class ImportController < ApplicationController
         if counter != 0
             f = FlightReservation.new
             f.GDS_Record_Locator = entry[0]
-            f.Reservation_Date = Date.strptime(entry[1], '%m/%d/%Y') unless entry[1].nil?
-            f.Ticket_Issue_Date = Date.strptime(entry[2], '%m/%d/%Y') unless entry[2].nil?
-            f.Trip_Departure_Date = Date.strptime(entry[3], '%m/%d/%Y') unless entry[3].nil?
+            f.Reservation_Date = Date.strptime(entry[1], '%m/%d/%y') unless entry[1].nil?
+            f.Ticket_Issue_Date = Date.strptime(entry[2], '%m/%d/%y') unless entry[2].nil?
+            f.Trip_Departure_Date = Date.strptime(entry[3], '%m/%d/%y') unless entry[3].nil?
             f.Ticket_Number = entry[4]
             f.Airline_Name = entry[5]
             f.Cabin_Class = entry[6]
