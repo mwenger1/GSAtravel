@@ -32,6 +32,7 @@ gem 'seed_dump'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'jquery-ui-rails'
 gem 'will_paginate'
+gem 'pg'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
