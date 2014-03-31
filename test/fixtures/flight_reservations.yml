@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  GDS_Record_Locator: MyString
+  Reservation_Date: 2014-03-30
+  Ticket_Issue_Date: 2014-03-30
+  Trip_Departure_Date: 2014-03-30
+  Ticket_Number: MyString
+  Airline_Name: MyString
+  Cabin_Class: MyString
+  Domestic_/_International_Indicator: MyString
+  Origin_Airport_Code: MyString
+  Destination_Airport_Code: MyString
+  Routing: MyString
+  Invoice_Amount: 1.5
+  Tax_Amount: 1.5
+  Total_Amount: 1.5
+  Mileage: 1.5
+  Exchange_Indicator: MyString
+  Exchange_Original_Ticket_Number: MyString
+  Refund__Indicator: MyString
+  Original_Invoice_Number: MyString
+  Online_Indicator: MyString
+  Fare_Category: MyString
+
+two:
+  GDS_Record_Locator: MyString
+  Reservation_Date: 2014-03-30
+  Ticket_Issue_Date: 2014-03-30
+  Trip_Departure_Date: 2014-03-30
+  Ticket_Number: MyString
+  Airline_Name: MyString
+  Cabin_Class: MyString
+  Domestic_/_International_Indicator: MyString
+  Origin_Airport_Code: MyString
+  Destination_Airport_Code: MyString
+  Routing: MyString
+  Invoice_Amount: 1.5
+  Tax_Amount: 1.5
+  Total_Amount: 1.5
+  Mileage: 1.5
+  Exchange_Indicator: MyString
+  Exchange_Original_Ticket_Number: MyString
+  Refund__Indicator: MyString
+  Original_Invoice_Number: MyString
+  Online_Indicator: MyString
+  Fare_Category: MyString
