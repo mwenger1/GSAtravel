@@ -5,6 +5,9 @@ before_filter :authenticate_user!, :except => [:transactions]
   end
 
   def transactions
+  end
+
+  def transactions_data
     respond_to do |format|
       format.html
       format.json{ render json: ReservationsDatatable.new(view_context)}
