@@ -18,7 +18,8 @@ function fnFormatDetails ( oTable, tmpTr)
      */
     var oTable = $('#flight_reservations').dataTable( {
         sPaginationType: "full_numbers",
-        iDisplayLength: "20",
+        iDisplayLength: 25,
+        aLengthMenu: [[25, 50, 100], [25, 50, 100]],
         bJQueryUI: true,
         bProcessing: true,
         bServerSide: true,
