@@ -21,7 +21,7 @@ private
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.gds_record_locator,
-        flight.reservation_date,
+        flight.days_in_advance,
         flight.airline_name,
         flight.cabin_class,
         number_to_currency(flight.total_amount)
@@ -51,7 +51,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator reservation_date airline_name cabin_class total_amount]
+    columns = %w[gds_record_locator gds_record_locator days_in_advance airline_name cabin_class total_amount]
     columns[params[:iSortCol_0].to_i]
   end
 

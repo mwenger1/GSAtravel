@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331003059) do
+ActiveRecord::Schema.define(version: 20140331164141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140331003059) do
     t.string   "fare_category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "days_in_advance"
   end
 
   create_table "hotel_reservations", force: true do |t|

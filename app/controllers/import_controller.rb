@@ -17,7 +17,7 @@ class ImportController < ApplicationController
         if counter != 0
 
             ## FILTERS OUT RETURNS AND REFUNDS @TODO incorporate refunds
-            unless (entry[17] == "Y" || entry[17] == "P" || entry[15] == "Y" || entry[13].blank? || entry[4].blank?)
+            unless (entry[17] == "Y" || entry[17] == "P" || entry[15] == "Y" || entry[13].blank? || entry[4].blank? || entry[3].blank?)
                 f = FlightReservation.new
                 f.gds_record_locator = entry[0]
                 f.reservation_date = Date.strptime(entry[1], '%m/%d/%y') unless entry[1].nil?
