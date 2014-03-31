@@ -24,7 +24,7 @@ private
         flight.Reservation_Date,
         flight.Airline_Name,
         flight.Cabin_Class,
-        flight.Total_Amount
+        number_to_currency(flight.Total_Amount)
       ]
     end
   end
