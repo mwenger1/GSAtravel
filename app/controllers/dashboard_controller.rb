@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-before_filter :authenticate_user!, :except => [:transactions]
+before_filter :authenticate_user!, :except => [:transactions,:transactions_data]
 
   def overview
   end
