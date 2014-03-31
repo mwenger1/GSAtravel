@@ -1,6 +1,6 @@
 <h1>Transactions</h1>
 
-<table id="flight_reservations" class="display">
+<table id="flight_reservations" class="display" data-source="<%= dashboard_transactions_url(format: "json") %>">
   <thead>
       <tr>
         <th>Departure Date</th>
@@ -10,13 +10,5 @@
       </tr>
   </thead>
 <tbody>
-<% @flight_reservations.each do |flight| %>
-  <tr>
-    <td><%= flight.Trip_Departure_Date %></td>
-    <td><%= flight.Airline_Name %></td>
-    <td><%= flight.Total_Amount %></td>
-    <td><%= flight.Fare_Category %></td>
-  </tr>
-<% end %>
 </tbody>
 </table>

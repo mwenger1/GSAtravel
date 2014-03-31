@@ -3,12 +3,4 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-        $('#flight_reservations').dataTable(sPaginationType: "full_numbers", bJQueryUI: true)
-
-
-
-# $(document).ready( function() {
-#   $('#flight_reservations').dataTable( {
-#     "sPaginationType": "full_numbers"
-#   } );
-# } )
+        $('#flight_reservations').dataTable(sPaginationType: "full_numbers", iDisplayLength: "200",bJQueryUI: true,bProcessing: true,bServerSide: true,sAjaxSource:$('#flight_reservations').data('source'))

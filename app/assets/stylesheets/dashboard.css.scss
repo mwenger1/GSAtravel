@@ -1,3 +1,47 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#flight_reservations tr{
+    cursor:pointer;
+}
+
+#flight_reservations tbody tr.even:hover, #flight_reservations tbody tr.even td.highlighted {
+    background-color: #ECFFB3;
+}
+
+#flight_reservations tbody tr.odd:hover, #flight_reservations tbody tr.odd td.highlighted {
+    background-color: #E6FF99;
+}
+
+#flight_reservations tr.even:hover {
+    background-color: #ECFFB3;
+}
+
+#flight_reservations tr.even:hover td.sorting_1 {
+    background-color: #DDFF75;
+}
+
+#flight_reservations tr.even:hover td.sorting_2 {
+    background-color: #E7FF9E;
+}
+
+#flight_reservations tr.even:hover td.sorting_3 {
+    background-color: #E2FF89;
+}
+
+#flight_reservations tr.odd:hover {
+    background-color: #E6FF99;
+}
+
+#flight_reservations tr.odd:hover td.sorting_1 {
+    background-color: #D6FF5C;
+}
+
+#flight_reservations tr.odd:hover td.sorting_2 {
+    background-color: #E0FF84;
+}
+
+#flight_reservations tr.odd:hover td.sorting_3 {
+    background-color: #DBFF70;
+}

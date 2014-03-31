@@ -5,7 +5,11 @@ before_filter :authenticate_user!
   end
 
   def transactions
-    @flight_reservations = FlightReservation.find(:all, :order => "id desc", :limit => 300)
+    respond_to do |format|
+      format.html
+      format.json{ render json: ReservationsDatatable.new(view_context)}
+    # @flight_reservations = FlightReservation.find(:all, :order => "id desc", :limit => 300)
+    end
   end
 
   def budgets
