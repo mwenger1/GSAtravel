@@ -51,7 +51,7 @@ private
   end
 
   def sort_column
-    columns = %w[Reservation_Date Airline_Name Cabin_Class Total_Amount]
+    columns = %w[GDS_Record_Locator GDS_Record_Locator Reservation_Date Airline_Name Cabin_Class Total_Amount]
     columns[params[:iSortCol_0].to_i]
   end
 
