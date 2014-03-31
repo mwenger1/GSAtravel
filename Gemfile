@@ -31,9 +31,16 @@ gem 'jquery-ui-rails'
 gem 'will_paginate'
 gem 'pg'
 
+gem 'googlecharts'
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :assets do
+    gem 'jquery-fileupload-rails'
 end
 
 group :development do
