@@ -5,6 +5,7 @@ before_filter :authenticate_user!
   end
 
   def transactions
+    @flight_reservations = FlightReservation.find(:all, :order => "id desc", :limit => 300)
   end
 
   def budgets
