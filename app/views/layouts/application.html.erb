@@ -7,65 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div id="wrapper">  
-    <!-- -->
-    
-
-
-    <div id="curtain" style="display:none;"></div>
-    <div id="header">  
-      <a href="/HDR_0_home" style=" float: left;"><img width="286" height="50" border="0" alt="GSA Logo" style="margin-top: 22px;" src="/resources/images/GSAlogo.gif"></a>
-      <div id="GSAloginHeader">
-       <ul>
-         <li><a title="home" href="/HDR_0_home">About</a></li>
-         <li>|</li>
-            <% if user_signed_in? %>
-            <li>Welcome, <strong><%= current_user.email %></strong>.</li>
-            <li>|</li>
-            <li><%= link_to 'Edit profile', edit_user_registration_path %></li> 
-            <li>|</li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li>|</li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <% end %>
-        </ul>
-     </div>
-     <div class="clear"><img src="/resources/images/transparent.gif" height="1" alt=""></div>
-    <div id="topnav">
-     <ul>
-       <li class="tab" id="gsa_offers">
-        <%= link_to "Overview", "dashboard/overview", :class => "mainlk" %>
-      </li>
-      <li class="tab" id="business_gsa">
-        <%= link_to "Trends", "dashboard/trends", :class => "mainlk" %>
-      </li>
-      <li class="tab" id="learn_more">
-      <%= link_to "Budgets", "dashboard/budgets", :class => "mainlk" %>
-      </li>
-      <li class="tab" id="">
-      <%= link_to "Transactions", "dashboard/transactions", :class => "mainlk" %>
-      </li>
-      <li class="tab" id="">
-        <%= link_to "Add Transactions", "dashboard/transactions_data", :class => "mainlk" %>
-      </li>
-      <li class="tab" id="">
-        <%= link_to "Ways to Save", "dashboard/ways_to_save", :class => "mainlk" %>
-      </li>
-    </ul>
-  </div>
-  <!-- top nav end -->
-</div>
-
-
-
 <%= render 'layouts/navigation' %>
 <p style="float:left;" class="notice"><%= notice %></p>
 <p style="float:left;" class="alert"><%= alert %></p>
 <div>
-  <%= image_tag("GSAlogo.gif") %>
+  
 </div>
 
 <%= yield %>

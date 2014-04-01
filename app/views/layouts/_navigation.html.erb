@@ -1,8 +1,52 @@
-<ul>
-    <li><%= link_to "Overview", dashboard_overview_path%></li>
-    <li><%= link_to "Transactions", dashboard_transactions_path%></li>
-    <li><%= link_to "Budgets", dashboard_budgets_path%></li>
-    <li><%= link_to "Trends", dashboard_trends_path%></li>
-    <li><%= link_to "Ways to Save", dashboard_ways_to_save_path%></li>
-    <li><%= link_to "Add Transactions", import_index_path%></li>
-</ul>
+
+<div id="wrapper">  
+    <!-- -->
+    
+
+
+    <div id="curtain" style="display:none;"></div>
+    <div id="header">  
+      <%= image_tag("GSAlogo.gif") %>
+      <!-- <a href="/HDR_0_home" style=" float: left;"><img width="286" height="50" border="0" alt="GSA Logo" style="margin-top: 22px;" src="/resources/images/GSAlogo.gif"></a> -->
+      <div id="GSAloginHeader">
+       <ul>
+         <li><%= link_to "About", "dashboard" %></li>
+         <li>|</li>
+            <% if user_signed_in? %>
+            <li>Welcome, <strong><%= current_user.email %></strong>.</li>
+            <li>|</li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li> 
+            <li>|</li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li>|</li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+        </ul>
+     </div>
+     <!-- <div class="clear"><img src="/resources/images/transparent.gif" height="1" alt=""></div> -->
+    <div id="topnav">
+     <ul>
+       <li class="tab" id="gsa_offers">
+        <%= link_to "Overview", dashboard_overview_path, :class => "mainlk" %>
+      </li>
+      <li class="tab" id="business_gsa">
+        <%= link_to "Trends", dashboard_trends_path, :class => "mainlk" %>
+      </li>
+      <li class="tab" id="learn_more">
+      <%= link_to "Budgets", dashboard_budgets_path, :class => "mainlk" %>
+      </li>
+      <li class="tab" id="">
+      <%= link_to "Transactions", dashboard_transactions_path, :class => "mainlk" %>
+      </li>
+      <li class="tab" id="">
+        <%= link_to "Add Transactions", import_index_path, :class => "mainlk" %>
+      </li>
+      <li class="tab" id="">
+        <%= link_to "Ways to Save", dashboard_ways_to_save_path, :class => "mainlk" %>
+      </li>
+    </ul>
+  </div>
+  <!-- top nav end -->
+</div>
