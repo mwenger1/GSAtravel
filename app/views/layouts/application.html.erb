@@ -37,22 +37,22 @@
     <div id="topnav">
      <ul>
        <li class="tab" id="gsa_offers">
-        <%= link_to "Login", new_user_session_path, class:'mainlk' %>
+        <%= link_to "Overview", "dashboard/overview", :class => "mainlk" %>
       </li>
       <li class="tab" id="business_gsa">
-        <a href="#" class="mainlk">Trends</a>
+        <%= link_to "Trends", "dashboard/trends", :class => "mainlk" %>
       </li>
       <li class="tab" id="learn_more">
-        <a href="#" class="mainlk" style="text-indent: -9999px">Budgets</a>
+      <%= link_to "Budgets", "dashboard/budgets", :class => "mainlk" %>
       </li>
-      <li class="tab" id="#">
-        <a href="#" class="mainlk" style="text-indent: -9999px">Transactions</a>
+      <li class="tab" id="">
+      <%= link_to "Transactions", "dashboard/transactions", :class => "mainlk" %>
       </li>
-      <li class="tab" id="#">
-        <a href="#" class="mainlk" style="text-indent: -9999px">Add Transactions</a>
+      <li class="tab" id="">
+        <%= link_to "Add Transactions", "dashboard/transactions_data", :class => "mainlk" %>
       </li>
-      <li class="tab" id="#">
-        <a href="#" class="mainlk" style="text-indent: -9999px">Ways to Save</a>
+      <li class="tab" id="">
+        <%= link_to "Ways to Save", "dashboard/ways_to_save", :class => "mainlk" %>
       </li>
     </ul>
   </div>
