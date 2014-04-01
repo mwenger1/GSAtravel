@@ -15,10 +15,11 @@
 *= require dataTables/extras/TableTools
  *= require_tree .
  */
-/* ***************************Import Accordion Styles *********************************/
-@import url("/resources/css/accordion.css");
 
 /* Structure */
+.border{
+	background: url('http://www.gsa.gov/resources/images/bars_background.gif') repeat-y scroll 50% 0 #CED5E8;
+}
 #wrapper {
 	overflow: hidden;
 }
@@ -58,7 +59,7 @@
 	margin-bottom: 7px;
 }
 .column h6 {
-	background:url(/resources/images/double_line_gray.gif) repeat-x scroll 0 3px;
+	background:url(http://www.gsa.gov/resources/images/double_line_gray.gif) repeat-x scroll 0 3px;
 	color:#666666;
 	margin:0 0 2px !important;
 	padding-top:10px;
@@ -135,7 +136,7 @@
 	width: 100%;
 	float: left;
 	margin-top: 0;
-	background: url(/resources/images/fav_bg.gif) repeat-x 0 3px;
+	background: url(http://www.gsa.gov/resources/images/fav_bg.gif) repeat-x 0 3px;
 	}
 #fav > div {
 	border: 2px solid #fff;
@@ -168,7 +169,7 @@
 	height: 84px;
 	font-family: Arial, Helvetica, sans-serif;
 	vertical-align: middle;
-	background: url(/resources/images/prefoot_gray_bg_bottom.gif) 0 0 repeat-x;
+	background: url(http://www.gsa.gov/resources/images/prefoot_gray_bg_bottom.gif) 0 0 repeat-x;
 	width: 987px;
 	_width: 993px;
 	margin-top: 10px;
@@ -204,7 +205,7 @@
 	width: 518px;
 	height: 368px; 
 	_height: 380px; 
-	background: url(/resources/images/flag_ghost.gif) repeat scroll 0% 0% transparent;
+	background: url(http://www.gsa.gov/resources/images/flag_ghost.gif) repeat scroll 0% 0% transparent;
 	margin-top : 20px; 
 	}
 #tabbedTable {
@@ -238,7 +239,7 @@
 	border: 1px solid #fff;
 	cursor: pointer;
 	color: #d6d8e3;	
-	background: #566698 url(/resources/images/tab_background.gif) no-repeat;
+	background: #566698 url(http://www.gsa.gov/resources/images/tab_background.gif) no-repeat;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	vertical-align: text-bottom;
@@ -279,7 +280,7 @@
 	text-align:left;
 	top:-1000px;
 	width:1px;
-	z-index:9000;
+
 }
 
 #skip-to-content-destination a.skip-content:active,#skip-to-content-destination a.skip-content:focus {
@@ -292,7 +293,6 @@
 	text-decoration:none;
 	top:0;
 	width:100%;
-	z-index:9000;
 }
 
 /* Reset */
@@ -420,7 +420,7 @@ a.custom:hover {
 }
 
 a.close:link,a.close:visited {
-	background-image:url(/resources/images/btn_close_x.gif);
+	background-image:url(http://www.gsa.gov/resources/images/btn_close_x.gif);
 	background-position:5px;
 	background-repeat:no-repeat;
 	color:#282e8c;
@@ -662,9 +662,8 @@ table#main td#left img {
 /***************** Navigation *****************/
 /* Gray - GSA.gov ONLY */
 #gray {
-	background:url(/resources/images/overlay.png) repeat-x;
+	background:url(http://www.gsa.gov/resources/images/overlay.png) repeat-x;
 	display:none;
-	z-index:980;
 	width:100%;
 	height:100%;
 	position:fixed;
@@ -679,9 +678,8 @@ table#main td#left img {
 	*margin:0;
 	padding:0;
 	clear:both;
-	background:url(/resources/images/header_bg.gif);
+	background:url(http://www.gsa.gov/resources/images/header_bg.gif);
 	position:relative;
-	z-index:990;
 }
 
 #topnav ul,#topnav ul li {
@@ -699,51 +697,43 @@ table#main td#left img {
 }
 
 #topnav a.mainlk {
-	text-indent:-9999px;
+	color: #fff;
+	padding: 20px 40px;
 }
 
 #topnav #lkhome .mainlk {
-	width:90px;
+
 }
 
 #topnav #gsa_offers a.mainlk {
-	width:187px;
-	background:url(/resources/images/gsa_offers.gif);
+
 }
 
 #topnav #gsa_offers a.mainlk:hover,#topnav #gsa_offers a.mainlk.over {
-	background:url(/resources/images/gsa_offers_hover.gif);
 }
 
 #topnav #business_gsa .mainlk {
-	width:255px;
-	background:url(/resources/images/business_gsa.gif);
 }
 
 #topnav #business_gsa a.mainlk:hover,#topnav #business_gsa a.mainlk.over {
-	background:url(/resources/images/business_gsa_hover.gif);
 }
 
 #topnav #learn_more .mainlk {
-	width:177px;
-	background:url(/resources/images/learn_more.gif);
 }
 
 #topnav #learn_more a.mainlk:hover,#topnav #learn_more a.mainlk.over {
-	background:url(/resources/images/learn_more_hover.gif);
 }
 
 #topnav #blogs .mainlk {
-	width:177px;
-	background:url(/resources/images/blogs.gif);
+
 }
 
 #topnav #blogs a.mainlk:hover,#topnav #blogs a.mainlk.over {
-	background:url(/resources/images/blogs_hover.gif);
+
 }
 
 #topnav #lkstore .mainlk {
-	width:141px;
+
 }
 
 #topnav li .submenu {
@@ -800,7 +790,7 @@ table#main td#left img {
 	margin:0;
 	padding-top:5px;
 	width:100%;
-	background:url(/resources/images/double_line.gif) repeat-x 0 0;
+	background:url(http://www.gsa.gov/resources/images/double_line.gif) repeat-x 0 0;
 	font-weight:700;
 }
 
@@ -848,7 +838,7 @@ table#main td#left img {
 }
 
 #navcontainer .firstlevel a:link,#navcontainer .firstlevel a:visited {
-	background:url(/resources/images/bullet_white.gif) no-repeat 5px 10px;
+	background:url(http://www.gsa.gov/resources/images/bullet_white.gif) no-repeat 5px 10px;
 }
 
 #navcontainer .secondlevel a:link,#navcontainer .secondlevel a:visited {
@@ -881,7 +871,7 @@ table#main td#left img {
 }
 
 #navcontainer .NavSelected a:link,#navcontainer .NavSelected a:visited,#navcontainer .NavSelected a:hover {
-	background:#fff url(/resources/images/nav_pointer.gif) center left no-repeat;
+	background:#fff url(http://www.gsa.gov/resources/images/nav_pointer.gif) center left no-repeat;
 	color:#282E8C;
 	border:1px solid #D5DCF1;
 }
@@ -965,7 +955,7 @@ table#main td#left img {
 }
 
 #pageLayout li,#right_navcontainer li {
-	background:url(/resources/images/square_bullet.gif) no-repeat scroll 2px -1.25px;
+	background:url(http://www.gsa.gov/resources/images/square_bullet.gif) no-repeat scroll 2px -1.25px;
 	list-style:none outside none;
 	padding:2px 0 0 10px;
 	margin:2px 0;
@@ -977,7 +967,7 @@ table#main td#left img {
 }
 
 #pageLayout li ul li {
-	background:url(/resources/images/roundBullet.gif) no-repeat 2px 8px;
+	background:url(http://www.gsa.gov/resources/images/roundBullet.gif) no-repeat 2px 8px;
 	padding:0 0 0 10px;
 	list-style:none;
 	font-size:1em;
@@ -1063,7 +1053,7 @@ table#main td#left img {
 /* !Blue box specific styles */
 /* Contact specific styles */
 .right_contact_box {
-	background:url(/resources/images/contact_box_flag.gif) no-repeat 0 0 #d0d8ef;
+	background:url(http://www.gsa.gov/resources/images/contact_box_flag.gif) no-repeat 0 0 #d0d8ef;
 }
 
 .right_contact_box li {
@@ -1153,7 +1143,7 @@ table#main td#left img {
 }
 
 .feature_content_box h5 {
-	background:url(/resources/images/doubleline_hdr.gif) repeat-x 0 0;
+	background:url(http://www.gsa.gov/resources/images/doubleline_hdr.gif) repeat-x 0 0;
 	font-weight:700;
 	margin-bottom:10px;
 	padding:10px 0 0;
@@ -1191,7 +1181,7 @@ div.full .feature_content_wt_box_left {
 }
 
 .BlockTitle_Ruled {
-	background:url(/resources/images/doubleline_hdr.gif) repeat-x 0 0;
+	background:url(http://www.gsa.gov/resources/images/doubleline_hdr.gif) repeat-x 0 0;
 	margin-bottom:10px;
 	padding-top:10px;
 	font-weight:700;
@@ -1344,17 +1334,17 @@ ul#innerTabsParent {
 	width:117px;
 	padding:5px 5px 2px;
 	color:#fff;
-	background:url(/resources/images/tab_inactive.gif) no-repeat scroll 0 0 #5C69AD;
+	background:url(http://www.gsa.gov/resources/images/tab_inactive.gif) no-repeat scroll 0 0 #5C69AD;
 	text-align:center;
 }
 
 #innerTabsParent li a:hover {
-	background:url(/resources/images/tab_hover.gif) no-repeat 0 0 #7e8bc6;
+	background:url(http://www.gsa.gov/resources/images/tab_hover.gif) no-repeat 0 0 #7e8bc6;
 	text-decoration:underline;
 }
 
 #innerTabsParent li a.selected:link,#innerTabsParent li a.selected:visited,#innerTabsParent li a.selected:active {
-	background:url(/resources/images/tab_active.gif) no-repeat #fff;
+	background:url(http://www.gsa.gov/resources/images/tab_active.gif) no-repeat #fff;
 	color:#333;
 	border-bottom:none;
 	height:40px;
@@ -1398,7 +1388,7 @@ ul#innerTabsParent {
 }
 
 #btnPrinter a {
-	background:transparent url(/resources/images/btn_printer.gif) no-repeat scroll 0 0;
+	background:transparent url(http://www.gsa.gov/resources/images/btn_printer.gif) no-repeat scroll 0 0;
 	height:25px;
 	line-height:20px;
 	padding-left:25px;
@@ -1445,7 +1435,7 @@ ul#innerTabsParent {
 
 /****************************Footer Styles *********************************/
 #footer {
-	background:url(/resources/images/doubleline_hdr.gif) repeat-x 0 0;
+	background:url(http://www.gsa.gov/resources/images/doubleline_hdr.gif) repeat-x 0 0;
 	padding:11px;
 	margin-top:9px;
 	clear:both;
@@ -1714,7 +1704,7 @@ table#perdiem_table td.leftText {
 
 #col_footer.contact {
 	float:left;
-	background:url(/resources/images/contact_box_flag.gif) no-repeat 0 0 #d0d8ef;
+	background:url(http://www.gsa.gov/resources/images/contact_box_flag.gif) no-repeat 0 0 #d0d8ef;
 	border:1px #fff solid;
 	width:202px;
 }
@@ -1746,7 +1736,7 @@ table#perdiem_table td.leftText {
 
 /* Added li styles to match regular site */
 #col_footer li {
-	background:url(/resources/images/square_bullet.gif) no-repeat scroll 2px -2.25px transparent;
+	background:url(http://www.gsa.gov/resources/images/square_bullet.gif) no-repeat scroll 2px -2.25px transparent;
 	font-size:.85em;
 	list-style:none outside none;
 	padding:0 0 0 10px;
@@ -1802,7 +1792,7 @@ table#enterData h5 {
 	width:80%;
 	height:90%;
 	color:#fff;
-	background:#fff url(/resources/images/perdiem/modal-bg.jpg);
+	background:#fff url(http://www.gsa.gov/resources/images/perdiem/modal-bg.jpg);
 	border-radius:25px;
 	-webkit-box-shadow:0 0 50px #000;
 	box-shadow:0 0 50px #000;
@@ -1835,7 +1825,7 @@ table#enterData h5 {
 }
 
 #simplemodal-container a.modalCloseImg {
-	background:url(/resources/images/perdiem/x.png) no-repeat;
+	background:url(http://www.gsa.gov/resources/images/perdiem/x.png) no-repeat;
 	width:90px;
 	height:90px;
 	display:inline;
@@ -1852,7 +1842,7 @@ table#enterData h5 {
 	border-radius:40px;
 	-webkit-box-shadow:2px 7px 20px #333;
 	box-shadow:2px 7px 20px #333;
-	background:url(/resources/images/perdiem/icon.jpg);
+	background:url(http://www.gsa.gov/resources/images/perdiem/icon.jpg);
 	margin:20px auto;
 }
 
@@ -1971,7 +1961,7 @@ h5:empty {
 	height:352px;
 	margin:10px auto;
 	padding:0;
-	background:url(/resources/images/ocsit/ocsit.jpg);
+	background:url(http://www.gsa.gov/resources/images/ocsit/ocsit.jpg);
 }
 
 #ocsit h1,#ocsit h2,#ocsit h3,#ocsit h4,#ocsit h5,#ocsit h6,#ocsit p {
@@ -2103,7 +2093,7 @@ h5:empty {
 /* 3RD LEVEL UL FIX
    =========================*/
 #content ol ol ul,#content ol ul ul,#content ul ul ul,#content ul ol ul {
-	background:url(/resources/images/square_bullet.gif) no-repeat scroll 2px -1.25px;
+	background:url(http://www.gsa.gov/resources/images/square_bullet.gif) no-repeat scroll 2px -1.25px;
 	list-style:none outside none;
 	padding:2px 0 0 10px;
 	margin:2px 0;

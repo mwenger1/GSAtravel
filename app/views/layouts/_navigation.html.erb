@@ -1,13 +1,12 @@
-
+<div class="border">
 <div id="wrapper">  
     <!-- -->
     
 
 
-    <div id="curtain" style="display:none;"></div>
+    <!-- <div id="curtain" style="display:none;"></div> -->
     <div id="header">  
       <%= image_tag("GSAlogo.gif") %>
-      <!-- <a href="/HDR_0_home" style=" float: left;"><img width="286" height="50" border="0" alt="GSA Logo" style="margin-top: 22px;" src="/resources/images/GSAlogo.gif"></a> -->
       <div id="GSAloginHeader">
        <ul>
          <li><%= link_to "About", "dashboard" %></li>
@@ -25,16 +24,15 @@
             <% end %>
         </ul>
      </div>
-     <!-- <div class="clear"><img src="/resources/images/transparent.gif" height="1" alt=""></div> -->
     <div id="topnav">
      <ul>
-       <li class="tab" id="gsa_offers">
+       <li class="tab" id="">
         <%= link_to "Overview", dashboard_overview_path, :class => "mainlk" %>
       </li>
-      <li class="tab" id="business_gsa">
+      <li class="tab" id="">
         <%= link_to "Trends", dashboard_trends_path, :class => "mainlk" %>
       </li>
-      <li class="tab" id="learn_more">
+      <li class="tab" id="">
       <%= link_to "Budgets", dashboard_budgets_path, :class => "mainlk" %>
       </li>
       <li class="tab" id="">
@@ -49,4 +47,3 @@
     </ul>
   </div>
   <!-- top nav end -->
-</div>
