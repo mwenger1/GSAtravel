@@ -15,6 +15,8 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard
+//= require moment
 //= require turbolinks
 //= require_tree .
+//= require daterangepicker
 
