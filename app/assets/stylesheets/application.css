@@ -655,13 +655,15 @@ table#main td#left img {
 
 #GSAloginHeader {
 	float:right;
-/*	margin-top:7px;*/
 }
 
 #GSAloginHeader li {
-	float:left;
+	float:right;
 	font-size:.85em;
 	padding:0 5px;
+}
+#GSAloginHeader p{
+	margin: 0 0 10px 0;
 }
 
 /***************** Navigation *****************/
