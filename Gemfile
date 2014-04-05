@@ -30,7 +30,7 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 gem 'jquery-ui-rails'
 gem 'will_paginate'
 gem 'pg'
-
+gem 'momentjs-rails'
 gem 'googlecharts'
 
 

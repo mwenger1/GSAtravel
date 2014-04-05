@@ -16,34 +16,29 @@
     </select>
 
 
+<div id="reportrange" class="pull-right">
+    <i class="fa fa-calendar fa-lg"></i>
+    <span>3/15/14 - 4/4/14</span> <b class="caret"></b>
+</div>
 
-<div id="inputDate"></div>
-
-<script>
-// $('#inputDate').DatePicker({
-//   mode: 'single',
-//   position: 'right',
-//   onBeforeShow: function(el){
-//     if($('#inputDate').val())
-//       $('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
-//   },
-//   onChange: function(date, el) {
-//     $(el).val((date.getMonth()+1)+'/'+date.getDate()+'/'+date.getFullYear());
-//     if($('#closeOnSelect input').attr('checked')) {
-//       $(el).DatePickerHide();
-//     }
-//   }
-// });
+<script type="text/javascript">
+$('#reportrange').daterangepicker(
+    {
+      ranges: {
+         'Today': [moment(), moment()],
+         'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+         'Last 7 Days': [moment().subtract('days', 6), moment()],
+         'Last 30 Days': [moment().subtract('days', 29), moment()],
+         'This Month': [moment().startOf('month'), moment().endOf('month')],
+         'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+      },
+      startDate: moment().subtract('days', 29),
+      endDate: moment()
+    },
+    function(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+);
 </script>
-<label style="margin-left:10px;">Date of Transaction</label>
-    <div style="200px;" class="datepicker-calendar" id="datepicker-calendar"></div>
-</p>
 
 
-<div id="date-range">
-            <div id="date-range-field" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
-              <span>22 March, 2014 - 5 April, 2014</span>
-              <a href="#" style="border-bottom-right-radius: 5px;">▼</a>
-            </div>
-
-          </div>
