@@ -17,9 +17,9 @@
  */
 
 /* Structure */
-.border{
+/*.border{
 	background: url('http://www.gsa.gov/resources/images/bars_background.gif') repeat-y scroll 50% 0 #CED5E8;
-}
+}*/
 #wrapper {
 	overflow: hidden;
 }
@@ -51,7 +51,7 @@
 }
 
 /* Homepage Column Styles */
-.column { 
+.column {
 	margin-right:11px;
 	margin-top:20px;
 }
@@ -92,7 +92,7 @@
 	font-size: 1.0em;
 	font-weight: bold;
 }
-.column span { 
+.column span {
 	font-size: .9em;
 	display: block;
 }
@@ -100,20 +100,20 @@
 	font-size: .7em;
 	margin:0 0 22px;
 }
-#pageLayout .column ul { 
+#pageLayout .column ul {
 	padding-left: 0
 }
-#pageLayout .column ul li{ 
+#pageLayout .column ul li{
 	font-size: 1.0em;
 }
 
-.arrowlistmenu ul li a { 
+.arrowlistmenu ul li a {
 	padding-left: 0 !important;
 }
-#showContent .list-header { 
+#showContent .list-header {
 	margin-bottom: 5px;
 }
-#showContent #picture-right { 
+#showContent #picture-right {
         float: right;
         margin: 0 0 5px 10px;
 		width: 77px;}
@@ -130,7 +130,7 @@
 	display: block;
 }
 .date {
- 	font-size: .8em; 
+ 	font-size: .8em;
 	display: block;
 	}
 #fav {
@@ -150,7 +150,7 @@
 	float:left;
 	overflow:hidden;
 }
-#fav h6 { 
+#fav h6 {
 	margin: 2px 0;
 	color: #999;
 	font-size: 0.9em;
@@ -204,25 +204,25 @@
 	float: left;}
 
 /* DYNAMIC MENU */
-#dynamicTab { 
+#dynamicTab {
 	width: 518px;
-	height: 368px; 
-	_height: 380px; 
+	height: 368px;
+	_height: 380px;
 	background: url(http://www.gsa.gov/resources/images/flag_ghost.gif) repeat scroll 0% 0% transparent;
-	margin-top : 20px; 
+	margin-top : 20px;
 	}
 #tabbedTable {
 	width: 500px;
 	height: 340px;
 	border: 2px solid #fff;
-	top:50px;	
+	top:50px;
 	left:100px;
-	margin-left: 8px; 
+	margin-left: 8px;
 	margin-top: 10px;
 	background: #fff;
 	}
-#sm4.activeTab span{ 
-	margin-top: 10px; 
+#sm4.activeTab span{
+	margin-top: 10px;
 	line-height: 12px;
 	}
 #displayContent {
@@ -241,19 +241,19 @@
 	height: 40px;
 	border: 1px solid #fff;
 	cursor: pointer;
-	color: #d6d8e3;	
+	color: #d6d8e3;
 	background: #566698 url(http://www.gsa.gov/resources/images/tab_background.gif) no-repeat;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	vertical-align: text-bottom;
-	margin-bottom: 0; 
+	margin-bottom: 0;
 	_margin-bottom: 2px;
 	}
-.activeTab img { 
+.activeTab img {
 	display: none;
 	}
-.activeTab span { 
-	display: block; 
+.activeTab span {
+	display: block;
 	font-size: .83em;
 	margin-top: 12px;
 	margin-left: 6px;
@@ -264,8 +264,8 @@
 	text-align: left;
 	font-size: 0.85em;
 	padding: 11px 11px 5px 11px;
-	height: 320px; 
-	_height: 26em;/* new */	
+	height: 320px;
+	_height: 26em;/* new */
 }
 .heading { /* text-align: center;  */
 	font-size:1.5em;
@@ -526,6 +526,7 @@ a.underlined:link {
 #wrapper {
 	margin:0 auto;
 	width:990px;
+	padding: 0 50px;
 }
 
 #navcontainer {
@@ -2167,7 +2168,7 @@ h5:empty {
 }
 
 /* <end> sub contracting directory */
-/*  govDelivery Styles 
+/*  govDelivery Styles
     =========================== */
 .govDelivery {
 	width:180px;
