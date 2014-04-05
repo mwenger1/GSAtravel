@@ -684,6 +684,7 @@ table#main td#left img {
 	clear:both;
 	background:url(http://www.gsa.gov/resources/images/header_bg.gif);
 	position:relative;
+	margin-bottom: 20px;
 }
 
 #topnav ul,#topnav ul li {
@@ -696,13 +697,19 @@ table#main td#left img {
 }
 
 #topnav .mainlk {
-	cursor:default;
+	cursor: pointer;
 	height:55px;
 }
 
 #topnav a.mainlk {
 	color: #fff;
 	padding: 20px 40px;
+	cursor: pointer;
+	height: 14px;
+}
+#topnav a.mainlk:hover {
+	text-decoration: none;
+
 }
 
 #topnav #lkhome .mainlk {
