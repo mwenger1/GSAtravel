@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
-before_filter :authenticate_user!, :except => [:transactions,:transactions_data]
+before_filter :authenticate_user!, :set_date, :except => [:transactions,:transactions_data]
+
 require 'gchart'
   def overview
         @line_chart = Gchart.line(:data => [0, 40, 10, 70, 20],:legend => 'Mike\'s test table', :axis_with_labels => 'y,x')
@@ -45,5 +46,12 @@ require 'gchart'
   end
 
   def ways_to_save
+  end
+
+  private
+  def set_date
+    @date = Date.today.strftime('%b %d, %Y')
+    @date_in_past = (Date.today-30).strftime('%b %d, %Y')
+
   end
 end
