@@ -11,6 +11,9 @@
 
 <%= render 'layouts/navigation' %>
 
+<% if controller_name == "dashboard" %>
+    <%= render 'layouts/filters' %>
+<% end %>
 
 <%= yield %>
 

@@ -1,0 +1,49 @@
+<p style="background-color:#ccc; padding:20px; margin-bottom:20px;">
+    <label>Department:</label>
+    <select>
+        <option>All</option>
+        <option>Agriculture</option>
+        <option>General Services Administration</option>
+        <option>Internal Revenue Service</option>
+    </select>
+
+
+    <label style="margin-left:10px;">Transaction type:</label>
+    <select>
+        <option>Airline</option>
+        <option>Hotel</option>
+        <option>Car Rental</option>
+    </select>
+
+
+
+<div id="inputDate"></div>
+
+<script>
+// $('#inputDate').DatePicker({
+//   mode: 'single',
+//   position: 'right',
+//   onBeforeShow: function(el){
+//     if($('#inputDate').val())
+//       $('#inputDate').DatePickerSetDate($('#inputDate').val(), true);
+//   },
+//   onChange: function(date, el) {
+//     $(el).val((date.getMonth()+1)+'/'+date.getDate()+'/'+date.getFullYear());
+//     if($('#closeOnSelect input').attr('checked')) {
+//       $(el).DatePickerHide();
+//     }
+//   }
+// });
+</script>
+<label style="margin-left:10px;">Date of Transaction</label>
+    <div style="200px;" class="datepicker-calendar" id="datepicker-calendar"></div>
+</p>
+
+
+<div id="date-range">
+            <div id="date-range-field" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+              <span>22 March, 2014 - 5 April, 2014</span>
+              <a href="#" style="border-bottom-right-radius: 5px;">▼</a>
+            </div>
+
+          </div>

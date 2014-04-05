@@ -25,7 +25,14 @@
       <li>|</li>
       <li>
         <%= link_to "Login", new_user_session_path %></li>
-      <% end %></ul>
+
+      <% end %>
+      <li>|</li>
+  <li class="tab" id="">
+        <%= link_to "Add Transactions", import_index_path, :class =>"mainlk" %></li>
+
+    </ul>
+
   </div>
   <div id="topnav">
     <ul>
@@ -37,8 +44,6 @@
         <%= link_to "Budgets", dashboard_budgets_path, :class =>"mainlk" %></li>
       <li class="tab" id="">
         <%= link_to "Transactions", dashboard_transactions_path, :class =>"mainlk" %></li>
-      <li class="tab" id="">
-        <%= link_to "Add Transactions", import_index_path, :class =>"mainlk" %></li>
       <li class="tab" id="">
         <%= link_to "Ways to Save", dashboard_ways_to_save_path, :class =>"mainlk" %></li>
     </ul>
