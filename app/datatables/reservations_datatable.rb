@@ -10,7 +10,7 @@ class ReservationsDatatable
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: FlightReservation.count,
+      iTotalRecords: flight_reservations.count,
       iTotalDisplayRecords: flight_reservations.total_entries,
       aaData: data
     }

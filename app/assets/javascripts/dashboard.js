@@ -27,14 +27,15 @@ function fnFormatDetails ( oTable, tmpTr)
     filterEndDate = moment().format('D/M/YYYY');
 
     var oTable = $('#flight_reservations').dataTable( {
-        sPaginationType: "full_numbers",
         iDisplayLength: 25,
         aLengthMenu: [[25, 50, 100], [25, 50, 100]],
         bJQueryUI: true,
         bProcessing: true,
         bServerSide: true,
         aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
-        sDom: "T<'clear'>lfrtip",
+        sDom: '<if>rt<lp><"clear">',
+        sPaginationType: "full_numbers",
+
         oTableTools: {
             "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
         },
