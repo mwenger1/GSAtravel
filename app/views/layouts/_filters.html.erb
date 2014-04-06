@@ -1,10 +1,29 @@
 <p style="background-color:#ccc; padding:20px; margin-bottom:20px;">
-     <label >Transaction type:</label>
-    <select>
-        <option>Airline</option>
-        <option>Hotel</option>
-        <option>Car Rental</option>
-    </select>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default"><%= image_tag "airplane_icon.png" %></button>
+        <button type="button" class="btn btn-default"><%= image_tag "hotel_icon.png" %></button>
+        <button type="button" class="btn btn-default"><%= image_tag "car_icon.png" %></button>
+    </div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Department <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li>All</li>
+    <li>NIH</li>
+    <li>GSA</li>
+    <li>IRS</li>
+    <li>EPA</li>
+    <li>FEMA</li>
+    <li>DoJ</li>
+    <li>FBI</li>
+    <li>CIA</li>
+    <li>DE</li>
+    <li>DHS</li>
+    <li>USDA</li>
+  </ul>
+</div>
 
 <% unless controller.action_name == "overview" %>
     <label style="margin-left:10px;">Department:</label>
