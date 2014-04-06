@@ -15,6 +15,7 @@
 *= require dataTables/extras/TableTools
 *= require bootstrap
 *= require daterangepicker-bs3
+*= require font-awesome
  *= require_tree .
  */
 
