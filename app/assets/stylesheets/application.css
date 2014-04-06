@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
 *= require bootstrap
- *= require_self
+
  *= require jquery.ui.theme
  *= require dataTables/jquery.dataTables
 *= require dataTables/src/demo_table_jui
@@ -17,6 +17,7 @@
 *= require daterangepicker-bs3
 *= require font-awesome
  *= require_tree .
+  *= require_self
  */
 
 /* Structure */
@@ -2598,7 +2599,6 @@ button.buttonBlue{
 	padding: 15px 20px;
 	font-size: 1.3em;
 }
-/* BOOTSTRAP OVERRIDES */
 
 .filterBar{
 	margin: 20px 0px;
@@ -2611,3 +2611,4 @@ button.buttonBlue{
 a{
 	color: #81050f;
 }
+
