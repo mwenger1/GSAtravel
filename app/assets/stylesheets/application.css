@@ -26,6 +26,10 @@
 #wrapper {
 	overflow: hidden;
 }
+
+.mainContent{
+	min-height: 600px;
+}
 .logo{
 /*	margin-top: 30px;
 */}
@@ -687,9 +691,11 @@ table#main td#left img {
 	*margin:0;
 	padding:0;
 	clear:both;
-	background:url(http://www.gsa.gov/resources/images/header_bg.gif);
+	/*background:url(http://www.gsa.gov/resources/images/header_bg.gif);*/
 	position:relative;
 	margin-bottom: 20px;
+	border: 3px solid #CED5E8;
+	background: #142c6c;
 }
 
 #topnav ul,#topnav ul li {
@@ -708,13 +714,15 @@ table#main td#left img {
 
 #topnav a.mainlk {
 	color: #fff;
-	padding: 20px 40px;
+	padding: 18px 50px;
 	cursor: pointer;
-	height: 14px;
+	height: 49px;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
 }
 #topnav a.mainlk:hover {
 	text-decoration: none;
-
+	background-color: #253b76;
 }
 
 #topnav #lkhome .mainlk {
@@ -2578,14 +2586,17 @@ button.buttonBlue{
 
 
 #reportrange {
-background: #FFF;
--webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
--moz-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-color: #333;
-padding: 8px;
-line-height: 18px;
-cursor: pointer;
+	background: #FFF;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1); 
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	color: #333;
+	padding: 8px;
+	line-height: 18px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 15px 20px;
+	font-size: 1.3em;
 }
 /* BOOTSTRAP OVERRIDES */
 
