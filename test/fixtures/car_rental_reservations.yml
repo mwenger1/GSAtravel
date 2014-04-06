@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gds_record_locator: MyString
+  reservation_date: 2014-04-06
+  car_pick_up_date: 2014-04-06
+  car_drop_off_date: 2014-04-06
+  car_chain_code: MyString
+  car_chain_name: MyString
+  car_pick_up_city: MyString
+  car_pick_up_state: MyString
+  car_drop_off_city: MyString
+  car_drop_off_state: MyString
+  car_rental_days: 1
+  car_daily_rate: 1.5
+  car_category: MyString
+  online_indicator: MyString
+
+two:
+  gds_record_locator: MyString
+  reservation_date: 2014-04-06
+  car_pick_up_date: 2014-04-06
+  car_drop_off_date: 2014-04-06
+  car_chain_code: MyString
+  car_chain_name: MyString
+  car_pick_up_city: MyString
+  car_pick_up_state: MyString
+  car_drop_off_city: MyString
+  car_drop_off_state: MyString
+  car_rental_days: 1
+  car_daily_rate: 1.5
+  car_category: MyString
+  online_indicator: MyString
