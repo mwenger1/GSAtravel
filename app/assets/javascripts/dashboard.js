@@ -69,16 +69,11 @@ function fnFormatDetails ( oTable, tmpTr)
     /* Table on Dashboard homepage */
     var overviewTable = $('#department_overview').dataTable( {
     sPaginationType: "full_numbers",
-    iDisplayLength: 25,
-    aLengthMenu: [[25, 50, 100], [25, 50, 100]],
-    bJQueryUI: true,
     bProcessing: true,
     bServerSide: true,
-    aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
-    sDom: "T<'clear'>lfrtip",
-    oTableTools: {
-        "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
-    },
+    bFilter: false,
+    bPaginate: false,
+    bInfo: false,
     sAjaxSource:$('#department_overview').data('source'),
     });
 };

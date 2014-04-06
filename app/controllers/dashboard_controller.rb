@@ -42,7 +42,7 @@ require 'gchart'
   def overview_data
     respond_to do |format|
       format.html
-      format.json{ render json: ReservationsDatatable.new(view_context)}
+      format.json{ render json: DepartmentOverviewDatatable.new(view_context)}
     # @flight_reservations = FlightReservation.find(:all, :order => "id desc", :limit => 300)
     end
   end
