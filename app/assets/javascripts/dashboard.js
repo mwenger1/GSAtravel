@@ -37,8 +37,8 @@ function fnFormatDetails ( oTable, tmpTr)
         sAjaxSource:$('#flight_reservations').data('source'),
         fnServerData: function ( sSource, aData, fnCallback ) {
             /* Add some extra data to the sender */
-            aData.push( { "name": "start_date2", "value": "AMERICAN" } );
-            aData.push( { "name": "end_date2", "value": "AMERICAN" } );
+            aData.push( { "name": "start_date", "value": "28/9/2010" } );
+            aData.push( { "name": "end_date", "value": "30/9/2010" } );
 
             $.getJSON( sSource, aData, function (json) {
                  // Do whatever additional processing you want on the callback, then tell DataTables

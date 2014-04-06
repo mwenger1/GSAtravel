@@ -3,8 +3,8 @@ class ReservationsDatatable
 
   def initialize(view)
     @view = view
-    @start_date = Date.new(2007, 5, 12)
-    @end_date = Date.new(2010, 10, 12)
+    @start_date =  Date.parse(params[:start_date]) #Date.new(2007, 5, 12)
+    @end_date = Date.parse(params[:end_date]) # Date.new(2007, 5, 12)
   end
 
   def as_json(options = {})
@@ -50,18 +50,8 @@ private
     if params[:sSearch].present?
       flight_reservations = flight_reservations.where("gds_record_locator like :search or airline_name like :search", search: "%#{params[:sSearch]}%")
     end
-    if params[:airline_name].present?
-      flight_reservations = flight_reservations.where(:airline_name => params[:airline_name])
-    end
 
     flight_reservations = flight_reservations.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
-#  @selected_date.beginning_of_day..@selected_date.end_of_day
- #  params[:start_date]..params[:end_date]
-    if params[:start_date].present? && params[:end_date].present?
-      flight_reservations = flight_reservations.where(:reservation_date => params[:start_date]..params[:end_date])
-      #
-      raise params[:start_date]
-    end
 
     flight_reservations = flight_reservations.page(page).per_page(per_page)
     flight_reservations
