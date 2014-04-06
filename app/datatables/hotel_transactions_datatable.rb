@@ -10,8 +10,8 @@ class HotelTransactionsDatatable
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: flight_reservations.count,
-      iTotalDisplayRecords: flight_reservations.total_entries,
+      iTotalRecords: hotel_transactions.count,
+      iTotalDisplayRecords: hotel_transactions.total_entries,
       aaData: data
     }
   end
@@ -19,42 +19,42 @@ class HotelTransactionsDatatable
 private
 
   def data
-    flight_reservations.map do |flight|
+    hotel_transactions.map do |hotel|
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
-        flight.gds_record_locator,
-        flight.reservation_date.strftime('%b %d, %Y'),
-        flight.days_in_advance,
-        flight.airline_name,
-        flight.fare_category,
-        number_to_currency(flight.benchmark_rate),
-        number_to_currency(flight.total_amount),
-        flight.online_indicator,
-        number_to_currency(flight.benchmark_rate_difference),
-        flight.benchmark_rate_percentage,
-        flight.ticket_number,
-        flight.mileage,
-        flight.routing,
-        flight.domestic_international_indicator,
-        flight.trip_departure_date
+        hotel.gds_record_locator,
+        hotel.reservation_date.strftime('%b %d, %Y'),
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
+        hotel.hotel_city_name,
+        number_to_currency(hotel.daily_rate),
+        number_to_currency(hotel.daily_rate),
+        hotel.online_indicator,
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
+        hotel.hotel_chain_name,
       ]
     end
   end
 
-  def flight_reservations
-    @flight_reservations ||= fetch_flight_reservations
+  def hotel_transactions
+    @hotel_transactions ||= fetch_hotel_transactions
   end
 
-  def fetch_flight_reservations
-    flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}")
+  def fetch_hotel_transactions
+    hotel_transactions = HotelReservation.order("#{sort_column} #{sort_direction}")
     if params[:sSearch].present?
-      flight_reservations = flight_reservations.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
+      hotel_transactions = hotel_transactions.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
     end
 
-    flight_reservations = flight_reservations.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
+    hotel_transactions = hotel_transactions.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
 
-    flight_reservations = flight_reservations.page(page).per_page(per_page)
-    flight_reservations
+    hotel_transactions = hotel_transactions.page(page).per_page(per_page)
+    hotel_transactions
   end
 
   def page
