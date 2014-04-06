@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
-before_filter :authenticate_user!, :set_date, :except => [:transactions,:transactions_data]
-
+before_filter :authenticate_user!, :except => [:transactions,:transactions_data]
+before_filter :set_date
 require 'gchart'
   def overview
         @line_chart = Gchart.line(:data => [0, 40, 10, 70, 20],:legend => 'Mike\'s test table', :axis_with_labels => 'y,x')
