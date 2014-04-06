@@ -21,6 +21,7 @@ private
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.gds_record_locator,
+        flight.reservation_date,
         flight.days_in_advance,
         flight.airline_name,
         flight.fare_category,
@@ -33,8 +34,7 @@ private
         flight.mileage,
         flight.routing,
         flight.domestic_international_indicator,
-        flight.trip_departure_date,
-        flight.reservation_date
+        flight.trip_departure_date
       ]
     end
   end
@@ -61,7 +61,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator days_in_advance airline_name fare_category benchmark_rate total_amount benchmark_rate_difference benchmark_rate_percentage ticket_number]
+    columns = %w[gds_record_locator reservation_date gds_record_locator days_in_advance airline_name fare_category benchmark_rate total_amount benchmark_rate_difference benchmark_rate_percentage ticket_number]
     columns[params[:iSortCol_0].to_i]
   end
 
