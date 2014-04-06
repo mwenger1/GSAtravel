@@ -25,6 +25,7 @@ function fnFormatDetails ( oTable, tmpTr)
 
     filterStartDate = moment('1/1/2010').format('D/M/YYYY');
     filterEndDate = moment().format('D/M/YYYY');
+    eventTypeFilter = "flight";
 
     var oTable = $('#flight_reservations').dataTable( {
         iDisplayLength: 25,
@@ -45,7 +46,7 @@ function fnFormatDetails ( oTable, tmpTr)
         sAjaxSource:$('#flight_reservations').data('source'),
         fnServerData: function ( sSource, aoData, fnCallback ) {
             /* Add some extra data to the sender */
-
+                aoData.push( { "name": "transaction_type", "value": eventTypeFilter } );
                 aoData.push( { "name": "start_date", "value": filterStartDate } );
                 aoData.push( { "name": "end_date", "value": filterEndDate } );
             $.getJSON( sSource, aoData, function (json) {
@@ -129,8 +130,8 @@ function fnFormatDetails ( oTable, tmpTr)
         $("#transcationTypeFilter button").removeClass("active");
         $(this).addClass("active");
         oTable.fnClearTable();
+        eventTypeFilter = "hotel"
         oTable.fnDraw();
-        // alert('test');
     });
 
 };
