@@ -2731,16 +2731,13 @@ fieldset[disabled] .btn {
 .btn-default {
   color: #333;
   background-color: #fff;
-  border-color: #ccc;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #333;
   background-color: #e6e6e6;
-  border-color: #adadad;
 }
 .btn-default:active,
 .btn-default.active,
@@ -3216,7 +3213,10 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
-}
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  
+}-moz-box-shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 .btn-group > .btn,
 .btn-group-vertical > .btn {
   position: relative;
