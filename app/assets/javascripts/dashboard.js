@@ -126,11 +126,11 @@ function fnFormatDetails ( oTable, tmpTr)
         }
     );
 
-    $('#transcationTypeFilter').click(function(){
+    $('#transcationTypeFilter button').click(function(){
         $("#transcationTypeFilter button").removeClass("active");
         $(this).addClass("active");
         oTable.fnClearTable();
-        eventTypeFilter = "hotel"
+        eventTypeFilter = $(this).data('filter');
         oTable.fnDraw();
     });
 
