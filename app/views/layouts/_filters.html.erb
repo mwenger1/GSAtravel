@@ -11,24 +11,31 @@
         </div>
     <% unless controller.action_name == "overview" %>
     <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <button type="button" id="agencyDropdownFilterText" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
         Agency <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">All</a></li>
-        <li><a href="#">NIH</a></li>
-        <li><a href="#">GSA</a></li>
-        <li><a href="#">IRS</a></li>
-        <li><a href="#">EPA</a></li>
-        <li><a href="#">FEMA</a></li>
-        <li><a href="#">DoJ</a></li>
-        <li><a href="#">FBI</a></li>
-        <li><a href="#">CIA</a></li>
-        <li><a href="#">DE</a></li>
-        <li><a href="#">DHS</a></li>
-        <li><a href="#">USDA</a></li>
+      <ul class="dropdown-menu" id="agencyDropdownFilter" role="menu">
+        <li><a href="javascript:void(0)">All</a></li>
+        <li><a href="javascript:void(0)">NIH</a></li>
+        <li><a href="javascript:void(0)">GSA</a></li>
+        <li><a href="javascript:void(0)">IRS</a></li>
+        <li><a href="javascript:void(0)">EPA</a></li>
+        <li><a href="javascript:void(0)">FEMA</a></li>
+        <li><a href="javascript:void(0)">DoJ</a></li>
+        <li><a href="javascript:void(0)">FBI</a></li>
+        <li><a href="javascript:void(0)">CIA</a></li>
+        <li><a href="javascript:void(0)">DE</a></li>
+        <li><a href="javascript:void(0)">DHS</a></li>
+        <li><a href="javascript:void(0)">USDA</a></li>
       </ul>
     </div>
+<script>
+    $("#agencyDropdownFilter li").click(function(){
+        $("#agencyDropdownFilterText").html($(this).text() + "&nbsp;<span class='caret'></span>");
+        // $(".dropdown-menu").hide();
+        // return false;
+    });
+</script>
     <% end %>
     <span id="reportrange" class="pull-right">
         <i class="fa fa-calendar fa-lg"></i>
