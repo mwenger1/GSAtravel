@@ -408,7 +408,7 @@ sub {
 
 /* Link styles */
 a,a:link,a:visited {
-	color:#3a45bf;
+	color:#81050f;
 	text-decoration:none;
 }
 
@@ -2588,23 +2588,7 @@ line-height: 18px;
 cursor: pointer;
 }
 /* BOOTSTRAP OVERRIDES */
-.btn{
-	padding: 6px 7px;
-}
-.btn img{
-	width: 30px; 
-}
-.btn-group > .btn:first-child{
-	font-family: BebasNeue;
-	font-size: 1.6em;
-	letter-spacing: 0.03em;
-}
-.btn-default:active,
-.btn-default:hover, 
-.btn-default:focus, 
-.btn-default.active{
-	background-color: #CED5E8;
-}
+
 .filterBar{
 	margin: 20px 0px;
 }
@@ -2612,4 +2596,7 @@ cursor: pointer;
 	font-family: BebasNeue;
 	font-size: 1.6em;
 	letter-spacing: 0.03em;
+}
+a{
+	color: #81050f;
 }

@@ -115,8 +115,8 @@
             if (this.element.hasClass('pull-right'))
                 this.opens = 'left';
 
-            this.buttonClasses = ['btn', 'btn-small'];
-            this.applyClass = 'btn-success';
+            this.buttonClasses = ['btn'];
+            this.applyClass = 'btn-apply';
             this.cancelClass = 'btn-default';
 
             this.format = 'MM/DD/YYYY';
