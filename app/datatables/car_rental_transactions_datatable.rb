@@ -10,8 +10,8 @@ class CarRentalTransactionsDatatable
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: flight_reservations.count,
-      iTotalDisplayRecords: flight_reservations.total_entries,
+      iTotalRecords: car_rental_transactions.count,
+      iTotalDisplayRecords: car_rental_transactions.total_entries,
       aaData: data
     }
   end
@@ -19,42 +19,42 @@ class CarRentalTransactionsDatatable
 private
 
   def data
-    flight_reservations.map do |flight|
+    car_rental_transactions.map do |rental|
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
-        flight.gds_record_locator,
-        flight.reservation_date.strftime('%b %d, %Y'),
-        flight.days_in_advance,
-        flight.airline_name,
-        flight.fare_category,
-        number_to_currency(flight.benchmark_rate),
-        number_to_currency(flight.total_amount),
-        flight.online_indicator,
-        number_to_currency(flight.benchmark_rate_difference),
-        flight.benchmark_rate_percentage,
-        flight.ticket_number,
-        flight.mileage,
-        flight.routing,
-        flight.domestic_international_indicator,
-        flight.trip_departure_date
+        rental.gds_record_locator,
+        rental.car_pick_up_date.strftime('%b %d, %Y'),
+        rental.gds_record_locator,
+        rental.car_chain_name,
+        rental.car_category,
+        number_to_currency(rental.car_daily_rate),
+        rental.car_rental_days,
+        rental.online_indicator,
+        rental.gds_record_locator,
+        rental.gds_record_locator,
+        rental.gds_record_locator,
+        rental.gds_record_locator,
+        rental.gds_record_locator,
+        rental.gds_record_locator,
+        rental.gds_record_locator
       ]
     end
   end
 
-  def flight_reservations
-    @flight_reservations ||= fetch_flight_reservations
+  def car_rental_transactions
+    @car_rental_transactions ||= fetch_car_rental_transactions
   end
 
-  def fetch_flight_reservations
-    flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}")
+  def fetch_car_rental_transactions
+    car_rental_transactions = CarRentalReservation.order("#{sort_column} #{sort_direction}")
     if params[:sSearch].present?
-      flight_reservations = flight_reservations.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
+      car_rental_transactions = car_rental_transactions.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
     end
 
-    flight_reservations = flight_reservations.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
+    car_rental_transactions = car_rental_transactions.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
 
-    flight_reservations = flight_reservations.page(page).per_page(per_page)
-    flight_reservations
+    car_rental_transactions = car_rental_transactions.page(page).per_page(per_page)
+    car_rental_transactions
   end
 
   def page
@@ -66,7 +66,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator gds_record_locator car_pick_up_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
     columns[params[:iSortCol_0].to_i]
   end
 
