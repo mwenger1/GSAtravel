@@ -25,14 +25,14 @@ function fnFormatDetails ( oTable, tmpTr)
 
     filterStartDate = moment('1/1/2010').format('D/M/YYYY');
     filterEndDate = moment().format('D/M/YYYY');
+    eventTypeFilter = "flight";
 
     var oTable = $('#flight_reservations').dataTable( {
         iDisplayLength: 25,
         aLengthMenu: [[25, 50, 100], [25, 50, 100]],
         bJQueryUI: true,
-        bProcessing: true,
         bServerSide: true,
-        aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
+        aoColumns:[null,null,null,null,null,null,null,null, null,{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
         sDom: '<if>rt<lp><"clear">',
         sPaginationType: "full_numbers",
 
@@ -46,7 +46,7 @@ function fnFormatDetails ( oTable, tmpTr)
         sAjaxSource:$('#flight_reservations').data('source'),
         fnServerData: function ( sSource, aoData, fnCallback ) {
             /* Add some extra data to the sender */
-
+                aoData.push( { "name": "transaction_type", "value": eventTypeFilter } );
                 aoData.push( { "name": "start_date", "value": filterStartDate } );
                 aoData.push( { "name": "end_date", "value": filterEndDate } );
             $.getJSON( sSource, aoData, function (json) {
@@ -89,7 +89,6 @@ function fnFormatDetails ( oTable, tmpTr)
     /* Table on Dashboard homepage */
     var overviewTable = $('#department_overview').dataTable( {
         sPaginationType: "full_numbers",
-        bProcessing: true,
         bServerSide: true,
         bJQueryUI: false,
         bFilter: false,
@@ -126,6 +125,14 @@ function fnFormatDetails ( oTable, tmpTr)
             oTable.fnDraw();
         }
     );
+
+    $('#transcationTypeFilter button').click(function(){
+        $("#transcationTypeFilter button").removeClass("active");
+        $(this).addClass("active");
+        oTable.fnClearTable();
+        eventTypeFilter = $(this).data('filter');
+        oTable.fnDraw();
+    });
 
 };
 
