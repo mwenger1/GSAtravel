@@ -21,7 +21,7 @@ private
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.gds_record_locator,
-        flight.reservation_date,
+        flight.reservation_date.strftime('%b %d, %Y'),
         flight.days_in_advance,
         flight.airline_name,
         flight.fare_category,
