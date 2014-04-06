@@ -1,19 +1,21 @@
 <p style="background-color:#ccc; padding:20px; margin-bottom:20px;">
-    <label>Department:</label>
+     <label >Transaction type:</label>
+    <select>
+        <option>Airline</option>
+        <option>Hotel</option>
+        <option>Car Rental</option>
+    </select>
+
+<% unless controller.action_name == "overview" %>
+    <label style="margin-left:10px;">Department:</label>
     <select>
         <option>All</option>
         <option>Agriculture</option>
         <option>General Services Administration</option>
         <option>Internal Revenue Service</option>
     </select>
+<% end %>
 
-
-    <label style="margin-left:10px;">Transaction type:</label>
-    <select>
-        <option>Airline</option>
-        <option>Hotel</option>
-        <option>Car Rental</option>
-    </select>
 
 <span id="reportrange" class="pull-right">
     <i class="fa fa-calendar fa-lg"></i>
