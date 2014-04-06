@@ -1,9 +1,13 @@
 <div class="filterBar">
     <div class="btn-group">
+        <% if controller.action_name == "overview" %>
+            <button style="font-size: 1.6em" type="button" class="btn btn-default all active">ALL</button>
             <button type="button" class="btn btn-default"><%= image_tag "airplane_icon.png" %></button>
+        <% else %>
+           <button type="button" class="btn btn-default active"><%= image_tag "airplane_icon.png" %></button>
+        <% end %>
             <button type="button" class="btn btn-default"><%= image_tag "hotel_icon.png" %></button>
             <button type="button" class="btn btn-default"><%= image_tag "car_icon.png" %></button>
-            <button style="font-size: 1.6em" type="button" class="btn btn-default all">ALL</button>
         </div>
     <% unless controller.action_name == "overview" %>
     <div class="btn-group">
