@@ -41,7 +41,7 @@ function fnFormatDetails ( oTable, tmpTr)
         },
         oLanguage: {
             sInfo: "Showing (_START_ to _END_) of _TOTAL_ transactions",
-            sInfoEmpty: "No transactions match this filter. Expand your search."
+            sInfoEmpty: "No transactions match this search. Expand your filters or <a href='/import/index' >upload transaction data</a>."
         },
         sAjaxSource:$('#flight_reservations').data('source'),
         fnServerData: function ( sSource, aoData, fnCallback ) {
