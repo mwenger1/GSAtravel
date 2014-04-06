@@ -86,6 +86,7 @@ function fnFormatDetails ( oTable, tmpTr)
         sPaginationType: "full_numbers",
         bProcessing: true,
         bServerSide: true,
+        bJQueryUI: false,
         bFilter: false,
         bPaginate: false,
         bInfo: false,
