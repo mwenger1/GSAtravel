@@ -1,22 +1,22 @@
 class CreateHotelReservations < ActiveRecord::Migration
   def change
     create_table :hotel_reservations do |t|
-      t.string :GDS_Record_Locator
-      t.date :Reservation_Date
-      t.date :Check_In_Date
-      t.date :Check_Out_Date
-      t.string :Hotel_Chain_Code
-      t.string :Hotel_Chain_Name
-      t.string :Hotel_Property_Name
-      t.string :Hotel_Address
-      t.string :Hotel_City_Name
-      t.string :Hotel_State
-      t.string :Hotel_Zip_Code
-      t.string :Hotel_Country_Code
-      t.integer :Number_of_Room_Nights
-      t.float :Daily_Rate
-      t.string :Room_Rate_Code
-      t.boolean :Online_Indicator
+      t.string :gds_record_locator
+      t.date :reservation_date
+      t.date :check_in_date
+      t.date :check_out_date
+      t.string :hotel_chain_code
+      t.string :hotel_chain_name
+      t.string :hotel_property_name
+      t.string :hotel_address
+      t.string :hotel_city_name
+      t.string :hotel_state
+      t.string :hotel_zip_code
+      t.string :hotel_country_code
+      t.integer :number_of_room_nights
+      t.float :daily_rate
+      t.string :room_rate_code
+      t.boolean :online_indicator
 
       t.timestamps
     end
