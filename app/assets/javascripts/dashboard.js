@@ -127,6 +127,12 @@ function fnFormatDetails ( oTable, tmpTr)
         }
     );
 
+    $('#transcationTypeFilter').click(function(){
+        $("#transcationTypeFilter button").removeClass("active");
+        $(this).addClass("active");
+        // alert('test');
+    });
+
 };
 
 $(document).ready(ready);
