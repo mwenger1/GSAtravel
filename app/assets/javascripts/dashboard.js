@@ -110,11 +110,11 @@ function fnFormatDetails ( oTable, tmpTr)
 
 
           },
-          startDate: moment().subtract('days', 20),
-          endDate: moment().subtract('days', 10)
+          // startDate: moment().subtract('days', 20),
+          // endDate: moment().subtract('days', 10)
         },
         function(start, end, aoData) {
-            $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            // $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
 
             // alert(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
             oTable.fnClearTable();
@@ -131,6 +131,7 @@ function fnFormatDetails ( oTable, tmpTr)
         $(this).addClass("active");
         oTable.fnClearTable();
         eventTypeFilter = $(this).data('filter');
+        $("#transactionsHeader").text(eventTypeFilter + " Transactions");
         oTable.fnDraw();
     });
 
