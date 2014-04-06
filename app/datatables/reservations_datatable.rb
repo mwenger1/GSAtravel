@@ -48,7 +48,15 @@ private
     if params[:sSearch].present?
       flight_reservations = flight_reservations.where("gds_record_locator like :search or airline_name like :search", search: "%#{params[:sSearch]}%")
     end
-    flight_reservations = flight_reservations.where(:reservation_date => Date.new(2010, 10, 19)..Date.new(2010, 10, 21))
+    if params[:airline_name].present?
+      flight_reservations = flight_reservations.where(:airline_name => params[:airline_name])
+    end
+
+    if params[:start_date].present?
+      flight_reservations = flight_reservations.where(:reservation_date => params[:start_date]..params[:end_date])
+      raise params[:start_date]
+    end
+
     flight_reservations = flight_reservations.page(page).per_page(per_page)
     flight_reservations
   end

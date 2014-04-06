@@ -35,6 +35,16 @@ function fnFormatDetails ( oTable, tmpTr)
             "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
         },
         sAjaxSource:$('#flight_reservations').data('source'),
+        fnServerData: function ( sSource, aData, fnCallback ) {
+            /* Add some extra data to the sender */
+            aData.push( { "name": "start_date2", "value": "AMERICAN" } );
+            aData.push( { "name": "end_date2", "value": "AMERICAN" } );
+
+            $.getJSON( sSource, aData, function (json) {
+                 // Do whatever additional processing you want on the callback, then tell DataTables
+                fnCallback(json);
+            } );
+        },
         fnRowCallback: function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
             var sDirectionClass;
             if ( aData[8] > 20 )
