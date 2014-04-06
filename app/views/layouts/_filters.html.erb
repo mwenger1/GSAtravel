@@ -24,29 +24,4 @@
 
 </p>
 
-<script type="text/javascript">
-$('#reportrange').daterangepicker(
-    {
-      ranges: {
-         // 'Today': [moment(), moment()],
-         // 'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
-         // 'Last 7 Days': [moment().subtract('days', 6), moment()],
-        'Sept 30 2010': [moment('9/30/2010').startOf('day'), moment('9/30/2010').endOf('day')],
-         'Last 30 Days': [moment().subtract('days', 29), moment()],
-         'This Month': [moment().startOf('month'), moment().endOf('month')],
-         'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')],
-         'This Year': [moment().startOf('year'), moment()],
-         'Last Year': [moment().subtract('month',12).startOf('year'), moment().subtract('month',12).endOf('year')]
-      },
-      startDate: moment().subtract('days', 29),
-      endDate: moment()
-    },
-    function(start, end) {
-        $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
-        // alert(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
-        ready();
-    }
-);
-</script>
-
 

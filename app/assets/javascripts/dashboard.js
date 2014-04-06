@@ -22,6 +22,10 @@ function fnFormatDetails ( oTable, tmpTr)
     /*
      * Initialse DataTables, with no sorting on the 'details' column
      */
+
+    filterStartDate = moment().subtract('days', 29).format('D/M/YYYY');
+    filterEndDate = moment().format('D/M/YYYY');
+
     var oTable = $('#flight_reservations').dataTable( {
         sPaginationType: "full_numbers",
         iDisplayLength: 25,
@@ -35,14 +39,15 @@ function fnFormatDetails ( oTable, tmpTr)
             "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
         },
         sAjaxSource:$('#flight_reservations').data('source'),
-        fnServerData: function ( sSource, aData, fnCallback ) {
+        fnServerData: function ( sSource, aoData, fnCallback ) {
             /* Add some extra data to the sender */
-            aData.push( { "name": "start_date", "value": "29/9/2010" } );
-            aData.push( { "name": "end_date", "value": "29/9/2010" } );
-            alert('it ran');
-            $.getJSON( sSource, aData, function (json) {
+
+                aoData.push( { "name": "start_date", "value": filterStartDate } );
+                aoData.push( { "name": "end_date", "value": filterEndDate } );
+            $.getJSON( sSource, aoData, function (json) {
                  // Do whatever additional processing you want on the callback, then tell DataTables
                 fnCallback(json);
+                // alert('ajax call ran');
             } );
         },
         fnRowCallback: function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
@@ -103,9 +108,15 @@ function fnFormatDetails ( oTable, tmpTr)
           startDate: moment().subtract('days', 29),
           endDate: moment()
         },
-        function(start, end) {
+        function(start, end, aoData) {
             $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
             // alert(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            oTable.fnClearTable();
+            filterStartDate = start.format('D/M/YYYY');
+            filterEndDate = end.format('D/M/YYYY');
+
+            // oTable.fnSettings().aoData.push({"name": 'start_date', "value":'27/9/2010'});
+            oTable.fnDraw();
         }
     );
 

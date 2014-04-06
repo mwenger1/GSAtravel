@@ -3,8 +3,8 @@ class ReservationsDatatable
 
   def initialize(view)
     @view = view
-    @start_date =  Date.parse(params[:start_date]) #Date.new(2007, 5, 12)
-    @end_date = Date.parse(params[:end_date]) # Date.new(2007, 5, 12)
+    @start_date =  Date.parse(params[:start_date]) #Date.parse() #Date.new(2007, 5, 12)
+    @end_date = Date.parse(params[:end_date]) #Date.parse() # Date.new(2007, 5, 12)
   end
 
   def as_json(options = {})
