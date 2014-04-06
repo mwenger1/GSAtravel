@@ -39,6 +39,14 @@ require 'gchart'
     end
   end
 
+  def overview_data
+    respond_to do |format|
+      format.html
+      format.json{ render json: ReservationsDatatable.new(view_context)}
+    # @flight_reservations = FlightReservation.find(:all, :order => "id desc", :limit => 300)
+    end
+  end
+
   def budgets
   end
 

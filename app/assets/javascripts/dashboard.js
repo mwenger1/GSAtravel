@@ -54,9 +54,6 @@ function fnFormatDetails ( oTable, tmpTr)
      * rather it is done here
      */
     $('#flight_reservations tbody').on('click','tr', function () {
-
-        // tmpImage = $("td img",this).attr('src');
-        // console.log(tmpImage);
         var tmpTr = $(this)[0];
 
         if(oTable.fnIsOpen(tmpTr)){
@@ -67,20 +64,22 @@ function fnFormatDetails ( oTable, tmpTr)
             $("td img",tmpTr).attr("src","http://datatables.net/release-datatables/examples/examples_support/details_close.png");
         }
 
-        // if ( oTable.fnIsOpen(nTr) )
-        // {
-        //     /* This row is already open - close it */
-        //     this.src = "http://datatables.net/release-datatables/examples/examples_support/details_open.png";
-        //     oTable.fnClose( nTr );
-        //     console.log('this ran');
-        // }
-        // else
-        // {
-        //     /* Open this row */
-        //     this.src = "http://datatables.net/release-datatables/examples/examples_support/details_close.png";
-        //     oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
-        //     console.log('that ran');
-        // }
+    });
+
+    /* Table on Dashboard homepage */
+    var overviewTable = $('#department_overview').dataTable( {
+    sPaginationType: "full_numbers",
+    iDisplayLength: 25,
+    aLengthMenu: [[25, 50, 100], [25, 50, 100]],
+    bJQueryUI: true,
+    bProcessing: true,
+    bServerSide: true,
+    aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
+    sDom: "T<'clear'>lfrtip",
+    oTableTools: {
+        "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
+    },
+    sAjaxSource:$('#department_overview').data('source'),
     });
 };
 

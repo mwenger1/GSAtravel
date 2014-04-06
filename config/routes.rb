@@ -8,6 +8,7 @@ GSAtravel::Application.routes.draw do
   get "dashboard/overview"
   get "dashboard/transactions"
   get "dashboard/transactions_data"
+  get "dashboard/overview_data"
   get "dashboard/budgets"
   get "dashboard/trends"
   get "dashboard/ways_to_save"
