@@ -1,46 +1,35 @@
-<p style="background-color:#ccc; padding:20px; margin-bottom:20px;">
+<div class="filterBar">
     <div class="btn-group">
-        <button type="button" class="btn btn-default"><%= image_tag "airplane_icon.png" %></button>
-        <button type="button" class="btn btn-default"><%= image_tag "hotel_icon.png" %></button>
-        <button type="button" class="btn btn-default"><%= image_tag "car_icon.png" %></button>
+            <button type="button" class="btn btn-default"><%= image_tag "airplane_icon.png" %></button>
+            <button type="button" class="btn btn-default"><%= image_tag "hotel_icon.png" %></button>
+            <button type="button" class="btn btn-default"><%= image_tag "car_icon.png" %></button>
+            <button style="font-size: 1.6em" type="button" class="btn btn-default all">ALL</button>
+        </div>
+    <% unless controller.action_name == "overview" %>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Department <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">All</a></li>
+        <li><a href="#">NIH</a></li>
+        <li><a href="#">GSA</a></li>
+        <li><a href="#">IRS</a></li>
+        <li><a href="#">EPA</a></li>
+        <li><a href="#">FEMA</a></li>
+        <li><a href="#">DoJ</a></li>
+        <li><a href="#">FBI</a></li>
+        <li><a href="#">CIA</a></li>
+        <li><a href="#">DE</a></li>
+        <li><a href="#">DHS</a></li>
+        <li><a href="#">USDA</a></li>
+      </ul>
     </div>
-
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Department <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li>All</li>
-    <li>NIH</li>
-    <li>GSA</li>
-    <li>IRS</li>
-    <li>EPA</li>
-    <li>FEMA</li>
-    <li>DoJ</li>
-    <li>FBI</li>
-    <li>CIA</li>
-    <li>DE</li>
-    <li>DHS</li>
-    <li>USDA</li>
-  </ul>
+    <% end %>
+    <span id="reportrange" class="pull-right">
+        <i class="fa fa-calendar fa-lg"></i>
+        <span><%= @date_in_past %> - <%= @date %></span> <b class="caret"></b>
+    </span>
 </div>
-
-<% unless controller.action_name == "overview" %>
-    <label style="margin-left:10px;">Department:</label>
-    <select>
-        <option>All</option>
-        <option>Agriculture</option>
-        <option>General Services Administration</option>
-        <option>Internal Revenue Service</option>
-    </select>
-<% end %>
-
-
-<span id="reportrange" class="pull-right">
-    <i class="fa fa-calendar fa-lg"></i>
-    <span><%= @date_in_past %> - <%= @date %></span> <b class="caret"></b>
-</span>
-
-</p>
 
 

@@ -2594,6 +2594,22 @@ cursor: pointer;
 .btn img{
 	width: 30px; 
 }
-.dropdown-toggle{
-	padding: 11px 11px;
+.btn-group > .btn:first-child{
+	font-family: BebasNeue;
+	font-size: 1.6em;
+	letter-spacing: 0.03em;
+}
+.btn-default:active,
+.btn-default:hover, 
+.btn-default:focus, 
+.btn-default.active{
+	background-color: #CED5E8;
+}
+.filterBar{
+	margin: 20px 0px;
+}
+.all{
+	font-family: BebasNeue;
+	font-size: 1.6em;
+	letter-spacing: 0.03em;
 }
