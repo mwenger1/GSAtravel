@@ -48,7 +48,7 @@ private
   def fetch_flight_reservations
     flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}")
     if params[:sSearch].present?
-      flight_reservations = flight_reservations.where("gds_record_locator like :search or airline_name like :search", search: "%#{params[:sSearch]}%")
+      flight_reservations = flight_reservations.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
     end
 
     flight_reservations = flight_reservations.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
