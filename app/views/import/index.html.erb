@@ -2,6 +2,8 @@
 
 <p>There are <%= @flight_transactions %> flight transactions.</p>
 <p>There are <%= @hotel_transactions %> hotel transactions</p>
+<p>There are <%= @car_rental_transactions %> car transactions</p>
+<br>
 <%= link_to "Run Hotel Importer", import_run_hotel_path %>
 <br>
 <%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %>
