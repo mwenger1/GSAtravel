@@ -95,15 +95,13 @@ function fnFormatDetails ( oTable, tmpTr)
     $('#reportrange').daterangepicker(
         {
           ranges: {
-             // 'Today': [moment(), moment()],
-             // 'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
-             // 'Last 7 Days': [moment().subtract('days', 6), moment()],
-            'Sept 30 2010': [moment('9/30/2010').startOf('day'), moment('9/30/2010').endOf('day')],
-             'Last 30 Days': [moment().subtract('days', 29), moment()],
-             'This Month': [moment().startOf('month'), moment().endOf('month')],
-             'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')],
-             'This Year': [moment().startOf('year'), moment()],
-             'Last Year': [moment().subtract('month',12).startOf('year'), moment().subtract('month',12).endOf('year')]
+             'All Time': [moment('1/1/2010'), moment()],
+             '&nbsp;2014': [moment('1/1/2014'), moment('1/1/2014').endOf('year')],
+             '&nbsp;2013': [moment('1/1/2013'), moment('1/1/2013').endOf('year')],
+             '&nbsp;2012': [moment('1/1/2012'), moment('1/1/2012').endOf('year')],
+             '&nbsp;2011': [moment('1/1/2011'), moment('1/1/2011').endOf('year')],
+             '&nbsp;2010': [moment('1/1/2010'), moment('1/1/2010').endOf('year')]
+
           },
           startDate: moment().subtract('days', 29),
           endDate: moment()
