@@ -9,8 +9,8 @@ class DepartmentOverviewDatatable
     {
       sEcho: params[:sEcho].to_i,
       iTotalRecords: FlightReservation.count,
-      iTotalDisplayRecords: flight_reservations.total_entries,
-      aaData: data
+      iTotalDisplayRecords: flight_reservations.count,
+      aaData: flight_reservations
     }
   end
 
@@ -28,17 +28,11 @@ private
   end
 
   def flight_reservations
-    @flight_reservations ||= fetch_flight_reservations
+    @flight_reservations ||= fetch_department_data
   end
 
-  def fetch_flight_reservations
-    flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}").limit(10)
-    if params[:sSearch].present?
-      flight_reservations = flight_reservations.where("gds_record_locator like :search or airline_name like :search", search: "%#{params[:sSearch]}%")
-    end
-    flight_reservations = flight_reservations.where(:reservation_date => Date.new(2007, 5, 12)..Date.new(2010, 10, 12))
-    flight_reservations = flight_reservations.page(page).per_page(per_page)
-    flight_reservations
+  def fetch_department_data
+    department_data = [["GSA","$34M"],["IRS","$32M"]]
   end
 
   def page
@@ -50,7 +44,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator reservation_date days_in_advance airline_name]
+    columns = %w[department amount]
     columns[params[:iSortCol_0].to_i]
   end
 

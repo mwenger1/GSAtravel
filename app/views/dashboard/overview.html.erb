@@ -4,10 +4,8 @@
 <table id="department_overview" class="display" data-source="<%= dashboard_overview_data_url(format: "json") %>">
   <thead>
       <tr>
-        <th>GDS #</th>
-        <th>Reservation Date</th>
-        <th>Days Prior</th>
-        <th>Airline</th>
+        <th>Department</th>
+        <th>Total Cost</th>
       </tr>
   </thead>
 <tbody>
@@ -16,37 +14,4 @@
 
 
 
-
-
-<br>
-<br><br><br><br><br><hr>
-
-
-
-
-
-
-<%= image_tag(@line_chart) %>
-<br>
-<br>
-
-<%= image_tag(@sparkline_chart) %>
-
-<br>
-<br>
-
-<%= image_tag(@piechart) %>
-<br>
-<br>
-
-<%= image_tag(@scatter_chart) %>
-<br>
-<br>
-
-<%= image_tag(@barchart) %>
-
-
-
-<br>
-<br>
 
