@@ -2,8 +2,20 @@
 
 <p>There are <%= @flight_reservations %> reservations</p>
 
-<%= link_to "Run Importer", import_run_path %>
+<%= link_to "Run Hotel Importer", import_run_hotel_path %>
+<br>
+<%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %>
 <br>
 <br>
+<%= link_to "Run Airline Importer", import_run_airline_path %>
+<br>
+<%= link_to "Run Short Airline Importer", import_run_airline_path(:length => "short") %>
+<br>
+<br>
+<%= link_to "Run Car Rental", import_run_car_rental_path %>
+<br>
+<%= link_to "Run Short Car Rental", import_run_car_rental_path(:length => "short") %>
 
+<br>
+<br>
 <%= link_to "Delete All Data", import_delete_all_path %>
