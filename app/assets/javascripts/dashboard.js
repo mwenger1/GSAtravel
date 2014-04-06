@@ -37,9 +37,9 @@ function fnFormatDetails ( oTable, tmpTr)
         sAjaxSource:$('#flight_reservations').data('source'),
         fnServerData: function ( sSource, aData, fnCallback ) {
             /* Add some extra data to the sender */
-            aData.push( { "name": "start_date", "value": "28/9/2010" } );
-            aData.push( { "name": "end_date", "value": "30/9/2010" } );
-
+            aData.push( { "name": "start_date", "value": "29/9/2010" } );
+            aData.push( { "name": "end_date", "value": "29/9/2010" } );
+            alert('it ran');
             $.getJSON( sSource, aData, function (json) {
                  // Do whatever additional processing you want on the callback, then tell DataTables
                 fnCallback(json);
@@ -78,14 +78,37 @@ function fnFormatDetails ( oTable, tmpTr)
 
     /* Table on Dashboard homepage */
     var overviewTable = $('#department_overview').dataTable( {
-    sPaginationType: "full_numbers",
-    bProcessing: true,
-    bServerSide: true,
-    bFilter: false,
-    bPaginate: false,
-    bInfo: false,
-    sAjaxSource:$('#department_overview').data('source'),
+        sPaginationType: "full_numbers",
+        bProcessing: true,
+        bServerSide: true,
+        bFilter: false,
+        bPaginate: false,
+        bInfo: false,
+        sAjaxSource:$('#department_overview').data('source'),
     });
+
+    $('#reportrange').daterangepicker(
+        {
+          ranges: {
+             // 'Today': [moment(), moment()],
+             // 'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+             // 'Last 7 Days': [moment().subtract('days', 6), moment()],
+            'Sept 30 2010': [moment('9/30/2010').startOf('day'), moment('9/30/2010').endOf('day')],
+             'Last 30 Days': [moment().subtract('days', 29), moment()],
+             'This Month': [moment().startOf('month'), moment().endOf('month')],
+             'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')],
+             'This Year': [moment().startOf('year'), moment()],
+             'Last Year': [moment().subtract('month',12).startOf('year'), moment().subtract('month',12).endOf('year')]
+          },
+          startDate: moment().subtract('days', 29),
+          endDate: moment()
+        },
+        function(start, end) {
+            $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            // alert(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+        }
+    );
+
 };
 
 $(document).ready(ready);
