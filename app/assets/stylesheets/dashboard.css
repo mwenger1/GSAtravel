@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .dataTables_wrapper{
-
+    padding: 15px;
 }
 
 #flight_reservations tbody .outlierSaver td, #flight_reservations tbody .outlierSaver{
@@ -59,4 +59,38 @@
 
 #flight_reservations tr.odd:hover td.sorting_3 {
     background-color: #DBFF70;
+}
+#department_overview{
+    border-spacing: 0 2em;
+    border-collapse: separate;
+}
+table.dataTable#department_overview tr.odd{
+    background-color: transparent;
+}
+table.dataTable#department_overview tr.even td.sorting_1,
+table.dataTable#department_overview tr.odd td.sorting_1{
+    background-color: transparent;
+}
+table.dataTable#department_overview td{
+    padding: 23px 4px;
+    font-size: 1.5em;
+}
+table.dataTable#department_overview thead th{
+    padding: 5px 10px 5px 0;
+}
+table.dataTable#department_overview tbody tr td:first-child{
+    padding-left: 20px;
+    border-left: 5px solid blue;
+    font-family: BebasNeue;
+    font-size: 3em;
+}
+table.dataTable#department_overview tbody tr:hover{
+    background: #ededed;
+    cursor: pointer;
+}
+.sorting_asc{
+    background: url('/assets/dataTables/sort_asc.png') no-repeat center;
+}
+.sorting{
+    background: url('/assets/dataTables/sort_both.png') no-repeat center;
 }

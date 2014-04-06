@@ -7,12 +7,10 @@
     <% if user_signed_in? %>
       <p>Welcome, <strong><%= current_user.email %></strong></p>
       <ul>
-     <!--  <li>
-        <%= link_to 'Edit profile', edit_user_registration_path %></li>
-      <li>|</li> -->
           <li>
             <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
+          <ul>
           <li>
             <%= link_to "Sign up", new_user_registration_path %></li>
           <li>|</li>
@@ -23,8 +21,7 @@
           <li>|</li>
           <li class="tab" id="">
           <%= link_to "Add Transactions", import_index_path, :class =>"mainlk" %></li>
-
-    </ul>
+      </ul>
 
   </div>
   <div id="topnav">
