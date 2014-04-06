@@ -31,7 +31,7 @@ function fnFormatDetails ( oTable, tmpTr)
         aLengthMenu: [[25, 50, 100], [25, 50, 100]],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
+        aoColumns:[null,null,null,null,null,null,null,null, null,{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
         sDom: '<if>rt<lp><"clear">',
         sPaginationType: "full_numbers",
 

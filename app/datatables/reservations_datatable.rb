@@ -29,10 +29,10 @@ private
         flight.fare_category,
         number_to_currency(flight.benchmark_rate),
         number_to_currency(flight.total_amount),
+        flight.online_indicator,
         number_to_currency(flight.benchmark_rate_difference),
         flight.benchmark_rate_percentage,
         flight.ticket_number,
-        flight.online_indicator,
         flight.mileage,
         flight.routing,
         flight.domestic_international_indicator,
@@ -66,7 +66,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount benchmark_rate_difference benchmark_rate_percentage ticket_number]
+    columns = %w[gds_record_locator gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
     columns[params[:iSortCol_0].to_i]
   end
 
