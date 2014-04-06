@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
 before_filter :authenticate_user!, :except => [:transactions,:transactions_data]
+before_filter :set_date
 require 'gchart'
   def overview
         @line_chart = Gchart.line(:data => [0, 40, 10, 70, 20],:legend => 'Mike\'s test table', :axis_with_labels => 'y,x')
@@ -38,6 +39,14 @@ require 'gchart'
     end
   end
 
+  def overview_data
+    respond_to do |format|
+      format.html
+      format.json{ render json: DepartmentOverviewDatatable.new(view_context)}
+    # @flight_reservations = FlightReservation.find(:all, :order => "id desc", :limit => 300)
+    end
+  end
+
   def budgets
   end
 
@@ -45,5 +54,12 @@ require 'gchart'
   end
 
   def ways_to_save
+  end
+
+  private
+  def set_date
+    @date = Date.today.strftime('%b %d, %Y')
+    @date_in_past = (Date.today-30).strftime('%b %d, %Y')
+
   end
 end

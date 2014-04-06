@@ -1,44 +1,27 @@
 <p style="background-color:#ccc; padding:20px; margin-bottom:20px;">
-    <label>Department:</label>
-    <select>
-        <option>All</option>
-        <option>Agriculture</option>
-        <option>General Services Administration</option>
-        <option>Internal Revenue Service</option>
-    </select>
-
-
-    <label style="margin-left:10px;">Transaction type:</label>
+     <label >Transaction type:</label>
     <select>
         <option>Airline</option>
         <option>Hotel</option>
         <option>Car Rental</option>
     </select>
 
+<% unless controller.action_name == "overview" %>
+    <label style="margin-left:10px;">Department:</label>
+    <select>
+        <option>All</option>
+        <option>Agriculture</option>
+        <option>General Services Administration</option>
+        <option>Internal Revenue Service</option>
+    </select>
+<% end %>
 
-<div id="reportrange" class="pull-right">
+
+<span id="reportrange" class="pull-right">
     <i class="fa fa-calendar fa-lg"></i>
-    <span>3/15/14 - 4/4/14</span> <b class="caret"></b>
-</div>
+    <span><%= @date_in_past %> - <%= @date %></span> <b class="caret"></b>
+</span>
 
-<script type="text/javascript">
-$('#reportrange').daterangepicker(
-    {
-      ranges: {
-         'Today': [moment(), moment()],
-         'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
-         'Last 7 Days': [moment().subtract('days', 6), moment()],
-         'Last 30 Days': [moment().subtract('days', 29), moment()],
-         'This Month': [moment().startOf('month'), moment().endOf('month')],
-         'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
-      },
-      startDate: moment().subtract('days', 29),
-      endDate: moment()
-    },
-    function(start, end) {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    }
-);
-</script>
+</p>
 
 

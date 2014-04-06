@@ -1,26 +1,17 @@
-<h1 style="margin-bottom:30px;">All Transactions</h1>
+<h1 style="margin-bottom:30px;">Department Overview</h1>
 
-<%= image_tag(@line_chart) %>
-<br>
-<br>
 
-<%= image_tag(@sparkline_chart) %>
-
-<br>
-<br>
-
-<%= image_tag(@piechart) %>
-<br>
-<br>
-
-<%= image_tag(@scatter_chart) %>
-<br>
-<br>
-
-<%= image_tag(@barchart) %>
+<table id="department_overview" class="display" data-source="<%= dashboard_overview_data_url(format: "json") %>">
+  <thead>
+      <tr>
+        <th>Department</th>
+        <th>Total Cost</th>
+      </tr>
+  </thead>
+<tbody>
+</tbody>
+</table>
 
 
 
-<br>
-<br>
 

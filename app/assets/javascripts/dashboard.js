@@ -22,6 +22,10 @@ function fnFormatDetails ( oTable, tmpTr)
     /*
      * Initialse DataTables, with no sorting on the 'details' column
      */
+
+    filterStartDate = moment().subtract('days', 29).format('D/M/YYYY');
+    filterEndDate = moment().format('D/M/YYYY');
+
     var oTable = $('#flight_reservations').dataTable( {
         sPaginationType: "full_numbers",
         iDisplayLength: 25,
@@ -35,6 +39,17 @@ function fnFormatDetails ( oTable, tmpTr)
             "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
         },
         sAjaxSource:$('#flight_reservations').data('source'),
+        fnServerData: function ( sSource, aoData, fnCallback ) {
+            /* Add some extra data to the sender */
+
+                aoData.push( { "name": "start_date", "value": filterStartDate } );
+                aoData.push( { "name": "end_date", "value": filterEndDate } );
+            $.getJSON( sSource, aoData, function (json) {
+                 // Do whatever additional processing you want on the callback, then tell DataTables
+                fnCallback(json);
+                // alert('ajax call ran');
+            } );
+        },
         fnRowCallback: function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
             var sDirectionClass;
             if ( aData[8] > 20 )
@@ -54,9 +69,6 @@ function fnFormatDetails ( oTable, tmpTr)
      * rather it is done here
      */
     $('#flight_reservations tbody').on('click','tr', function () {
-
-        // tmpImage = $("td img",this).attr('src');
-        // console.log(tmpImage);
         var tmpTr = $(this)[0];
 
         if(oTable.fnIsOpen(tmpTr)){
@@ -67,21 +79,47 @@ function fnFormatDetails ( oTable, tmpTr)
             $("td img",tmpTr).attr("src","http://datatables.net/release-datatables/examples/examples_support/details_close.png");
         }
 
-        // if ( oTable.fnIsOpen(nTr) )
-        // {
-        //     /* This row is already open - close it */
-        //     this.src = "http://datatables.net/release-datatables/examples/examples_support/details_open.png";
-        //     oTable.fnClose( nTr );
-        //     console.log('this ran');
-        // }
-        // else
-        // {
-        //     /* Open this row */
-        //     this.src = "http://datatables.net/release-datatables/examples/examples_support/details_close.png";
-        //     oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
-        //     console.log('that ran');
-        // }
     });
+
+    /* Table on Dashboard homepage */
+    var overviewTable = $('#department_overview').dataTable( {
+        sPaginationType: "full_numbers",
+        bProcessing: true,
+        bServerSide: true,
+        bFilter: false,
+        bPaginate: false,
+        bInfo: false,
+        sAjaxSource:$('#department_overview').data('source'),
+    });
+
+    $('#reportrange').daterangepicker(
+        {
+          ranges: {
+             // 'Today': [moment(), moment()],
+             // 'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+             // 'Last 7 Days': [moment().subtract('days', 6), moment()],
+            'Sept 30 2010': [moment('9/30/2010').startOf('day'), moment('9/30/2010').endOf('day')],
+             'Last 30 Days': [moment().subtract('days', 29), moment()],
+             'This Month': [moment().startOf('month'), moment().endOf('month')],
+             'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')],
+             'This Year': [moment().startOf('year'), moment()],
+             'Last Year': [moment().subtract('month',12).startOf('year'), moment().subtract('month',12).endOf('year')]
+          },
+          startDate: moment().subtract('days', 29),
+          endDate: moment()
+        },
+        function(start, end, aoData) {
+            $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            // alert(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            oTable.fnClearTable();
+            filterStartDate = start.format('D/M/YYYY');
+            filterEndDate = end.format('D/M/YYYY');
+
+            // oTable.fnSettings().aoData.push({"name": 'start_date', "value":'27/9/2010'});
+            oTable.fnDraw();
+        }
+    );
+
 };
 
 $(document).ready(ready);
