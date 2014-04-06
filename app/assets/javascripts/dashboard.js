@@ -23,7 +23,7 @@ function fnFormatDetails ( oTable, tmpTr)
      * Initialse DataTables, with no sorting on the 'details' column
      */
 
-    filterStartDate = moment().subtract('days', 29).format('D/M/YYYY');
+    filterStartDate = moment('1/1/2010').format('D/M/YYYY');
     filterEndDate = moment().format('D/M/YYYY');
 
     var oTable = $('#flight_reservations').dataTable( {
@@ -110,11 +110,12 @@ function fnFormatDetails ( oTable, tmpTr)
 
 
           },
-          startDate: moment().subtract('days', 29),
-          endDate: moment()
+          startDate: moment().subtract('days', 20),
+          endDate: moment().subtract('days', 10)
         },
         function(start, end, aoData) {
             $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+
             // alert(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
             oTable.fnClearTable();
             filterStartDate = start.format('D/M/YYYY');
