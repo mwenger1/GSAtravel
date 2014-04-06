@@ -1,7 +1,7 @@
 <h1>Importer Console</h1>
 
-<p>There are <%= @flight_reservations %> reservations</p>
-
+<p>There are <%= @flight_transactions %> flight transactions.</p>
+<p>There are <%= @hotel_transactions %> hotel transactions</p>
 <%= link_to "Run Hotel Importer", import_run_hotel_path %>
 <br>
 <%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %>
