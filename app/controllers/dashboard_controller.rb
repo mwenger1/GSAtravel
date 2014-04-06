@@ -39,9 +39,9 @@ require 'gchart'
       if params[:transaction_type]== "flight"
         format.json{ render json: ReservationsDatatable.new(view_context)}
       elsif params[:transaction_type]== "car_rental"
-        format.json{ render json: ReservationsDatatable.new(view_context)}
+        format.json{ render json: CarRentalTransactionsDatatable.new(view_context)}
       elsif params[:transaction_type]== "hotel"
-        format.json{ render json: ReservationsDatatable.new(view_context)}
+        format.json{ render json: HotelTransactionsDatatable.new(view_context)}
       else
         format.json{ render json: ReservationsDatatable.new(view_context)}
       end
