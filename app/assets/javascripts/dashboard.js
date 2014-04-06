@@ -37,7 +37,11 @@ function fnFormatDetails ( oTable, tmpTr)
         sPaginationType: "full_numbers",
 
         oTableTools: {
-            "sSwfPath": "media/swf/copy_csv_xls_pdf.swf"
+            sSwfPath: "media/swf/copy_csv_xls_pdf.swf"
+        },
+        oLanguage: {
+            sInfo: "Showing (_START_ to _END_) of _TOTAL_ transactions",
+            sInfoEmpty: "No transactions match this filter. Expand your search."
         },
         sAjaxSource:$('#flight_reservations').data('source'),
         fnServerData: function ( sSource, aoData, fnCallback ) {
@@ -101,7 +105,9 @@ function fnFormatDetails ( oTable, tmpTr)
              '&nbsp;2013': [moment('1/1/2013'), moment('1/1/2013').endOf('year')],
              '&nbsp;2012': [moment('1/1/2012'), moment('1/1/2012').endOf('year')],
              '&nbsp;2011': [moment('1/1/2011'), moment('1/1/2011').endOf('year')],
-             '&nbsp;2010': [moment('1/1/2010'), moment('1/1/2010').endOf('year')]
+             '&nbsp;2010': [moment('1/1/2010'), moment('1/1/2010').endOf('year')],
+             '&nbsp;2009': [moment('1/1/2009'), moment('1/1/2009').endOf('year')]
+
 
           },
           startDate: moment().subtract('days', 29),
