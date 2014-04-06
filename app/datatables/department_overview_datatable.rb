@@ -33,10 +33,11 @@ private
 
   def fetch_flight_reservations
     flight_reservations = FlightReservation.order("#{sort_column} #{sort_direction}").limit(10)
-    flight_reservations = flight_reservations.page(page).per_page(per_page)
     if params[:sSearch].present?
       flight_reservations = flight_reservations.where("gds_record_locator like :search or airline_name like :search", search: "%#{params[:sSearch]}%")
     end
+    flight_reservations = flight_reservations.where(:reservation_date => Date.new(2007, 5, 12)..Date.new(2010, 10, 12))
+    flight_reservations = flight_reservations.page(page).per_page(per_page)
     flight_reservations
   end
 
