@@ -30,7 +30,6 @@ function fnFormatDetails ( oTable, tmpTr)
         iDisplayLength: 25,
         aLengthMenu: [[25, 50, 100], [25, 50, 100]],
         bJQueryUI: true,
-        bProcessing: true,
         bServerSide: true,
         aoColumns:[null,null,null,null,null,null,null,null, {"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false },{"bSearchable": false, "bVisible":    false }],
         sDom: '<if>rt<lp><"clear">',
@@ -89,7 +88,6 @@ function fnFormatDetails ( oTable, tmpTr)
     /* Table on Dashboard homepage */
     var overviewTable = $('#department_overview').dataTable( {
         sPaginationType: "full_numbers",
-        bProcessing: true,
         bServerSide: true,
         bJQueryUI: false,
         bFilter: false,
@@ -130,6 +128,8 @@ function fnFormatDetails ( oTable, tmpTr)
     $('#transcationTypeFilter').click(function(){
         $("#transcationTypeFilter button").removeClass("active");
         $(this).addClass("active");
+        oTable.fnClearTable();
+        oTable.fnDraw();
         // alert('test');
     });
 
