@@ -28,23 +28,23 @@ class ImportController < ApplicationController
 
             ## FILTERS OUT RETURNS AND REFUNDS @TODO incorporate refunds
             unless (false) ## ADD FILTERS
-                f = HotelReservation.new
-                f.gds_record_locator = entry[0]
-                f.reservation_date = Date.strptime(entry[1], '%m/%d/%y') unless entry[1].nil?
-                f.check_in_date = Date.strptime(entry[2], '%m/%d/%y') unless entry[2].nil?
-                f.check_out_date = Date.strptime(entry[3], '%m/%d/%y') unless entry[3].nil?
-                f.hotel_chain_code = entry[4]
-                f.hotel_chain_name = entry[5]
-                f.hotel_property_name = entry[6]
-                f.hotel_address = entry[7]
-                f.hotel_city_name = entry[8]
-                f.hotel_state = entry[9]
-                f.hotel_zip_code = entry[10]
-                f.hotel_country_code = entry[11]
-                f.number_of_room_nights = entry[12].to_i
-                f.daily_rate = entry[13].to_f
-                f.room_rate_code = calculate_benchmark_rate(entry[13])
-                f.save
+                h = HotelReservation.new
+                h.gds_record_locator = entry[0]
+                h.reservation_date = Date.strptime(entry[1], '%m/%d/%y') unless entry[1].nil?
+                h.check_in_date = Date.strptime(entry[2], '%m/%d/%y') unless entry[2].nil?
+                h.check_out_date = Date.strptime(entry[3], '%m/%d/%y') unless entry[3].nil?
+                h.hotel_chain_code = entry[4]
+                h.hotel_chain_name = entry[5]
+                h.hotel_property_name = entry[6]
+                h.hotel_address = entry[7]
+                h.hotel_city_name = entry[8]
+                h.hotel_state = entry[9]
+                h.hotel_zip_code = entry[10]
+                h.hotel_country_code = entry[11]
+                h.number_of_room_nights = entry[12].to_i
+                h.daily_rate = entry[13].to_f
+                h.room_rate_code = calculate_benchmark_rate(entry[13])
+                h.save
            end
         end
         counter = counter + 1
