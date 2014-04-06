@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331174602) do
+ActiveRecord::Schema.define(version: 20140406192718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "car_rental_reservations", force: true do |t|
+    t.string   "gds_record_locator"
+    t.date     "reservation_date"
+    t.date     "car_pick_up_date"
+    t.date     "car_drop_off_date"
+    t.string   "car_chain_code"
+    t.string   "car_chain_name"
+    t.string   "car_pick_up_city"
+    t.string   "car_pick_up_state"
+    t.string   "car_drop_off_city"
+    t.string   "car_drop_off_state"
+    t.integer  "car_rental_days"
+    t.float    "car_daily_rate"
+    t.string   "car_category"
+    t.string   "online_indicator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "flight_reservations", force: true do |t|
     t.string   "gds_record_locator"
