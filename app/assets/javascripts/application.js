@@ -18,5 +18,6 @@
 //= require moment
 //= require turbolinks
 //= require_tree .
+//= require dropdown
 //= require daterangepicker
 

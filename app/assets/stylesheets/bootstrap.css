@@ -2673,7 +2673,7 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 7px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -2696,6 +2696,15 @@ select[multiple].input-lg {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+}
+.btn img{
+  width: 30px; 
+}
+.btn-default:active,
+.btn-default:hover, 
+.btn-default:focus, 
+.btn-default.active{
+  background-color: #CED5E8;
 }
 .btn:hover,
 .btn:focus {
@@ -3123,7 +3132,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:focus {
   color: #262626;
   text-decoration: none;
-  background-color: #f5f5f5;
+  background-color: #CED5E8;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -3206,6 +3215,7 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 }
 .btn-group > .btn,
 .btn-group-vertical > .btn {
@@ -3249,6 +3259,9 @@ tbody.collapse.in {
 }
 .btn-group > .btn:first-child {
   margin-left: 0;
+  font-family: BebasNeue;
+  font-size: 1.6em;
+  letter-spacing: 0.03em;
 }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
   border-top-right-radius: 0;

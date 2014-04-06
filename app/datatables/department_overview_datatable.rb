@@ -32,7 +32,7 @@ private
   end
 
   def fetch_department_data
-    department_data = [["GSA","$34M"],["IRS","$32M"]]
+    department_data = [["GSA","$34M","22%"],["IRS","$32M","12%"],["Homeland Security","$32M","6%"]]
   end
 
   def page
