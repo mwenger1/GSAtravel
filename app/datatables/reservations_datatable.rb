@@ -23,7 +23,7 @@ private
       [
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.gds_record_locator,
-        flight.reservation_date.strftime('%b %d, %Y'),
+        flight.trip_departure_date.strftime('%b %d, %Y'),
         flight.days_in_advance,
         flight.airline_name,
         flight.fare_category,
@@ -51,7 +51,7 @@ private
       flight_reservations = flight_reservations.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
     end
 
-    flight_reservations = flight_reservations.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
+    flight_reservations = flight_reservations.where(:trip_departure_date => @start_date.beginning_of_day..@end_date.end_of_day)
 
     flight_reservations = flight_reservations.page(page).per_page(per_page)
     flight_reservations
@@ -66,7 +66,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator gds_record_locator trip_departure_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
     columns[params[:iSortCol_0].to_i]
   end
 
