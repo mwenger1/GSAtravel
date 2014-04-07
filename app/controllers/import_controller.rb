@@ -152,6 +152,8 @@ class ImportController < ApplicationController
 
   def delete_all
     FlightReservation.delete_all
+    HotelReservation.delete_all
+    CarRentalReservation.delete_all
     redirect_to import_index_path, notice: "All Items deleted"
   end
 end
