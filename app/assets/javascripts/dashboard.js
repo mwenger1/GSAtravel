@@ -4,18 +4,16 @@ ready = function() {
     function fnFormatFlightDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
     var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-    sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[9] + '</td>';
-    sOut += '<td><strong>Online:</strong></td><td>' + aData[10] + '</td>';
-    sOut += '<td><strong>Miles:</strong></td><td>' + aData[11] + '</td></tr>';
-    sOut += '<tr><td><strong>Routing:</strong></td><td>' + aData[12] + '</td>';
-    sOut += '<td><strong>Dom/Intl:</strong></td><td>' + aData[13] + '</td></tr>';
-    sOut += '<tr><td><strong>Departure Date:</strong></td><td>' + aData[14] + '</td>';
-    sOut += '<td><strong>Reservation Date:</strong></td><td>' + aData[15] + '</td></tr>';
+    sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[11] + '</td>';
+    sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td>';
+    sOut += '<td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td></tr>';
+    sOut += '<tr><td><strong>Distance:</strong></td><td>' + aData[12] + '</td>';
+    sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
+    sOut += '<tr><td><strong>Final Destination:</strong></td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[14] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
+    sOut += '<td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td></tr>';
     sOut += '</table>';
     sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
 
-
-            // var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
             // sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[11] + '</td></tr>';
             // sOut += '<tr class="nonClickable"><td>Cabin Type:</td><td>' + aData[18] + '</td></tr>';
             // sOut += '<tr class="nonClickable"><td>Purchase Date:</td><td>' + aData[15] + '</td></tr>';
