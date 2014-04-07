@@ -18,6 +18,39 @@ ready = function() {
         return sOut;
     }
 
+    function fnFormatHotelDetails(oTable, tmpTr) {
+        var aData = oTable.fnGetData(tmpTr);
+            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#87CEEB;">';
+            sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[11] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Hotel Address:</td><td>' + aData[18] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Property Name:</td><td>' + aData[15] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Distance:</td><td>' + aData[12] + ' miles</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Cost Per Mile:</td><td>$5.23 (site average = $7.25)</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Final Destination:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td></tr>';
+            sOut += '<tr class="nonClickable"><td>Full Trip Itinerary:</td><td>' + aData[13] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
+
+            sOut += '</table>';
+        checkPopups();
+        return sOut;
+    }
+
+    function fnFormatCarRentalDetails(oTable, tmpTr) {
+        var aData = oTable.fnGetData(tmpTr);
+            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#87CEEB;">';
+            sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[11] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Cabin Type:</td><td>' + aData[18] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Purchase Date:</td><td>' + aData[15] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Dates of Rental:</td><td>From: ' + aData[12] + ' to ' + aData[12] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Cost Per Mile:</td><td>$5.23 (site average = $7.25)</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Pick Up Location:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td></tr>';
+            sOut += '<tr class="nonClickable"><td>Drop Off Location:</td><td>' + aData[13] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
+
+            sOut += '</table>';
+        checkPopups();
+        return sOut;
+    }
     function checkPopups (){
         $('*[data-toggle]').on('click',function(e) {
             $('.popover').popover('hide');
@@ -287,7 +320,7 @@ ready = function() {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
             oTable2.fnClose(tmpTr);
         } else {
-            oTable2.fnOpen(tmpTr, fnFormatFlightDetails(oTable2, tmpTr));
+            oTable2.fnOpen(tmpTr, fnFormatHotelDetails(oTable2, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
         }
     });
@@ -298,7 +331,7 @@ ready = function() {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
             oTable3.fnClose(tmpTr);
         } else {
-            oTable3.fnOpen(tmpTr, fnFormatFlightDetails(oTable3, tmpTr));
+            oTable3.fnOpen(tmpTr, fnFormatCarRentalDetails(oTable3, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
         }
     });
