@@ -5,7 +5,12 @@
 .dataTables_wrapper{
     padding: 15px;
 }
-
+#hotel_reservations_wrapper{
+    display:none;
+}
+#car_rental_reservations_wrapper{
+    display:none;
+}
 #tablesWrapper tbody .outlierSaver td, #tablesWrapper tbody .outlierSaver{
     background-color:rgba(75,169,10,0.1);
 }

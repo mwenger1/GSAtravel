@@ -27,7 +27,7 @@ ready = function() {
     filterEndDate = moment().format('D/M/YYYY');
     eventTypeFilter = "flight";
 
-    var oTable = $('#flight_reservations').dataTable({
+    var oTable1 = $('#flight_reservations').dataTable({
         iDisplayLength: 25,
         aLengthMenu: [
             [25, 50, 100],
@@ -99,14 +99,11 @@ ready = function() {
 
             $(nRow).addClass(sDirectionClass);
 
-            $("#tablesWrapper .dataTables_wrapper").hide();
-            $("#flight_reservations_wrapper").show();
-
             return nRow;
         }
     });
 
-    var oTable = $('#hotel_reservations').dataTable({
+    var oTable2 = $('#hotel_reservations').dataTable({
         iDisplayLength: 25,
         aLengthMenu: [
             [25, 50, 100],
@@ -181,7 +178,7 @@ ready = function() {
         }
     });
 
- var oTable = $('#car_rental_reservations').dataTable({
+        var oTable3 = $('#car_rental_reservations').dataTable({
         iDisplayLength: 25,
         aLengthMenu: [
             [25, 50, 100],
@@ -301,26 +298,36 @@ ready = function() {
         },
         function(start, end, aoData) {
             $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
-            oTable.fnClearTable();
+            oTable1.fnClearTable();
+            oTable2.fnClearTable();
+            oTable3.fnClearTable();
+
             filterStartDate = start.format('D/M/YYYY');
             filterEndDate = end.format('D/M/YYYY');
 
             // oTable.fnSettings().aoData.push({"name": 'start_date', "value":'27/9/2010'});
-            oTable.fnDraw();
+            oTable1.fnDraw();
+            oTable2.fnDraw();
+            oTable3.fnDraw();
         }
     );
 
     $('#transcationTypeFilter button').click(function() {
         $("#transcationTypeFilter button").removeClass("active");
         $(this).addClass("active");
-        oTable.fnClearTable();
-        $("#tablesWrapper .dataTables_wrapper").hide();
+        oTable1.fnClearTable();
+        oTable2.fnClearTable();
+        oTable3.fnClearTable();
+        oTable1.fnDraw();
+        oTable2.fnDraw();
+        oTable3.fnDraw();
         eventTypeFilter = $(this).data('filter');
+        $("#transactionsHeader").text(eventTypeFilter + " Transactions");
+
         var tmpFilter = (eventTypeFilter == "Car Rental")?"car_rental":eventTypeFilter.toLowerCase();
         var tmpName = "#" + tmpFilter + "_reservations_wrapper";
+        $("#tablesWrapper .dataTables_wrapper").hide();
         $(tmpName).show();
-        $("#transactionsHeader").text(eventTypeFilter + " Transactions");
-        oTable.fnDraw();
     });
 
 };
