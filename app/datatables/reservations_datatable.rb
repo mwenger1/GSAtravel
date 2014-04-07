@@ -24,7 +24,7 @@ private
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.gds_record_locator,
         flight.trip_departure_date.strftime('%b %d, %Y'),
-        flight.days_in_advance,
+        flight.days_in_advance.to_s + " days",
         flight.airline_name.titleize,
         flight.fare_category,
         number_to_currency(flight.benchmark_rate),

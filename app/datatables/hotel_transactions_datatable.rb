@@ -24,7 +24,7 @@ private
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         hotel.gds_record_locator,
         hotel.reservation_date.strftime('%b %d, %Y'),
-        hotel.days_in_advance,
+        hotel.days_in_advance.to_s + " days",
         hotel.hotel_chain_name.titleize,
         hotel.hotel_city_name,
         number_to_currency(hotel.daily_rate),
