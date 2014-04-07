@@ -2206,10 +2206,10 @@ h5:empty {
 	top:7px;
 	left:5px;
 	border:1px solid #fff;
-	box-shadow:0 0 7px #fff;
+/*	box-shadow:0 0 7px #fff;
 	-moz-box-shadow:0 0 7px #fff;
 }
-
+*/
 .govDelivery span {
 	font-size:11px;
 	color:#333;
@@ -2544,10 +2544,10 @@ button.mobileButton{
 	border-radius: 4px;
 	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
 	filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+/*	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
 	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
 	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
-	color: #fff;
+*/	color: #fff;
 	-webkit-appearance: button;
 	margin: 0;
 	padding: 9px 14px;
