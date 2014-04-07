@@ -111,3 +111,36 @@ table.dataTable tr.even td.sorting_1{
 #car_rental_reservations_wrapper{
     display:none;
 }
+.trendOptions{
+    display: inline;
+    float: left;
+}
+.trendOptions span{
+float: right;
+margin-left: 15px;
+}
+.trendOptions div{
+    padding: 0px 6px;
+}
+.trendOptions h4{
+    background: #CED5E8;
+    display: inline-block;
+    padding: 4px 24px 4px 10px;
+    margin: 2px 0;
+    width: 100%
+}
+.sectionBox{
+    box-shadow: -4px 7px 17px 0px #aaaaaa;
+    float: left;
+    display: inline;
+    padding: 10px 5px;
+}
+.trendCharts{
+    margin-left: 20px;
+    width: 620px;
+    height: 460px;
+}
+.chart{
+    display:none;
+    padding: 20px;
+}

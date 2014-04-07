@@ -397,41 +397,42 @@ ready = function() {
         $(tmpName).show();
     });
 
-    var isVisible = false;
 
-    var hideAllPopovers = function() {
-       $('.popup-marker').each(function() {
-            $(this).popover('hide');
-        });
-    };
-
-    $('.popup-marker').popover({
-        html: true,
-        trigger: 'manual'
-    }).on('click', function(e) {
-        // if any other popovers are visible, hide them
-        if(isVisible) {
-            hideAllPopovers();
-        }
-
-        $(this).popover('show');
-
-        // handle clicking on the popover itself
-        $('.popover').off('click').on('click', function(e) {
-            e.stopPropagation(); // prevent event for bubbling up => will not get caught with document.onclick
-        });
-
-        isVisible = true;
-        e.stopPropagation();
+    $('.trendOptions h4').click(function(){
+        $('.glyphicon .glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
+        $('.glyphicon .glyphicon-chevron-down').removeClass('glyphicon glyphicon-chevron-down');
     });
-
-
-    $(document).on('click', function(e) {
-        hideAllPopovers();
-        isVisible = false;
+    $('.franchise').click(function(){
+        $('#franchise').show();
+        $('#pricePerMile').hide();
+        $('#hotspots').hide();
+        $('#days').hide();
+    });
+    $('.pricePerMile').click(function(){
+        $('#pricePerMile').show();
+        $('#hotspots').hide();
+        $('#days').hide();
+        $('#franchise').hide();
+    });
+    $('.hotspots').click(function(){
+        $('#hotspots').show();
+        $('#days').hide();
+        $('#franchise').hide();
+        $('#pricePerMile').hide();
+    });
+    $('.days').click(function(){
+        $('#days').show();
+        $('#franchise').hide();
+        $('#pricePerMile').hide();
+        $('#hotspots').hide();
     });
 
 };
 
+
+
+
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+
