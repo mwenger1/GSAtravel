@@ -409,9 +409,33 @@ ready = function() {
         $(tmpName).show();
     });
 
-    $('.trendOptions h4').click(){
+    $('.trendOptions h4').click(function(){
         $('.glyphicon .glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
         $('.glyphicon .glyphicon-chevron-down').removeClass('glyphicon glyphicon-chevron-down');
+    });
+    $('.franchise').click(function(){
+        $('#franchise').show();
+        $('#pricePerMile').hide();
+        $('#hotspots').hide();
+        $('#days').hide();
+    });
+    $('.pricePerMile').click(function(){
+        $('#pricePerMile').show();
+        $('#hotspots').hide();
+        $('#days').hide();
+        $('#franchise').hide();
+    });
+    $('.hotspots').click(function(){
+        $('#hotspots').show();
+        $('#days').hide();
+        $('#franchise').hide();
+        $('#pricePerMile').hide();
+    });
+    $('.days').click(function(){
+        $('#days').show();
+        $('#franchise').hide();
+        $('#pricePerMile').hide();
+        $('#hotspots').hide();
     });
 };
 
