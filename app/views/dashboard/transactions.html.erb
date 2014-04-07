@@ -1,10 +1,32 @@
 <h1 style="margin-bottom:1em;" id="transactionsHeader">Flight Transactions</h1>
-<button type="button" id="test" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+
+<span class="airportCode btn btn-default" data-container="body" data-poload="http://airportcode.riobard.com/airport/EWR?fmt=JSON" data-toggle="popover" data-placement="top" >
   Popover on left
-</button>
+</span>
 
 <script>
-$('#test').popover();
+$(document).ready(function(){
+    $('*[data-poload]').on('click',function(e) {
+
+    // $.getJSON("https://airport.api.aero/airport/ewr?user_key=d9e2c9a6cad452d0e6f9ee9bd2f5cd0b&callback",function(result){
+        alert(result);
+    });
+        //     e.popover({content: d}).popover('show');
+        // });
+        // var e=$(this);
+        // e.unbind('hover');
+        // $.getJSON(e.data('poload'),function(d) {
+        //     e.popover({content: d}).popover('show');
+        // });
+    });
+});
+// $('.airportCode').popover({
+
+//     // alert(tmpVar);
+//     title: "EWR",
+//     content: "Newark Liberty International Airport<br /><br>Newark/Elizabeth, New Jersey, United States",
+//     html: true
+// });
 </script>
 <div id="tablesWrapper">
 <table id="flight_reservations" class="display" data-source="<%= dashboard_transactions_flight_data_url(format: "json") %>">

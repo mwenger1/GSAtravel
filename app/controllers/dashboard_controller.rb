@@ -70,6 +70,12 @@ require 'gchart'
   def ways_to_save
   end
 
+  def airport_api
+    require 'rest_client'
+    @data = RestClient.get "https://airport.api.aero/airport/#{params[:airport_code]}?user_key=d9e2c9a6cad452d0e6f9ee9bd2f5cd0b&callback", {:accept => :json}
+    render json: @data
+  end
+
   private
   def set_date
     @date = Date.today.strftime('%b %d, %Y')
