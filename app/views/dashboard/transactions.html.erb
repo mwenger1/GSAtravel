@@ -1,10 +1,60 @@
 <h1 style="margin-bottom:1em;" id="transactionsHeader">Flight Transactions</h1>
 
-<table id="flight_reservations" class="display" data-source="<%= dashboard_transactions_data_url(format: "json") %>">
+<table id="flight_reservations" class="display" data-source="<%= dashboard_transactions_flight_data_url(format: "json") %>">
   <thead>
       <tr>
         <th style="width:8px;"></th>
         <th>GDS #</th>
+        <th>Trip Date</th>
+        <th>Days Prior</th>
+        <th>Airline</th>
+        <th>Booked By</th>
+        <th>Average Historical Price</th>
+        <th>Purchase Price</th>
+        <th>Online Indicator</th>
+        <th>Net Savings</th>
+        <th>Percentage of savings</th>
+        <th>Ticket Number</th>
+        <th>Mileage</th>
+        <th>Routing</th>
+        <th>Domestic/International</th>
+        <th>Trip Departure Date</th>
+      </tr>
+  </thead>
+<tbody>
+</tbody>
+</table>
+
+<table id="hotel_reservations" class="display" data-source="<%= dashboard_transactions_hotel_data_url(format: "json") %>">
+  <thead>
+      <tr>
+        <th style="width:8px;"></th>
+        <th>Hotel GDS #</th>
+        <th>Trip Date</th>
+        <th>Days Prior</th>
+        <th>Airline</th>
+        <th>Booked By</th>
+        <th>Average Historical Price</th>
+        <th>Purchase Price</th>
+        <th>Online Indicator</th>
+        <th>Net Savings</th>
+        <th>Percentage of savings</th>
+        <th>Ticket Number</th>
+        <th>Mileage</th>
+        <th>Routing</th>
+        <th>Domestic/International</th>
+        <th>Trip Departure Date</th>
+      </tr>
+  </thead>
+<tbody>
+</tbody>
+</table>
+
+<table id="car_rental_reservations" class="display" data-source="<%= dashboard_transactions_car_rental_data_url(format: "json") %>">
+  <thead>
+      <tr>
+        <th style="width:8px;"></th>
+        <th>Car GDS #</th>
         <th>Trip Date</th>
         <th>Days Prior</th>
         <th>Airline</th>

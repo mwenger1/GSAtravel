@@ -31,26 +31,27 @@ require 'gchart'
   def transactions
   end
 
-  def transactions_data
-
+  def transactions_flight_data
     respond_to do |format|
       format.html
-
-      if params[:transaction_type]== "Flight"
-        format.json{ render json: ReservationsDatatable.new(view_context)}
-      elsif params[:transaction_type]== "Car Rental"
-        format.json{ render json: CarRentalTransactionsDatatable.new(view_context)}
-      elsif params[:transaction_type]== "Hotel"
-        format.json{ render json: HotelTransactionsDatatable.new(view_context)}
-      else
-        format.json{ render json: ReservationsDatatable.new(view_context)}
-      end
-
+      format.json{ render json: ReservationsDatatable.new(view_context)}
     end
-
-
-
   end
+
+  def transactions_car_rental_data
+    respond_to do |format|
+      format.html
+      format.json{ render json: CarRentalTransactionsDatatable.new(view_context)}
+    end
+  end
+
+  def transactions_hotel_data
+    respond_to do |format|
+      format.html
+      format.json{ render json: HotelTransactionsDatatable.new(view_context)}
+    end
+  end
+
 
   def overview_data
     respond_to do |format|

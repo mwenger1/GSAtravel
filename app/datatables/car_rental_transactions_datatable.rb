@@ -28,7 +28,7 @@ private
         rental.car_chain_name,
         rental.car_category,
         number_to_currency(rental.car_daily_rate),
-        rental.car_rental_days,
+        number_to_currency(rental.total_amount),
         rental.online_indicator,
         rental.gds_record_locator,
         rental.gds_record_locator,

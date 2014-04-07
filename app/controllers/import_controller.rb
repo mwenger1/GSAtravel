@@ -86,6 +86,7 @@ class ImportController < ApplicationController
                 c.car_drop_off_state = entry[9]
                 c.car_rental_days = entry[10].to_i
                 c.car_daily_rate = entry[11].to_f
+                c.benchmark_rate = calculate_benchmark_rate(entry[13])
                 c.car_category = entry[12]
                 c.online_indicator = entry[13]
                 c.save
