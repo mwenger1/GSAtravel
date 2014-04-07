@@ -297,15 +297,15 @@ ready = function() {
             });
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            var sDirectionClass;
-            if (aData[8] > 20)
-                sDirectionClass = "outlierSaver";
-            else if (aData[8] < -20)
-                sDirectionClass = "outlierSpender";
-            else
-                sDirectionClass = "nonOutlier";
+            // var sDirectionClass;
+            // if (aData[8] > 20)
+            //     sDirectionClass = "outlierSaver";
+            // else if (aData[8] < -20)
+            //     sDirectionClass = "outlierSpender";
+            // else
+            //     sDirectionClass = "nonOutlier";
 
-            $(nRow).addClass(sDirectionClass);
+            // $(nRow).addClass(sDirectionClass);
             return nRow;
         }
     });
@@ -314,36 +314,43 @@ ready = function() {
      * Note that the indicator for showing which row is open is not controlled by DataTables,
      * rather it is done here
      */
-    $('#flight_reservations tbody[role="alert"]').on('click', 'tr.nonOutlier', function() {
+    $('#flight_reservations tbody[role="alert"]').on('click', 'tr', function() {
         var tmpTr = $(this)[0];
         if (oTable1.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
             oTable1.fnClose(tmpTr);
+            $(this).removeClass('active');
         } else {
             oTable1.fnOpen(tmpTr, fnFormatFlightDetails(oTable1, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
+            $(this).addClass('active');
         }
     });
 
-    $('#hotel_reservations tbody[role="alert"]').on('click', 'tr.nonOutlier', function() {
+    $('#hotel_reservations tbody[role="alert"]').on('click', 'tr', function() {
         var tmpTr = $(this)[0];
         if (oTable2.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
             oTable2.fnClose(tmpTr);
+            $(this).removeClass('active');
         } else {
             oTable2.fnOpen(tmpTr, fnFormatHotelDetails(oTable2, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
+            $(this).addClass('active');
+
         }
     });
 
-    $('#car_rental_reservations tbody[role="alert"]').on('click', 'tr.nonOutlier', function() {
+    $('#car_rental_reservations tbody[role="alert"]').on('click', 'tr', function() {
         var tmpTr = $(this)[0];
         if (oTable3.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
             oTable3.fnClose(tmpTr);
+            $(this).removeClass('active');
         } else {
             oTable3.fnOpen(tmpTr, fnFormatCarRentalDetails(oTable3, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
+            $(this).addClass('active');
         }
     });
 

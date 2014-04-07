@@ -25,7 +25,7 @@
     display: none;
 }
 
-#tablesWrapper tbody tr.even:hover, #tablesWrapper tbody tr.even td.highlighted,
+#tablesWrapper tbody tr.even:hover, #tablesWrapper table.dataTable tbody tr.even.active .sorting_1, #tablesWrapper table.dataTable tbody tr.odd.active .sorting_1, #tablesWrapper table.dataTable tbody tr.even.active, #tablesWrapper table.dataTable tbody tr.odd.active, #tablesWrapper tbody tr.even td.highlighted,
 #tablesWrapper tbody tr.odd:hover, #tablesWrapper tbody tr.odd td.highlighted,
 #tablesWrapper table.dataTable tr.odd:hover,
 #tablesWrapper table.dataTable tr.even:hover,
