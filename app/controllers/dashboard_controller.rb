@@ -72,7 +72,7 @@ require 'gchart'
   private
   def set_date
     @date = Date.today.strftime('%b %d, %Y')
-    @date_in_past = (Date.today-30).strftime('%b %d, %Y')
+    @date_in_past = Date.new(2010,1,1).strftime('%b %d, %Y')
 
   end
 end
