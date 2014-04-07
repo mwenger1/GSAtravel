@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406192718) do
+ActiveRecord::Schema.define(version: 20140407003536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 20140406192718) do
     t.string   "online_indicator"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "days_in_advance"
+    t.float    "benchmark_rate"
+    t.float    "benchmark_rate_percentage"
+    t.float    "benchmark_rate_difference"
   end
 
   create_table "flight_reservations", force: true do |t|
@@ -84,6 +88,10 @@ ActiveRecord::Schema.define(version: 20140406192718) do
     t.boolean  "online_indicator"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "days_in_advance"
+    t.float    "benchmark_rate"
+    t.float    "benchmark_rate_percentage"
+    t.float    "benchmark_rate_difference"
   end
 
   create_table "users", force: true do |t|
