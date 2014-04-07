@@ -7,14 +7,14 @@
   <thead>
       <tr>
         <th style="width:8px;"></th>
-        <th>Flight GDS #</th>
+        <th>ID</th>
         <th>Flight Date</th>
-        <th>Advanced Booking</th>
+        <th>Days Prior</th>
         <th>Airline</th>
-        <th>Booked Thru</th>
-        <th>Average Historical Price</th>
-        <th>Purchase Price</th>
-        <th>Online Indicator</th>
+        <th>Booked Via</th>
+        <th>Benchmark</th>
+        <th>Price</th>
+        <th>Online</th>
         <th>Net Savings</th>
         <th>Percentage of savings</th>
         <th>Ticket Number</th>
@@ -29,6 +29,7 @@
 <tbody>
 </tbody>
 </table>
+
 
 <table id="hotel_reservations" class="display" data-source="<%= dashboard_transactions_hotel_data_url(format: "json") %>">
   <thead>
