@@ -14,17 +14,6 @@ ready = function() {
     sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td><td></td></tr>';
     sOut += '</table>';
     sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
-
-            // sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[11] + '</td></tr>';
-            // sOut += '<tr class="nonClickable"><td>Cabin Type:</td><td>' + aData[18] + '</td></tr>';
-            // sOut += '<tr class="nonClickable"><td>Purchase Date:</td><td>' + aData[15] + '</td></tr>';
-            // sOut += '<tr class="nonClickable"><td>Distance:</td><td>' + aData[12] + ' miles</td></tr>';
-            // sOut += '<tr class="nonClickable"><td>Cost Per Mile:</td><td>$5.23 (site average = $7.25)</td></tr>';
-            // sOut += '<tr class="nonClickable"><td>Final Destination:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td></tr>';
-            // sOut += '<tr class="nonClickable"><td>Full Trip Itinerary:</td><td>' + aData[13] + '</td></tr>';
-            // sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
-
-            // sOut += '</table>';
         checkPopups();
         return sOut;
     }
