@@ -26,6 +26,10 @@
     cursor:pointer;
 }
 
+#tablesWrapper tr table tr{
+    cursor:default;
+}
+
 #tablesWrapper tbody tr.even:hover, #tablesWrapper tbody tr.even td.highlighted {
     background-color: #ECFFB3;
 }

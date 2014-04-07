@@ -36,7 +36,10 @@ private
         flight.mileage,
         flight.routing,
         flight.domestic_international_indicator,
-        flight.trip_departure_date
+        flight.reservation_date.strftime('%b %d, %Y'),
+        flight.origin_airport_code,
+        flight.destination_airport_code,
+        flight.cabin_class
       ]
     end
   end
