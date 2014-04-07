@@ -5,12 +5,13 @@ ready = function() {
         var aData = oTable.fnGetData(tmpTr);
     var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
     sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[11] + '</td>';
-    sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td>';
-    sOut += '<td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td></tr>';
-    sOut += '<tr><td><strong>Distance:</strong></td><td>' + aData[12] + '</td>';
+    sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td></tr>';
+    sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td>';
+    sOut += '<td><strong>Distance:</strong></td><td>' + aData[12] + '</td></tr>';
+    sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode" data-container="body" data-toggle="popover" data-placement="top" >' + aData[14] + '</span>  to  <span class="airportCode" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
     sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
-    sOut += '<tr><td><strong>Final Destination:</strong></td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[14] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
-    sOut += '<td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td></tr>';
+
+    sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td><td></td></tr>';
     sOut += '</table>';
     sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
 
