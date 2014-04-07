@@ -8,7 +8,7 @@ ready = function() {
             sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td></tr>';
             sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td>';
             sOut += '<td><strong>Distance:</strong></td><td>' + aData[12] + '</td></tr>';
-            sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[14] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
+            sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
             sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
 
             sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td><td></td></tr>';
