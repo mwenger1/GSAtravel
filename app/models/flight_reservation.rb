@@ -11,4 +11,19 @@ class FlightReservation < ActiveRecord::Base
     def calculate_benchmark_difference
         self.benchmark_rate_difference = (self.benchmark_rate - self.total_amount).to_f
     end
+
+    def shorten_fare_category
+        case self.fare_category
+        when "YCA City Pair Fare (Contract)"
+          "YCA City"
+        when "_CA Deep Discount City Pair Fare (Contract)"
+          "CA Deep Discount"
+        when "Economy Unrestricted Fare (Non-Contract)"
+          "Economy Unrestricted (NC)"
+        when "Economy Discounted Government (Non-Contract)"
+          "Economy Discounted Govt (NC)"
+        else
+          self.fare_category
+        end
+    end
 end

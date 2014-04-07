@@ -26,7 +26,7 @@ private
         flight.trip_departure_date.strftime('%b %d, %Y'),
         flight.days_in_advance.to_s + " days",
         flight.airline_name.titleize,
-        flight.fare_category,
+        flight.shorten_fare_category,
         number_to_currency(flight.benchmark_rate),
         number_to_currency(flight.total_amount),
         flight.online_indicator,
