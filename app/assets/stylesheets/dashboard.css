@@ -14,58 +14,57 @@
     background-color:rgba(255,0,0,0.1);
 }
 #flight_reservations tbody .nonOutlier, #flight_reservations tbody .nonOutlier td{
-    background-color:rgba(0,0,0,0.1);
+    padding: 20px 5px;
 }
 
 #flight_reservations tr{
     cursor:pointer;
+    border: none;
+}
+#flight_reservations:first-child span{
+    display: none;
 }
 
-#flight_reservations tbody tr.even:hover, #flight_reservations tbody tr.even td.highlighted {
-    background-color: #ECFFB3;
+#flight_reservations tbody tr.even:hover, #flight_reservations tbody tr.even td.highlighted,
+#flight_reservations tbody tr.odd:hover, #flight_reservations tbody tr.odd td.highlighted,
+table.dataTable#flight_reservations tr.odd:hover,
+table.dataTable#flight_reservations tr.even:hover,
+table.dataTable#flight_reservations tr.odd:hover .sorting_1,
+table.dataTable#flight_reservations tr.even:hover .sorting_1{
+    background-color: #CED5E8;
+    cursor: pointer;
+}
+table.dataTable#flight_reservations thead th{
+    padding: 3px 0px 6px 10px;
+}
+.ui-state-default .ui-icon{
+
+}
+td.undefined td{
+    padding: 5px;
+}
+table.display td.undefined{
+    background: #ededed;
+    padding: 23px 10px;
+}
+table.display td.undefined{
+    display: table-cell;
+}
+table.dataTable#flight_reservations th:first-child,
+table.dataTable#flight_reservations td:first-child img,
+table.dataTable#flight_reservations td:first-child img{
+    visibility:hidden;
 }
 
-#flight_reservations tbody tr.odd:hover, #flight_reservations tbody tr.odd td.highlighted {
-    background-color: #E6FF99;
-}
+/* OVERVIEW TABLE CSS */
 
-#flight_reservations tr.even:hover {
-    background-color: #ECFFB3;
-}
-
-#flight_reservations tr.even:hover td.sorting_1 {
-    background-color: #DDFF75;
-}
-
-#flight_reservations tr.even:hover td.sorting_2 {
-    background-color: #E7FF9E;
-}
-
-#flight_reservations tr.even:hover td.sorting_3 {
-    background-color: #E2FF89;
-}
-
-#flight_reservations tr.odd:hover {
-    background-color: #E6FF99;
-}
-
-#flight_reservations tr.odd:hover td.sorting_1 {
-    background-color: #D6FF5C;
-}
-
-#flight_reservations tr.odd:hover td.sorting_2 {
-    background-color: #E0FF84;
-}
-
-#flight_reservations tr.odd:hover td.sorting_3 {
-    background-color: #DBFF70;
-}
 #department_overview{
     border-spacing: 0 2em;
     border-collapse: separate;
 }
-table.dataTable#department_overview tr.odd{
-    background-color: transparent;
+table.dataTable#department_overview tr.odd,
+table.dataTable#flight_reservations tr.odd{
+    background-color: #fff;
 }
 table.dataTable#department_overview tr.even td.sorting_1,
 table.dataTable#department_overview tr.odd td.sorting_1{
@@ -93,4 +92,15 @@ table.dataTable#department_overview tbody tr:hover{
 }
 .sorting{
     background: url('/assets/dataTables/sort_both.png') no-repeat center;
+}
+table.dataTable tr.odd td.sorting_1,
+table.dataTable tr.even td.sorting_1{
+    background-color: #fff;
+ }
+.table.display thead th{
+    background: transparent;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    border: none;
+    background: none;
 }
