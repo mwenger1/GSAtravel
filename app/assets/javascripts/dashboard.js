@@ -22,6 +22,7 @@ ready = function() {
      * Initialse DataTables, with no sorting on the 'details' column
      */
 
+
     filterStartDate = moment('1/1/2010').format('D/M/YYYY');
     filterEndDate = moment().format('D/M/YYYY');
     eventTypeFilter = "flight";
@@ -97,6 +98,10 @@ ready = function() {
                 sDirectionClass = "nonOutlier";
 
             $(nRow).addClass(sDirectionClass);
+
+            $("#tablesWrapper .dataTables_wrapper").hide();
+            $("#flight_reservations_wrapper").show();
+
             return nRow;
         }
     });
@@ -309,7 +314,11 @@ ready = function() {
         $("#transcationTypeFilter button").removeClass("active");
         $(this).addClass("active");
         oTable.fnClearTable();
+        $("#tablesWrapper .dataTables_wrapper").hide();
         eventTypeFilter = $(this).data('filter');
+        var tmpFilter = (eventTypeFilter == "Car Rental")?"car_rental":eventTypeFilter.toLowerCase();
+        var tmpName = "#" + tmpFilter + "_reservations_wrapper";
+        $(tmpName).show();
         $("#transactionsHeader").text(eventTypeFilter + " Transactions");
         oTable.fnDraw();
     });
