@@ -25,7 +25,7 @@ private
         flight.gds_record_locator,
         flight.trip_departure_date.strftime('%b %d, %Y'),
         flight.days_in_advance,
-        flight.airline_name,
+        flight.airline_name.titleize,
         flight.fare_category,
         number_to_currency(flight.benchmark_rate),
         number_to_currency(flight.total_amount),

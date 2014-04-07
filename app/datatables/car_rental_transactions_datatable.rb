@@ -25,7 +25,7 @@ private
         rental.gds_record_locator,
         rental.car_pick_up_date.strftime('%b %d, %Y'),
         rental.days_in_advance,
-        rental.car_chain_name,
+        rental.car_chain_name.titleize,
         rental.car_category,
         number_to_currency(rental.car_daily_rate),
         number_to_currency(rental.total_amount),

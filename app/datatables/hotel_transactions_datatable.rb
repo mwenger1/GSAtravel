@@ -25,7 +25,7 @@ private
         hotel.gds_record_locator,
         hotel.reservation_date.strftime('%b %d, %Y'),
         hotel.days_in_advance,
-        hotel.hotel_chain_name,
+        hotel.hotel_chain_name.titleize,
         hotel.hotel_city_name,
         number_to_currency(hotel.daily_rate),
         number_to_currency(hotel.daily_rate),
