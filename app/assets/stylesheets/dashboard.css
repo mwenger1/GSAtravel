@@ -6,58 +6,58 @@
     padding: 15px;
 }
 
-#flight_reservations tbody .outlierSaver td, #flight_reservations tbody .outlierSaver{
+#tablesWrapper tbody .outlierSaver td, #tablesWrapper tbody .outlierSaver{
     background-color:rgba(75,169,10,0.1);
 }
 
-#flight_reservations tbody .outlierSpender, #flight_reservations tbody .outlierSpender td{
+#tablesWrapper tbody .outlierSpender, #tablesWrapper tbody .outlierSpender td{
     background-color:rgba(255,0,0,0.1);
 }
-#flight_reservations tbody .nonOutlier, #flight_reservations tbody .nonOutlier td{
+#tablesWrapper tbody .nonOutlier, #tablesWrapper tbody .nonOutlier td{
     background-color:rgba(0,0,0,0.1);
 }
 
-#flight_reservations tr{
+#tablesWrapper tr{
     cursor:pointer;
 }
 
-#flight_reservations tbody tr.even:hover, #flight_reservations tbody tr.even td.highlighted {
+#tablesWrapper tbody tr.even:hover, #tablesWrapper tbody tr.even td.highlighted {
     background-color: #ECFFB3;
 }
 
-#flight_reservations tbody tr.odd:hover, #flight_reservations tbody tr.odd td.highlighted {
+#tablesWrapper tbody tr.odd:hover, #tablesWrapper tbody tr.odd td.highlighted {
     background-color: #E6FF99;
 }
 
-#flight_reservations tr.even:hover {
+#tablesWrapper tr.even:hover {
     background-color: #ECFFB3;
 }
 
-#flight_reservations tr.even:hover td.sorting_1 {
+#tablesWrapper tr.even:hover td.sorting_1 {
     background-color: #DDFF75;
 }
 
-#flight_reservations tr.even:hover td.sorting_2 {
+#tablesWrapper tr.even:hover td.sorting_2 {
     background-color: #E7FF9E;
 }
 
-#flight_reservations tr.even:hover td.sorting_3 {
+#tablesWrapper tr.even:hover td.sorting_3 {
     background-color: #E2FF89;
 }
 
-#flight_reservations tr.odd:hover {
+#tablesWrapper tr.odd:hover {
     background-color: #E6FF99;
 }
 
-#flight_reservations tr.odd:hover td.sorting_1 {
+#tablesWrapper tr.odd:hover td.sorting_1 {
     background-color: #D6FF5C;
 }
 
-#flight_reservations tr.odd:hover td.sorting_2 {
+#tablesWrapper tr.odd:hover td.sorting_2 {
     background-color: #E0FF84;
 }
 
-#flight_reservations tr.odd:hover td.sorting_3 {
+#tablesWrapper tr.odd:hover td.sorting_3 {
     background-color: #DBFF70;
 }
 #department_overview{
