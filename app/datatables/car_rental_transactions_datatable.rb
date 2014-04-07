@@ -24,7 +24,7 @@ private
         '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         rental.gds_record_locator,
         rental.car_pick_up_date.strftime('%b %d, %Y'),
-        rental.gds_record_locator,
+        rental.days_in_advance,
         rental.car_chain_name,
         rental.car_category,
         number_to_currency(rental.car_daily_rate),
