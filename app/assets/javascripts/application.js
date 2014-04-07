@@ -19,5 +19,6 @@
 //= require turbolinks
 //= require_tree .
 //= require dropdown
+//= require tooltip
 //= require daterangepicker
 
