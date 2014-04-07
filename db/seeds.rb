@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Loading Users"
-user = User.create! :name => 'Mike Wenger', :email => 'michaelwenger27@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :email => 'michaelwenger27@gmail.com', :password => 'password', :password_confirmation => 'password'
 
-puts "Loading users"
+puts "Completed loading users"
 
 
