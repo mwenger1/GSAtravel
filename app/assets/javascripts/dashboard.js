@@ -3,18 +3,17 @@ ready = function() {
 
     function fnFormatFlightDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
-    var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-    sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[11] + '</td>';
-    sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td></tr>';
-    sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td>';
-    sOut += '<td><strong>Distance:</strong></td><td>' + aData[12] + '</td></tr>';
-    sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode" data-container="body" data-toggle="popover" data-placement="top" >' + aData[14] + '</span>  to  <span class="airportCode" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
-    sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
+            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
+            sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[11] + '</td>';
+            sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td></tr>';
+            sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td>';
+            sOut += '<td><strong>Distance:</strong></td><td>' + aData[12] + '</td></tr>';
+            sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[14] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
+            sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
 
-    sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td><td></td></tr>';
-    sOut += '</table>';
-    sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
-        checkPopups();
+            sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td><td></td></tr>';
+            sOut += '</table>';
+            sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
         return sOut;
     }
 
@@ -31,7 +30,6 @@ ready = function() {
             sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
 
             sOut += '</table>';
-        checkPopups();
         return sOut;
     }
 
@@ -48,10 +46,10 @@ ready = function() {
             sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
 
             sOut += '</table>';
-        checkPopups();
         return sOut;
     }
-    function checkPopups (){
+
+    function checkPopups(){
         $('*[data-toggle]').on('click',function(e) {
             $('.popover').popover('hide');
             var e=$(this);
@@ -66,7 +64,7 @@ ready = function() {
     filterStartDate = moment('1/1/2010').format('D/M/YYYY');
     filterEndDate = moment().format('D/M/YYYY');
     eventTypeFilter = "flight";
-
+    checkPopups();
     var oTable1 = $('#flight_reservations').dataTable({
         iDisplayLength: 25,
         aLengthMenu: [
@@ -136,13 +134,7 @@ ready = function() {
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             var sDirectionClass;
-            if (aData[8] > 20)
-                sDirectionClass = "outlierSaver";
-            else if (aData[8] < -20)
-                sDirectionClass = "outlierSpender";
-            else
-                sDirectionClass = "nonOutlier";
-
+            sDirectionClass = "clickableTableRow";
             $(nRow).addClass(sDirectionClass);
 
             return nRow;
@@ -303,7 +295,7 @@ ready = function() {
      * Note that the indicator for showing which row is open is not controlled by DataTables,
      * rather it is done here
      */
-    $('#flight_reservations tbody[role="alert"]').on('click', 'tr', function() {
+    $('#flight_reservations tbody[role="alert"]').on('click', 'tr.clickableTableRow', function() {
         var tmpTr = $(this)[0];
         if (oTable1.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
@@ -313,10 +305,11 @@ ready = function() {
             oTable1.fnOpen(tmpTr, fnFormatFlightDetails(oTable1, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
             $(this).addClass('active');
+            checkPopups();
         }
     });
 
-    $('#hotel_reservations tbody[role="alert"]').on('click', 'tr', function() {
+    $('#hotel_reservations tbody[role="alert"]').on('click', 'tr.clickableTableRow', function() {
         var tmpTr = $(this)[0];
         if (oTable2.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
@@ -330,7 +323,7 @@ ready = function() {
         }
     });
 
-    $('#car_rental_reservations tbody[role="alert"]').on('click', 'tr', function() {
+    $('#car_rental_reservations tbody[role="alert"]').on('click', 'tr.clickableTableRow', function() {
         var tmpTr = $(this)[0];
         if (oTable3.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
