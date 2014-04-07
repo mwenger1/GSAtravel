@@ -9,46 +9,25 @@ ready = function() {
         sOut += '<tr><td>Purchase Date:</td><td>' + aData[15] + '</td></tr>';
         sOut += '<tr><td>Distance:</td><td>' + aData[12] + ' miles</td></tr>';
         sOut += '<tr><td>Cost Per Mile:</td><td>$5.23 (site average = $7.25)</td></tr>';
-        sOut += '<tr><td>Final Destination:</td><td>From:' + aData[16] + ' to: ' + aData[17] + '</td></tr>';
+        sOut += '<tr><td>Final Destination:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td></tr>';
         sOut += '<tr><td>Full Trip Itinerary:</td><td>' + aData[13] + '</td></tr>';
         sOut += '<tr><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
 
         sOut += '</table>';
-
+        checkPopups();
         return sOut;
     }
 
+    function checkPopups (){
+        $('*[data-toggle]').on('click',function(e) {
+            $('.popover').popover('hide');
+            var e=$(this);
+            $.getJSON("/dashboard/airport_api?airport_code=" + e.text().trim(), function(data){
+                e.popover({title: data['airports'][0]['name'], content: data['airports'][0]['city'] + ", " + data['airports'][0]['country']}).popover('show');
+            });
+        });
+    }
 
-    // t.string   "gds_record_locator"
-    // t.date     "reservation_date"
-    // t.date     "ticket_issue_date"
-    // t.date     "trip_departure_date"
-    // t.string   "ticket_number"
-    // t.string   "airline_name"
-    // t.string   "cabin_class"
-    // t.string   "domestic_international_indicator"
-    // t.string   "origin_airport_code"
-    // t.string   "destination_airport_code"
-    // t.string   "routing"
-    // t.float    "invoice_amount"
-    // t.float    "tax_amount"
-    // t.float    "total_amount"
-    // t.float    "mileage"
-    // t.string   "exchange_indicator"
-    // t.string   "exchange_original_ticket_number"
-    // t.string   "refund_indicator"
-    // t.string   "original_invoice_number"
-    // t.string   "online_indicator"
-    // t.string   "fare_category"
-    // t.datetime "created_at"
-    // t.datetime "updated_at"
-    // t.integer  "days_in_advance"
-    // t.float    "benchmark_rate"
-    // t.float    "benchmark_rate_percentage"
-    // t.float    "benchmark_rate_difference"
-    /*
-     * Initialse DataTables, with no sorting on the 'details' column
-     */
 
 
     filterStartDate = moment('1/1/2010').format('D/M/YYYY');
@@ -384,7 +363,6 @@ ready = function() {
         $("#tablesWrapper .dataTables_wrapper").hide();
         $(tmpName).show();
     });
-
 };
 
 $(document).ready(ready);

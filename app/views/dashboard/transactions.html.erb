@@ -1,20 +1,7 @@
 <h1 style="margin-bottom:1em;" id="transactionsHeader">Flight Transactions</h1>
 
-<span class="airportCode btn btn-default" data-container="body" data-poload="http://airportcode.riobard.com/airport/EWR?fmt=JSON" data-toggle="popover" data-placement="top" >
-  Popover on left
-</span>
+<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >Ewr</span>
 
-<script>
-$(document).ready(function(){
-    $('*[data-poload]').on('click',function(e) {
-        var e=$(this);
-        $.getJSON("/dashboard/airport_api?airport_code=den", function(data){
-            e.popover({title: data['airports'][0]['name'], content: data['airports'][0]['city'] + ", " + data['airports'][0]['country']}).popover('show');
-        });
-    });
-});
-
-</script>
 <div id="tablesWrapper">
 <table id="flight_reservations" class="display" data-source="<%= dashboard_transactions_flight_data_url(format: "json") %>">
   <thead>
