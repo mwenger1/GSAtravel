@@ -1,7 +1,7 @@
 var ready;
 ready = function() {
 
-    function fnFormatDetails(oTable, tmpTr) {
+    function fnFormatFlightDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
         var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; border:2px solid #333; width:100%; background-color:#87CEEB;">';
         sOut += '<tr><td>Ticket Number:</td><td>' + aData[9] + '</td></tr>';
@@ -259,16 +259,37 @@ ready = function() {
      */
     $('#flight_reservations tbody').on('click', 'tr', function() {
         var tmpTr = $(this)[0];
-
-        if (oTable.fnIsOpen(tmpTr)) {
+        if (oTable1.fnIsOpen(tmpTr)) {
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
-            oTable.fnClose(tmpTr);
+            oTable1.fnClose(tmpTr);
         } else {
-            oTable.fnOpen(tmpTr, fnFormatDetails(oTable, tmpTr));
+            oTable1.fnOpen(tmpTr, fnFormatFlightDetails(oTable1, tmpTr));
             $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
         }
-
     });
+
+    $('#hotel_reservations tbody').on('click', 'tr', function() {
+        var tmpTr = $(this)[0];
+        if (oTable2.fnIsOpen(tmpTr)) {
+            $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
+            oTable2.fnClose(tmpTr);
+        } else {
+            oTable2.fnOpen(tmpTr, fnFormatFlightDetails(oTable2, tmpTr));
+            $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
+        }
+    });
+
+    $('#car_rental_reservations tbody').on('click', 'tr', function() {
+        var tmpTr = $(this)[0];
+        if (oTable3.fnIsOpen(tmpTr)) {
+            $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_open.png");
+            oTable3.fnClose(tmpTr);
+        } else {
+            oTable3.fnOpen(tmpTr, fnFormatFlightDetails(oTable3, tmpTr));
+            $("td img", tmpTr).attr("src", "http://datatables.net/release-datatables/examples/examples_support/details_close.png");
+        }
+    });
+
 
     /* Table on Dashboard homepage */
     var overviewTable = $('#department_overview').dataTable({
