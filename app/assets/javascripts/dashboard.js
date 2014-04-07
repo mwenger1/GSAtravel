@@ -146,7 +146,7 @@ ready = function() {
             sInfo: "Showing (_START_ to _END_) of _TOTAL_ transactions",
             sInfoEmpty: "No transactions match this search.<br>Expand your filters or <a href='/import/index' >upload transaction data</a>."
         },
-        sAjaxSource: $('#flight_reservations').data('source'),
+        sAjaxSource: $('#hotel_reservations').data('source'),
         fnServerData: function(sSource, aoData, fnCallback) {
             /* Add some extra data to the sender */
             aoData.push({
@@ -221,7 +221,7 @@ ready = function() {
             sInfo: "Showing (_START_ to _END_) of _TOTAL_ transactions",
             sInfoEmpty: "No transactions match this search.<br>Expand your filters or <a href='/import/index' >upload transaction data</a>."
         },
-        sAjaxSource: $('#flight_reservations').data('source'),
+        sAjaxSource: $('#car_rental_reservations').data('source'),
         fnServerData: function(sSource, aoData, fnCallback) {
             /* Add some extra data to the sender */
             aoData.push({
