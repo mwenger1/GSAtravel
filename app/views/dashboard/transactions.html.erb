@@ -7,26 +7,13 @@
 <script>
 $(document).ready(function(){
     $('*[data-poload]').on('click',function(e) {
-
-    // $.getJSON("https://airport.api.aero/airport/ewr?user_key=d9e2c9a6cad452d0e6f9ee9bd2f5cd0b&callback",function(result){
-        alert(result);
-    });
-        //     e.popover({content: d}).popover('show');
-        // });
-        // var e=$(this);
-        // e.unbind('hover');
-        // $.getJSON(e.data('poload'),function(d) {
-        //     e.popover({content: d}).popover('show');
-        // });
+        var e=$(this);
+        $.getJSON("/dashboard/airport_api?airport_code=den", function(data){
+            e.popover({title: data['airports'][0]['name'], content: data['airports'][0]['city'] + ", " + data['airports'][0]['country']}).popover('show');
+        });
     });
 });
-// $('.airportCode').popover({
 
-//     // alert(tmpVar);
-//     title: "EWR",
-//     content: "Newark Liberty International Airport<br /><br>Newark/Elizabeth, New Jersey, United States",
-//     html: true
-// });
 </script>
 <div id="tablesWrapper">
 <table id="flight_reservations" class="display" data-source="<%= dashboard_transactions_flight_data_url(format: "json") %>">
