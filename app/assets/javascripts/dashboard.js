@@ -408,7 +408,17 @@ ready = function() {
         $("#tablesWrapper .dataTables_wrapper").hide();
         $(tmpName).show();
     });
+
+    $('.trendOptions h4').click(){
+        $('.glyphicon .glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
+        $('.glyphicon .glyphicon-chevron-down').removeClass('glyphicon glyphicon-chevron-down');
+    });
 };
+
+
+
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+
