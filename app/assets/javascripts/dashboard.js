@@ -13,7 +13,8 @@ ready = function() {
 
             sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
             sOut += '</table>';
-            sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
+            sOut += '<a target="_blank" href="http://www.kayak.com/flights/' + aData[15] + '-' + aData[16] + '/' + moment().add(59,"d").format('YYYY-MM-DD') + '/' + moment().add(63,"d").format('YYYY-MM-DD') + '" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Compare on Kayak</a>';
+            sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
         return sOut;
     }
 
