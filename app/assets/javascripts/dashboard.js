@@ -4,14 +4,14 @@ ready = function() {
     function fnFormatFlightDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-            sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[11] + '</td>';
-            sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[18] + '</td></tr>';
-            sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[15] + '</td>';
-            sOut += '<td><strong>Distance:</strong></td><td>' + aData[12] + '</td></tr>';
-            sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td>';
+            sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[10] + '</td>';
+            sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[17] + '</td></tr>';
+            sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[14] + '</td>';
+            sOut += '<td><strong>Distance:</strong></td><td>' + aData[11] + '</td></tr>';
+            sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td>';
             sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
 
-            sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[13] + '</td><td></td></tr>';
+            sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
             sOut += '</table>';
             sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 30px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
         return sOut;
@@ -20,13 +20,13 @@ ready = function() {
     function fnFormatHotelDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-            sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[11] + '</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Hotel Address:</td><td>' + aData[18] + '</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Property Name:</td><td>' + aData[15] + '</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Distance:</td><td>' + aData[12] + ' miles</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[10] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Hotel Address:</td><td>' + aData[16] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Property Name:</td><td>' + aData[14] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Distance:</td><td>' + aData[11] + ' miles</td></tr>';
             sOut += '<tr class="nonClickable"><td>Cost Per Mile:</td><td>$5.23 (site average = $7.25)</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Final Destination:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td></tr>';
-            sOut += '<tr class="nonClickable"><td>Full Trip Itinerary:</td><td>' + aData[13] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Final Destination:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td></tr>';
+            sOut += '<tr class="nonClickable"><td>Full Trip Itinerary:</td><td>' + aData[12] + '</td></tr>';
             sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
 
             sOut += '</table>';
@@ -36,13 +36,13 @@ ready = function() {
     function fnFormatCarRentalDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-            sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[11] + '</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Cabin Type:</td><td>' + aData[18] + '</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Purchase Date:</td><td>' + aData[15] + '</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Dates of Rental:</td><td>From: ' + aData[12] + ' to ' + aData[12] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Ticket Number:</td><td>' + aData[10] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Cabin Type:</td><td>' + aData[16] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Purchase Date:</td><td>' + aData[14] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Dates of Rental:</td><td>From: ' + aData[11] + ' to ' + aData[12] + '</td></tr>';
             sOut += '<tr class="nonClickable"><td>Cost Per Mile:</td><td>$5.23 (site average = $7.25)</td></tr>';
-            sOut += '<tr class="nonClickable"><td>Pick Up Location:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[17] + '</span></td></tr>';
-            sOut += '<tr class="nonClickable"><td>Drop Off Location:</td><td>' + aData[13] + '</td></tr>';
+            sOut += '<tr class="nonClickable"><td>Pick Up Location:</td><td>From:<span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span> to: <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td></tr>';
+            sOut += '<tr class="nonClickable"><td>Drop Off Location:</td><td>' + aData[12] + '</td></tr>';
             sOut += '<tr class="nonClickable"><td style="colspan:2"><a href="#">Exclude this Transaction</a></td></tr>';
 
             sOut += '</table>';
@@ -73,7 +73,7 @@ ready = function() {
         ],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns: [null, null, null, null, null, null, null, null, {
+        aoColumns: [null, { "sWidth": "120px" }, { "sWidth": "100px" }, { "sWidth": "160px" }, { "sWidth": "180px" },  null, null, null, {
             "bSearchable": false,
             "bVisible": false
         }, {

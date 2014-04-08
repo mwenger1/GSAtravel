@@ -24,6 +24,10 @@
 #tablesWrapper:first-child span{
     display: none;
 }
+.airportCode.btn{
+line-height: 1em;
+padding: 2px 7px;
+}
 
 #tablesWrapper tbody tr.even:hover, #tablesWrapper table.dataTable tbody tr.even.active .sorting_1, #tablesWrapper table.dataTable tbody tr.odd.active .sorting_1, #tablesWrapper table.dataTable tbody tr.even.active, #tablesWrapper table.dataTable tbody tr.odd.active, #tablesWrapper tbody tr.even td.highlighted,
 #tablesWrapper tbody tr.odd:hover, #tablesWrapper tbody tr.odd td.highlighted,

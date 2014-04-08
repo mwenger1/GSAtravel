@@ -21,7 +21,7 @@ class FlightReservation < ActiveRecord::Base
         when "Economy Unrestricted Fare (Non-Contract)"
           "Economy Unrestricted (NC)"
         when "Economy Discounted Government (Non-Contract)"
-          "Economy Discounted Govt (NC)"
+          "Economy Disc. Govt (NC)"
         else
           self.fare_category
         end
