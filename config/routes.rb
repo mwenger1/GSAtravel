@@ -17,6 +17,7 @@ GSAtravel::Application.routes.draw do
   get "dashboard/trends"
   get "dashboard/ways_to_save"
   get "dashboard/airport_api"
+  get "dashboard/partials/fat"  => 'partials#fat'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
