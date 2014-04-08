@@ -68,7 +68,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator trip_departure_date days_in_advance airline_name fare_category online_indicator benchmark_rate total_amount]
+    columns = %w[gds_record_locator trip_departure_date days_in_advance airline_name fare_category online_indicator benchmark_rate total_amount benchmark_rate_difference]
     columns[params[:iSortCol_0].to_i]
   end
 

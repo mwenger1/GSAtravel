@@ -19,9 +19,9 @@ class FlightReservation < ActiveRecord::Base
         when "_CA Deep Discount City Pair Fare (Contract)"
           "CA Deep Discount"
         when "Economy Unrestricted Fare (Non-Contract)"
-          "Economy Unrest. (NC)"
+          "Econ. Unrest. (NC)"
         when "Economy Discounted Government (Non-Contract)"
-          "Economy Disc. Govt (NC)"
+          "Econ. Disc. Govt (NC)"
         else
           self.fare_category
         end
