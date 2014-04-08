@@ -65,6 +65,11 @@ require 'gchart'
   end
 
   def trends
+    @vendor_flight_pie = Gchart.pie(:data => [10, 35, 55])
+    @vendor_hotel_pie = Gchart.pie(:data => [20, 35, 45])
+    @vendor_car_rental_pie = Gchart.pie(:data => [40, 35, 25])
+
+
   end
 
   def ways_to_save

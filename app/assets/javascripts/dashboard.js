@@ -397,7 +397,7 @@ ready = function() {
         $(tmpName).show();
     });
 
-
+    $('#franchise').show();
     $('.trendOptions h4').click(function(){
         $('.glyphicon .glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
         $('.glyphicon .glyphicon-chevron-down').removeClass('glyphicon glyphicon-chevron-down');

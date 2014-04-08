@@ -1,30 +1,45 @@
 <div class="sectionBox trendOptions">
 	<div class="franchise">
-		<h4>Franchise<span class="glyphicon glyphicon-chevron-down"></span></h4>
+		<h4>Vendor<span class="glyphicon glyphicon-chevron-down"></span></h4>
 	</div>
 	<div class="pricePerMile">
-		<h4>Price Per Mile<span class="glyphicon glyphicon-chevron-down"></span></h4>
+		<h4>Price Breakdown<span class="glyphicon glyphicon-chevron-down"></span></h4>
 	</div>
 	<div class="hotspots">
 		<h4>Hotspots<span class="glyphicon glyphicon-chevron-down"></span></h4>
 	</div>
 	<div class="days">
-		<h4>Days Booked Prior<span class="glyphicon glyphicon-chevron-down"></span></h4>
+		<h4>Booking in Advance<span class="glyphicon glyphicon-chevron-down"></span></h4>
 	</div>
 </div>
 <div class="sectionBox trendCharts">
 	<div class="chartContent">
 		<div id="franchise" class="chart">
-			<h1>Franchise</h1>
+			<h1>Vendor</h1>
+
+			<div class="vendor flight">
+			    <%= image_tag(@vendor_flight_pie, :class => "chartDiagram") %>
+			</div>
+
+			<div class="vendor hotel">
+			    <%= image_tag(@vendor_hotel_pie, :class => "chartDiagram") %>
+			</div>
+			<div class="vendor car_rental">
+			    <%= image_tag(@vendor_car_rental_pie, :class => "chartDiagram") %>
+			</div>
+    <!-- @vendor_hotel_pie
+    @vendor_car_rental_pie -->
+
 		</div>
 		<div id="pricePerMile" class="chart">
-			<h1>Price Per Mile</h1>
+			<h1>Price Breakdown</h1>
+
 		</div>
 		<div id="hotspots" class="chart">
 			<h1>Hotspots</h1>
 		</div>
 		<div id="days" class="chart">
-			<h1>Days Booked Prior to Travel</h1>
+			<h1>Booking in Advance to Travel</h1>
 		</div>
 	</div>
 </div>
