@@ -73,7 +73,7 @@ ready = function() {
         ],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns: [null, { "sWidth": "120px" }, { "sWidth": "110px" }, { "sWidth": "160px" }, { "sWidth": "180px" },  null, null, null, {
+        aoColumns: [null, { "sWidth": "120px" }, { "sWidth": "110px" }, { "sWidth": "160px" }, { "sWidth": "180px" }, { "sWidth": "30px" }, null, null, {
             "bSearchable": false,
             "bVisible": false
         }, {

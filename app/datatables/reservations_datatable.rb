@@ -26,9 +26,9 @@ private
         flight.days_in_advance.to_s + " days",
         flight.airline_name.titleize,
         flight.shorten_fare_category,
+        flight.online_indicator,
         number_to_currency(flight.benchmark_rate),
         number_to_currency(flight.total_amount),
-        flight.online_indicator,
         number_to_currency(flight.benchmark_rate_difference),
         flight.benchmark_rate_percentage,
         flight.ticket_number,
@@ -68,7 +68,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator trip_departure_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator trip_departure_date days_in_advance airline_name fare_category online_indicator benchmark_rate total_amount]
     columns[params[:iSortCol_0].to_i]
   end
 
