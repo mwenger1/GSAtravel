@@ -2,15 +2,15 @@ angular.module("google-chart-sample", ["ngRoute", "googlechart"]).config(['$rout
     function ($routeProvider) {
         $routeProvider.
             when('/fat', {
-                templateUrl: 'partials/fat.html',
+                templateUrl: 'fat.html',
                 controller: 'FatChartCtrl'
             }).
             when('/annotation', {
-                templateUrl: 'partials/annotation.html',
+                templateUrl: 'annotation.html',
                 controller: 'AnnotationChartCtrl'
             }).
             when('/generic/:chartType', {
-                templateUrl: 'partials/generic.html',
+                templateUrl: 'generic.html',
                 controller: 'GenericChartCtrl'
             }).
             otherwise({
