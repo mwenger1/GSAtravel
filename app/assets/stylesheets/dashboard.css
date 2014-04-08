@@ -6,6 +6,15 @@
     padding: 15px;
 }
 
+.footer{
+    background-color:#142C6C;
+    height:30px;
+    width:100%;
+    height: 80px;
+    width: 1103px;
+    margin: 30px auto 0 auto;
+
+}
 #tablesWrapper tbody .outlierSaver td, #tablesWrapper tbody .outlierSaver{
     background-color:rgba(75,169,10,0.1);
 }
