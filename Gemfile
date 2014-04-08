@@ -17,7 +17,7 @@ gem "google_visualr"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'bootstrap-glyphicons'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

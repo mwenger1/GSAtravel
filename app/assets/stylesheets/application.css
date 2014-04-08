@@ -16,6 +16,7 @@
 *= require dataTables/extras/TableTools
 *= require daterangepicker-bs3
 *= require font-awesome
+
  *= require_tree .
   *= require_self
  */
@@ -24,6 +25,7 @@
 /*.border{
 	background: url('http://www.gsa.gov/resources/images/bars_background.gif') repeat-y scroll 50% 0 #CED5E8;
 }*/
+@import 'bootstrap/glyphicons';
 #wrapper {
 	overflow: hidden;
 }
