@@ -65,25 +65,70 @@ require 'gchart'
   end
 
   def trends
-    @vendor_flight_pie = Gchart.pie(:data => [10, 35, 55])
-    @vendor_hotel_pie = Gchart.pie(:data => [20, 35, 45])
-    @vendor_car_rental_pie = Gchart.pie(:data => [40, 35, 25])
+    # @vendor_flight_pie = Gchart.pie(:data => [10, 35, 55])
+    # @vendor_hotel_pie = Gchart.pie(:data => [20, 35, 45])
+    # @vendor_car_rental_pie = Gchart.pie(:data => [40, 35, 25])
 
-    data_table = GoogleVisualr::DataTable.new
-    # Add Column Headers
-    data_table.new_column('string', 'Year' )
-    data_table.new_column('number', 'Sales')
-    data_table.new_column('number', 'Expenses')
+ data_table = GoogleVisualr::DataTable.new
+  data_table.new_column('string', 'Task')
+  data_table.new_column('number', 'Hours per Day')
+  data_table.add_rows(5)
+  data_table.set_cell(0, 0, 'American Airlines'     )
+  data_table.set_cell(0, 1, 11 )
+  data_table.set_cell(1, 0, 'United'      )
+  data_table.set_cell(1, 1, 2  )
+  data_table.set_cell(2, 0, 'Jet Blue'  )
+  data_table.set_cell(2, 1, 2  )
+  data_table.set_cell(3, 0, 'South West' )
+  data_table.set_cell(3, 1, 2  )
+  data_table.set_cell(4, 0, 'Luthsana'    )
+  data_table.set_cell(4, 1, 7  )
 
-    # Add Rows and Values
-    data_table.add_rows([
-        ['2004', 1000, 400],
-        ['2005', 1170, 460],
-        ['2006', 660, 1120],
-        ['2007', 1030, 540]
-    ])
-    option = { width: 400, height: 240, title: 'Company Performance' }
-    @chart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+  opts   = { :width => 800, :height => 500, :title => 'Airline Breakdown', :isDonutchart => true }
+  @vendor_flight_pie = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
+
+   data_table = GoogleVisualr::DataTable.new
+  data_table.new_column('number', 'Age')
+  data_table.new_column('number', 'Weight')
+  data_table.add_rows(6)
+  data_table.set_cell( 0, 0, 8  )
+  data_table.set_cell( 0, 1, 12 )
+  data_table.set_cell( 1, 0, 4  )
+  data_table.set_cell( 1, 1, 5.5)
+  data_table.set_cell( 2, 0, 11 )
+  data_table.set_cell( 2, 1, 14 )
+  data_table.set_cell( 3, 0, 4  )
+  data_table.set_cell( 3, 1, 4.5)
+  data_table.set_cell( 4, 0, 3  )
+  data_table.set_cell( 4, 1, 3.5)
+  data_table.set_cell( 5, 0, 6.5)
+  data_table.set_cell( 5, 1, 7  )
+
+  opts   = { :width => 400, :height => 240, :title => 'Age vs. Weight comparison',
+             :hAxis => { :title => 'Age'    , :minValue => 0, :maxValue => 15 },
+             :vAxis => { :title => 'Weight' , :minValue => 0, :maxValue => 15 },
+             :legend => 'none' }
+  @vendor_flight_scatter_chart = GoogleVisualr::Interactive::ScatterChart.new(data_table, opts)
+
+
+  data_table = GoogleVisualr::DataTable.new
+  data_table.new_column('string', 'Year')
+  data_table.new_column('number', 'Sales')
+  data_table.add_rows(4)
+  data_table.set_cell(0, 0, '2004')
+  data_table.set_cell(0, 1, 1000)
+  data_table.set_cell(1, 0, '2005')
+  data_table.set_cell(1, 1, 1170)
+  data_table.set_cell(2, 0, '2006')
+  data_table.set_cell(2, 1, 660)
+  data_table.set_cell(3, 0, '2007')
+  data_table.set_cell(3, 1, 1030)
+
+  opts   = { :width => 400, :height => 240, :title => 'Company Performance', :hAxis => { :title => 'Year', :titleTextStyle => {:color => 'red'}} }
+  @vendor_flight_barchart = GoogleVisualr::Interactive::ColumnChart.new(data_table, opts)
+
+
+
   end
 
   def ways_to_save

@@ -19,19 +19,15 @@
 
 
 <div id='chart'></div>
-<%= render_chart(@chart, 'chart') %>
+<%= render_chart(@vendor_flight_pie, 'chart') %>
+
+<div id='scatterchart'></div>
+<%= render_chart(@vendor_flight_scatter_chart, 'scatterchart') %>
 
 
-			<div class="vendor flight">
-			    <%= image_tag(@vendor_flight_pie, :class => "chartDiagram") %>
-			</div>
+<div id='barchart'></div>
+<%= render_chart(@vendor_flight_barchart, 'barchart') %>
 
-			<div class="vendor hotel">
-			    <%= image_tag(@vendor_hotel_pie, :class => "chartDiagram") %>
-			</div>
-			<div class="vendor car_rental">
-			    <%= image_tag(@vendor_car_rental_pie, :class => "chartDiagram") %>
-			</div>
     <!-- @vendor_hotel_pie
     @vendor_car_rental_pie -->
 
