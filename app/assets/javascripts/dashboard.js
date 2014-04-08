@@ -136,7 +136,6 @@ ready = function() {
             var sDirectionClass;
             sDirectionClass = "clickableTableRow";
             $(nRow).addClass(sDirectionClass);
-
             return nRow;
         }
     });
@@ -204,15 +203,8 @@ ready = function() {
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             var sDirectionClass;
-            if (aData[8] > 20)
-                sDirectionClass = "outlierSaver";
-            else if (aData[8] < -20)
-                sDirectionClass = "outlierSpender";
-            else
-                sDirectionClass = "nonOutlier";
-
+            sDirectionClass = "clickableTableRow";
             $(nRow).addClass(sDirectionClass);
-            return nRow;
         }
     });
 
@@ -278,16 +270,9 @@ ready = function() {
             });
         },
         fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            // var sDirectionClass;
-            // if (aData[8] > 20)
-            //     sDirectionClass = "outlierSaver";
-            // else if (aData[8] < -20)
-            //     sDirectionClass = "outlierSpender";
-            // else
-            //     sDirectionClass = "nonOutlier";
-
-            // $(nRow).addClass(sDirectionClass);
-            return nRow;
+            var sDirectionClass;
+            sDirectionClass = "clickableTableRow";
+            $(nRow).addClass(sDirectionClass);
         }
     });
 
