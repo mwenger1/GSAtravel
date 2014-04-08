@@ -25,6 +25,6 @@
 //= require daterangepicker
 //= require ng-google-charts
 //= require sample
-//= require annotation
-//= require generic
-//= require fat
+//= require partials/annotation
+//= require partials/generic
+//= require partials/fat
