@@ -1,7 +1,7 @@
 angular.module("google-chart-sample", ["ngRoute", "googlechart"]).config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
-            when('/fat', {
+            when('/charts', {
                 templateUrl: 'partials/fat.html',
                 controller: 'FatChartCtrl'
             }).
@@ -14,6 +14,6 @@ angular.module("google-chart-sample", ["ngRoute", "googlechart"]).config(['$rout
                 controller: 'GenericChartCtrl'
             }).
             otherwise({
-                redirectTo: '/fat'
+                redirectTo: '/charts'
             });
     }])
