@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require angular
+//= require bootstrap
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/TableTools
@@ -22,4 +23,5 @@
 //= require dropdown
 //= require tooltip
 //= require daterangepicker
+//= require ng-google-charts
 
