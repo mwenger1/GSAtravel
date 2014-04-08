@@ -9,7 +9,7 @@ ready = function() {
             sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[14] + '</td>';
             sOut += '<td><strong>Distance:</strong></td><td>' + aData[11] + '</td></tr>';
             sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td>';
-            sOut += '<td><strong>Cost Per Mile:</strong></td><td>$5.23 (site average = $7.25)</td></tr>';
+            sOut += '<td><strong>Cost Per Mile:</strong></td><td>' + aData[18] + ' (site average = $7.25)</td></tr>';
 
             sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
             sOut += '</table>';
@@ -74,6 +74,9 @@ ready = function() {
         bJQueryUI: true,
         bServerSide: true,
         aoColumns: [null, { "sWidth": "120px" }, { "sWidth": "110px" }, { "sWidth": "160px" }, { "sWidth": "180px" }, { "sWidth": "30px" }, null, null, null, {
+            "bSearchable": false,
+            "bVisible": false
+        }, {
             "bSearchable": false,
             "bVisible": false
         }, {

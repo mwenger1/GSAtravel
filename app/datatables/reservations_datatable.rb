@@ -38,7 +38,8 @@ private
         flight.reservation_date.strftime('%b %d, %Y'),
         flight.origin_airport_code,
         flight.destination_airport_code,
-        flight.cabin_class
+        flight.cabin_class,
+        number_to_currency(flight.cost_per_mile)
       ]
     end
   end
