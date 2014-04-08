@@ -24,4 +24,7 @@
 //= require tooltip
 //= require daterangepicker
 //= require ng-google-charts
-
+//= require sample
+//= require partials/annotation
+//= require partials/generic
+//= require partials/fat
