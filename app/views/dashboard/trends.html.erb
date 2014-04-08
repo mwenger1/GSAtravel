@@ -17,6 +17,11 @@
 		<div id="franchise" class="chart">
 			<h1>Vendor</h1>
 
+
+<div id='chart'></div>
+<%= render_chart(@chart, 'chart') %>
+
+
 			<div class="vendor flight">
 			    <%= image_tag(@vendor_flight_pie, :class => "chartDiagram") %>
 			</div>
