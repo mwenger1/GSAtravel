@@ -73,7 +73,7 @@ ready = function() {
         ],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns: [null, null, null, null, null, null, null, null, null, {
+        aoColumns: [null, null, null, null, null, null, null, null, {
             "bSearchable": false,
             "bVisible": false
         }, {
@@ -148,7 +148,7 @@ ready = function() {
         ],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns: [null, null, null, null, null, null, null, null, null, {
+        aoColumns: [null, null, null, null, null, null, null, null, {
             "bSearchable": false,
             "bVisible": false
         }, {
@@ -216,7 +216,7 @@ ready = function() {
         ],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns: [null, null, null, null, null, null, null, null, null, {
+        aoColumns: [null, null, null, null, null, null, null, null, {
             "bSearchable": false,
             "bVisible": false
         }, {

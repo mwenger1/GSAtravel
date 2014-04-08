@@ -21,7 +21,6 @@ private
   def data
     hotel_transactions.map do |hotel|
       [
-        '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         hotel.gds_record_locator,
         hotel.reservation_date.strftime('%b %d, %Y'),
         hotel.days_in_advance.to_s + " days",
@@ -66,7 +65,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
     columns[params[:iSortCol_0].to_i]
   end
 

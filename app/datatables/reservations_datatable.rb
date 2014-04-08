@@ -21,7 +21,6 @@ private
   def data
     flight_reservations.map do |flight|
       [
-        '<img src="http://datatables.net/release-datatables/examples/examples_support/details_open.png">',
         flight.gds_record_locator,
         flight.trip_departure_date.strftime('%b %d, %Y'),
         flight.days_in_advance.to_s + " days",
@@ -69,7 +68,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator gds_record_locator trip_departure_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator trip_departure_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
     columns[params[:iSortCol_0].to_i]
   end
 

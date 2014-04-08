@@ -50,11 +50,6 @@ table.display td.undefined{
 table.display td.undefined{
     display: table-cell;
 }
-#tablesWrapper table.dataTable th:first-child,
-#tablesWrapper table.dataTable td:first-child img,
-#tablesWrapper table.dataTable td:first-child img{
-    visibility:hidden;
-}
 
 /* OVERVIEW TABLE CSS */
 
