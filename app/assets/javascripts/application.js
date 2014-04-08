@@ -19,7 +19,6 @@
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard
 //= require moment
-//= require_tree .
 //= require dropdown
 //= require tooltip
 //= require daterangepicker
@@ -28,3 +27,4 @@
 //= require partials/annotation
 //= require partials/generic
 //= require partials/fat
+//= require_tree .
