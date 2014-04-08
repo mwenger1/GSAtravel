@@ -98,7 +98,7 @@ ready = function() {
             "bSearchable": false,
             "bVisible": false
         }],
-        sDom: '<if>rt<lp><"clear">',
+        sDom: '<if>rt<"tableFooterBuffer"><lp><"clear">',
         sPaginationType: "full_numbers",
 
         oTableTools: {
@@ -176,7 +176,7 @@ ready = function() {
             "bSearchable": false,
             "bVisible": false
         }],
-        sDom: '<if>rt<lp><"clear">',
+        sDom: '<if>rt<"tableFooterBuffer"><lp><"clear">',
         sPaginationType: "full_numbers",
 
         oTableTools: {
@@ -244,7 +244,7 @@ ready = function() {
             "bSearchable": false,
             "bVisible": false
         }],
-        sDom: '<if>rt<lp><"clear">',
+        sDom: '<if>rt<"tableFooterBuffer"><lp><"clear">',
         sPaginationType: "full_numbers",
 
         oTableTools: {

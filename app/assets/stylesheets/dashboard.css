@@ -13,8 +13,13 @@
     height: 80px;
     width: 1103px;
     margin: 30px auto 0 auto;
-
 }
+
+.tableFooterBuffer{
+    height:15px;
+    border-top: 1px solid #333;
+}
+
 #tablesWrapper tbody .outlierSaver td, #tablesWrapper tbody .outlierSaver{
     background-color:rgba(75,169,10,0.1);
 }
