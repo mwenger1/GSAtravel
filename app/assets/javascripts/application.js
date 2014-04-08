@@ -19,7 +19,6 @@
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard
 //= require moment
-//= require turbolinks
 //= require_tree .
 //= require dropdown
 //= require tooltip
