@@ -10,12 +10,16 @@
     background-color:rgba(75,169,10,0.1);
 }
 
-#tablesWrapper tbody .outlierSpender, #tablesWrapper tbody .outlierSpender td{
-    background-color:rgba(255,0,0,0.1);
+#tablesWrapper tr.saver td:last-child{
+    color:green;
+    font-weight:bold;
 }
-#tablesWrapper tbody .nonOutlier, #tablesWrapper tbody .nonOutlier td{
-    padding: 20px 5px;
+#tablesWrapper tr.spender td:last-child{
+    color:red;
+    font-weight:bold;
 }
+
+
 
 #tablesWrapper tr{
     cursor:pointer;

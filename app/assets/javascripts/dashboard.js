@@ -133,7 +133,16 @@ ready = function() {
             var sDirectionClass;
             sDirectionClass = "clickableTableRow";
             $(nRow).addClass(sDirectionClass);
-            return nRow;
+            var number = Number(aData[8].replace(/[^-?0-9\.]+/g,""));
+            if ( number > 0)
+                sDirectionClass = "saver";
+            else if (number < 0)
+                sDirectionClass = "spender";
+            else
+                sDirectionClass = "";
+
+            $(nRow).addClass(sDirectionClass);
+
         }
     });
 
