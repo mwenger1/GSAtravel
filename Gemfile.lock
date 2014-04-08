@@ -72,6 +72,7 @@ GEM
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
+    google_visualr (2.2.0)
     googlecharts (1.6.8)
     guard (2.5.1)
       formatador (>= 0.2.4)
@@ -203,6 +204,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
+  google_visualr
   googlecharts
   guard-livereload
   jbuilder (~> 1.2)
