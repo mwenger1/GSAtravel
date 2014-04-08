@@ -104,9 +104,9 @@ require 'gchart'
   data_table.set_cell( 5, 0, 6.5)
   data_table.set_cell( 5, 1, 7  )
 
-  opts   = { :width => 400, :height => 240, :title => 'Age vs. Weight comparison',
-             :hAxis => { :title => 'Age'    , :minValue => 0, :maxValue => 15 },
-             :vAxis => { :title => 'Weight' , :minValue => 0, :maxValue => 15 },
+  opts   = { :width => 400, :height => 240, :title => 'Days in Advance to Cost per Mile',
+             :hAxis => { :title => 'Days in Advance'    , :minValue => 0, :maxValue => 15 },
+             :vAxis => { :title => 'Cost Per Mile' , :minValue => 0, :maxValue => 15 },
              :legend => 'none' }
   @vendor_flight_scatter_chart = GoogleVisualr::Interactive::ScatterChart.new(data_table, opts)
 
