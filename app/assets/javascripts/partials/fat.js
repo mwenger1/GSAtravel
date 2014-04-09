@@ -148,36 +148,6 @@ angular.module('google-chart-sample').controller("FatChartCtrl", function ($scop
     }
 
 
-    $scope.htmlTooltip = function () {
-
-        if ($scope.chart.options.tooltip.isHtml) {
-            $scope.chart.data.cols.push({id: "", "role": "tooltip", "type": "string", "p": { "role": "tooltip", 'html': true} });
-            $scope.chart.data.rows[0].c[5] = {v: " <b>Shipping " + $scope.chart.data.rows[0].c[4].v + "</b><br /><img src=\"http://icons.iconarchive.com/icons/antrepo/container-4-cargo-vans/512/Google-Shipping-Box-icon.png\" style=\"height:85px\" />"};
-            $scope.chart.data.rows[1].c[5] = {v: " <b>Shipping " + $scope.chart.data.rows[1].c[4].v + "</b><br /><img src=\"http://icons.iconarchive.com/icons/antrepo/container-4-cargo-vans/512/Google-Shipping-Box-icon.png\" style=\"height:85px\" />"};
-            $scope.chart.data.rows[2].c[5] = {v: " <b>Shipping " + $scope.chart.data.rows[2].c[4].v + "</b><br /><img src=\"http://icons.iconarchive.com/icons/antrepo/container-4-cargo-vans/512/Google-Shipping-Box-icon.png\" style=\"height:85px\" />"};
-        } else {
-            $scope.chart.data.cols.pop();
-            delete $scope.chart.data.rows[0].c[5];
-            delete $scope.chart.data.rows[1].c[5];
-            delete $scope.chart.data.rows[2].c[5];
-        }
-    }
-
-
-    $scope.hideServer = false;
-    $scope.selectionChange = function () {
-        if ($scope.hideServer) {
-            $scope.chart.view = {columns: [0, 1, 2, 4]};
-        } else {
-            $scope.chart.view = {};
-        }
-    }
-
-    $scope.formatCollection = formatCollection;
-    $scope.toggleFormat = function (format) {
-        $scope.chart.formatters[format.name] = format.format;
-    };
-
     $scope.chartReady = function () {
         fixGoogleChartsBarsBootstrap();
     }
