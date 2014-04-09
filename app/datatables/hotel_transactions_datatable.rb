@@ -28,8 +28,8 @@ private
         hotel.hotel_chain_name.titleize,
         hotel.online_indicator,
         number_to_currency(hotel.daily_rate),
+        hotel.number_of_room_nights,
         number_to_currency(hotel.total_amount),
-        hotel.hotel_chain_name,
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,
@@ -65,7 +65,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator reservation_date days_in_advance hotel_city_name hotel_chain_name online_indicator daily_rate daily_rate total_amount ]
+    columns = %w[gds_record_locator reservation_date days_in_advance hotel_city_name hotel_chain_name online_indicator daily_rate number_of_room_nights total_amount ]
     columns[params[:iSortCol_0].to_i]
   end
 

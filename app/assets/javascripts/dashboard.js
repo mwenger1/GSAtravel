@@ -158,10 +158,7 @@ ready = function() {
         ],
         bJQueryUI: true,
         bServerSide: true,
-        aoColumns: [null, null, null, null, null, null, null, null, {
-            "bSearchable": false,
-            "bVisible": false
-        }, {
+        aoColumns: [null, null, null, null, null, null, null, null, null, {
             "bSearchable": false,
             "bVisible": false
         }, {
