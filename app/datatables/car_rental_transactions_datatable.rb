@@ -47,7 +47,7 @@ private
   def fetch_car_rental_transactions
     car_rental_transactions = CarRentalReservation.order("#{sort_column} #{sort_direction}")
     if params[:sSearch].present?
-      car_rental_transactions = car_rental_transactions.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
+      car_rental_transactions = car_rental_transactions.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(car_chain_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
     end
 
     car_rental_transactions = car_rental_transactions.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
