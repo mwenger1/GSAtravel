@@ -27,7 +27,7 @@ private
         hotel.hotel_chain_name.titleize,
         hotel.online_indicator,
         number_to_currency(hotel.daily_rate),
-        number_to_currency(hotel.daily_rate),
+        number_to_currency(hotel.total_amount),
         hotel.hotel_city_name,
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,

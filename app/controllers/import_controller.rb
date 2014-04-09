@@ -28,7 +28,7 @@ class ImportController < ApplicationController
         if counter != 0
 
             ## FILTERS OUT RETURNS AND REFUNDS @TODO incorporate refunds
-            unless (false) ## ADD FILTERS
+            unless (entry[13].to_i < 0)
                 h = HotelReservation.new
                 h.gds_record_locator = entry[0]
                 h.reservation_date = Date.strptime(entry[1], '%m/%d/%y') unless entry[1].nil?
