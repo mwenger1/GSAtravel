@@ -8,23 +8,26 @@
 			<h1>Vendor</h1>
 
 
-<div id='chart'></div>
+<div id='chart'>
 <%= render_chart(@vendor_flight_pie, 'chart') %>
-
-<div id='scatterchart'></div>
+</div>
+<div id='price_piechart'>
+<%= render_chart(@vendor_flight_cost_pie, 'price_piechart') %>
+</div>
+<div id='scatterchart'>
 <%= render_chart(@vendor_flight_scatter_chart, 'scatterchart') %>
+</div>
 
-
-<div id='barchart'></div>
+<div id='barchart'>
 <%= render_chart(@vendor_flight_barchart, 'barchart') %>
-
+</div>
     <!-- @vendor_hotel_pie
     @vendor_car_rental_pie -->
 
-<div id="chart_div" style="width: 900px; height: 500px;"></div>
 
 
 
+<div id="chart_div" style="width: 900px; height: 500px;">
     <script type='text/javascript'>
      google.load('visualization', '1', {'packages': ['geochart']});
      google.setOnLoadCallback(drawMarkersMap);
@@ -48,7 +51,7 @@
       chart.draw(data, options);
     };
     </script>
-
+</div>
 
 
 

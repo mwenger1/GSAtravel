@@ -69,6 +69,7 @@ require 'gchart'
     # @vendor_hotel_pie = Gchart.pie(:data => [20, 35, 45])
     # @vendor_car_rental_pie = Gchart.pie(:data => [40, 35, 25])
 
+# FLIGHTS BY AIRLINE
  data_table = GoogleVisualr::DataTable.new
   data_table.new_column('string', 'Task')
   data_table.new_column('number', 'Hours per Day')
@@ -84,9 +85,29 @@ require 'gchart'
   data_table.set_cell(4, 0, 'Luthsana'    )
   data_table.set_cell(4, 1, 7  )
 
-  opts   = { :width => 800, :height => 500, :title => 'Airline Breakdown', :isDonutchart => true }
+  opts   = { :width => 600, :height => 400, :title => 'Flights by Airline' }
   @vendor_flight_pie = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
 
+  # COST BY AIRLINE
+ data_table = GoogleVisualr::DataTable.new
+  data_table.new_column('string', 'Task')
+  data_table.new_column('number', 'Hours per Day')
+  data_table.add_rows(5)
+  data_table.set_cell(0, 0, 'American Airlines'     )
+  data_table.set_cell(0, 1, 7 )
+  data_table.set_cell(1, 0, 'United'      )
+  data_table.set_cell(1, 1, 11  )
+  data_table.set_cell(2, 0, 'Jet Blue'  )
+  data_table.set_cell(2, 1, 2  )
+  data_table.set_cell(3, 0, 'South West' )
+  data_table.set_cell(3, 1, 2  )
+  data_table.set_cell(4, 0, 'Luthsana'    )
+  data_table.set_cell(4, 1, 2  )
+
+  opts   = { :width => 600, :height => 400, :title => 'Cost by Airline' }
+  @vendor_flight_cost_pie = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
+
+# FLIGHTS SCATTER
    data_table = GoogleVisualr::DataTable.new
   data_table.new_column('number', 'Age')
   data_table.new_column('number', 'Weight')
