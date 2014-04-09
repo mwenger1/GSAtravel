@@ -30,7 +30,7 @@ private
         number_to_currency(hotel.daily_rate),
         hotel.number_of_room_nights,
         number_to_currency(hotel.total_amount),
-        hotel.hotel_chain_name,
+        number_to_currency(hotel.total_amount),
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,
