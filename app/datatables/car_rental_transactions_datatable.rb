@@ -24,15 +24,15 @@ private
         rental.gds_record_locator,
         rental.car_pick_up_date.strftime('%b %d, %Y'),
         rental.days_in_advance.to_s + " days",
+        rental.car_pick_up_city,
         rental.car_chain_name.titleize,
         rental.car_category,
-        number_to_currency(rental.car_daily_rate),
-        number_to_currency(rental.total_amount),
         rental.online_indicator,
-        rental.gds_record_locator,
-        rental.gds_record_locator,
-        rental.gds_record_locator,
-        rental.gds_record_locator,
+        number_to_currency(rental.car_daily_rate),
+        rental.car_rental_days,
+        number_to_currency(rental.total_amount),
+        number_to_currency(rental.total_amount),
+        number_to_currency(rental.total_amount),
         rental.gds_record_locator,
         rental.gds_record_locator,
         rental.gds_record_locator
@@ -65,7 +65,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator car_pick_up_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator car_pick_up_date days_in_advance car_pick_up_city car_chain_name car_category online_indicator car_daily_rate car_rental_days total_amount ]
     columns[params[:iSortCol_0].to_i]
   end
 
