@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('google-chart-sample').controller("FatChartCtrl", function ($scope) {
+angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", function ($scope) {
 
     var chart1 = {};
     chart1.type = "PieChart";
@@ -168,7 +168,7 @@ angular.module('google-chart-sample').controller("FatChartCtrl", function ($scop
         });
     };
 
-});
+}]);
 
 
 
