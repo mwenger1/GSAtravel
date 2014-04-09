@@ -1,24 +1,8 @@
 <div class="col-xs-5">
-    <form class="form-horizontal" role="form">
-
-        <div class="form-group">
-            <label for="chartType">Chart type</label>
-
-            <select class="form-control" id="chartType" ng-model="chart.type" ng-change="chartSelectionChange()">
-                <option value="PieChart">PieChart</option>
-                <option value="AreaChart">AreaChart</option>
-                <option value="ColumnChart">ColumnChart</option>
-                <option value="LineChart">LineChart</option>
-                <option value="Table">Table</option>
-                <option value="BarChart">BarChart</option>
-            </select>
-
-
-        </div>
 
         <%= render 'dashboard/trends_nav' %>
 
-    </form>
+
 </div>
 
 <div class="col-xs-7">
