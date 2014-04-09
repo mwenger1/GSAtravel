@@ -32,15 +32,18 @@ before_filter :set_date
 
   def flight_vendor_data
     respond_to do |format|
+      @start_date = Date.new(2007, 5, 12) #params[:start_date]
+      @end_date = Date.new(2010, 5, 12) #params[:end_date]
+
       format.html
       format.json{ render json: {
-        "airlinecount"=>FlightReservation.group(:airline_name).count,
-        "airportcodecount"=>FlightReservation.group(:origin_airport_code).count,
-        "totalairlinecost"=>FlightReservation.group(:airline_name).sum(:total_amount),
+        "airlinecount"=>FlightReservation.group(:airline_name).where(:trip_departure_date => @start_date.beginning_of_day..@end_date.end_of_day).count,
+        "airportcodecount"=>FlightReservation.group(:origin_airport_code).count.where(:trip_departure_date => @start_date.beginning_of_day..@end_date.end_of_day),
+        "totalairlinecost"=>FlightReservation.group(:airline_name).sum(:total_amount).where(:trip_departure_date => @start_date.beginning_of_day..@end_date.end_of_day),
         "TotalCost"=> {
-                        "flights" => FlightReservation.sum(:total_amount),
-                        "hotels" => HotelReservation.sum(:total_amount),
-                        "car_rentals" => CarRentalReservation.sum(:total_amount)
+                        "flights" => FlightReservation.sum(:total_amount).where(:trip_departure_date => @start_date.beginning_of_day..@end_date.end_of_day),
+                        "hotels" => HotelReservation.sum(:total_amount).where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day),
+                        "car_rentals" => CarRentalReservation.sum(:total_amount).where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
                       }
 
         }
