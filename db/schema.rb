@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408034140) do
+ActiveRecord::Schema.define(version: 20140409015902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20140408034140) do
     t.integer  "number_of_room_nights"
     t.float    "daily_rate"
     t.string   "room_rate_code"
-    t.boolean  "online_indicator"
+    t.string   "online_indicator"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "days_in_advance"

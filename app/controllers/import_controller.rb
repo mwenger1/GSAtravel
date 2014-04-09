@@ -45,7 +45,7 @@ class ImportController < ApplicationController
                 h.number_of_room_nights = entry[12].to_i
                 h.daily_rate = entry[13].to_f
                 h.room_rate_code = calculate_benchmark_rate(entry[13])
-                h.online_indicator = entry[14]
+                h.online_indicator = entry[15]
                 h.save
            end
         end
