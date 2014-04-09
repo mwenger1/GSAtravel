@@ -160,3 +160,14 @@ margin-left: 15px;
     display:none;
     padding: 20px;
 }
+.chartContent{
+    padding: 0px 20px;
+}
+.chartToggle{
+    margin: 10px 0px;
+}
+.btn-group .btn{
+    font-family: BebasNeue;
+    font-size: 1.6em;
+    letter-spacing: 0.03em;
+}

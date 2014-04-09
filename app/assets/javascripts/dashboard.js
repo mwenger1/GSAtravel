@@ -421,6 +421,16 @@ ready = function() {
         $('#pricePerMile').hide();
         $('#hotspots').hide();
     });
+    $('#price_piechart').hide();
+    $('#scatterchart').hide();
+    $('#barchart').hide();
+    $('#geochart').hide();
+    $('#franchise .flights_amount').click(function(){
+        $('#chart').show();
+        $('#price_piechart').hide();
+        $('#scatterchart').hide();
+        $('#barchart').hide();
+    });
 
 };
 

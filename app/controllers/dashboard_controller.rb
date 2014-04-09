@@ -85,7 +85,7 @@ require 'gchart'
   data_table.set_cell(4, 0, 'Luthsana'    )
   data_table.set_cell(4, 1, 7  )
 
-  opts   = { :width => 600, :height => 400, :title => 'Flights by Airline' }
+  opts   = { :width => 500, :height => 350, :title => 'Flights by Airline' }
   @vendor_flight_pie = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
 
   # COST BY AIRLINE
@@ -104,7 +104,7 @@ require 'gchart'
   data_table.set_cell(4, 0, 'Luthsana'    )
   data_table.set_cell(4, 1, 2  )
 
-  opts   = { :width => 600, :height => 400, :title => 'Cost by Airline' }
+  opts   = { :width => 500, :height => 350, :title => 'Cost by Airline' }
   @vendor_flight_cost_pie = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
 
 # FLIGHTS SCATTER

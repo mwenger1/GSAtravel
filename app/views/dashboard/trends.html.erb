@@ -6,6 +6,10 @@
 	<div class="chartContent">
 		<div id="franchise" class="chart">
 			<h1>Vendor</h1>
+			<div class="btn-group chartToggle" id="chartToggle">
+	            <button style="font-size: 1.6em" type="button" class="btn btn-default flights_amount">By Flights</button>
+	            <button style="font-size: 1.6em" type="button" class="btn btn-default flights_cost">By Cost</button>
+        	</div>
 
 
 <div id='chart'>
@@ -27,7 +31,7 @@
 
 
 
-<div id="chart_div" style="width: 900px; height: 500px;">
+<div id="geochart" style="width: 900px; height: 500px;">
     <script type='text/javascript'>
      google.load('visualization', '1', {'packages': ['geochart']});
      google.setOnLoadCallback(drawMarkersMap);
