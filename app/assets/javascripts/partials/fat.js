@@ -3,7 +3,7 @@
 angular.module('google-chart-sample').controller("FatChartCtrl", function ($scope) {
 
     var chart1 = {};
-    chart1.type = "AreaChart";
+    chart1.type = "PieChart";
     chart1.displayed = false;
     chart1.data = {"cols": [
         {id: "month", label: "Month", type: "string"},
