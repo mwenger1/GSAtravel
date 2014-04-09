@@ -43,11 +43,11 @@ ready = function() {
             sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[14] + '</td>';
             sOut += '<td><strong>Distance:</strong></td><td>' + aData[11] + '</td></tr>';
             sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td>';
-            sOut += '<td><strong>Cost Per Mile:</strong></td><td>' + aData[18] + ' (site average = $7.25)</td></tr>';
+            sOut += '<td><strong>Cost Per Mile:</strong></td><td>' + aData[18] + '</td></tr>';
 
             sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
             sOut += '</table>';
-            sOut += '<a target="_blank" href="http://www.kayak.com/flights/' + aData[15] + '-' + aData[16] + '/' + moment().add(59,"d").format('YYYY-MM-DD') + '/' + moment().add(63,"d").format('YYYY-MM-DD') + '" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Compare on Kayak</a>';
+            sOut += '<a target="_blank" href="http://www.kayak.com/cars/SLC-a31915/2014-06-06/2014-06-10" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Compare on Kayak</a>';
             sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
         return sOut;
     }
