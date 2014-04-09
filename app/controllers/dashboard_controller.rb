@@ -35,7 +35,7 @@ before_filter :set_date
       format.html
       format.json{ render json: {
         "airlinecount"=>FlightReservation.group(:airline_name).count,
-        "airportcodecoutn"=>FlightReservation.group(:origin_airport_code).count,
+        "airportcodecount"=>FlightReservation.group(:origin_airport_code).count,
         "totalairlinecost"=>FlightReservation.group(:airline_name).sum(:total_amount),
         "TotalCost"=> {
                         "flights" => FlightReservation.sum(:total_amount),
