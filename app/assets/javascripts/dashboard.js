@@ -30,7 +30,7 @@ ready = function() {
 
             sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
             sOut += '</table>';
-            sOut += '<a target="_blank" href="http://www.kayak.com/flights/' + aData[15] + '-' + aData[16] + '/' + moment().add(59,"d").format('YYYY-MM-DD') + '/' + moment().add(63,"d").format('YYYY-MM-DD') + '" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Compare on Kayak</a>';
+            sOut += '<a target="_blank" href="http://www.orbitz.com/shop/hotelsearch?type=hotel&hotel.type=keyword&hotel.coord=&hotel.keyword.key=New+York%2C+NY%2C+United+States&hotel.locId=loc.id%3A17796&hotel.chkin=04%2F17%2F14&hotel.chkout=04%2F20%2F14&hotel.rooms%5B0%5D.adlts=1&hotel.rooms%5B0%5D.chlds=0&hotel.rooms%5B0%5D.chldAge%5B0%5D=&hotel.rooms%5B0%5D.chldAge%5B1%5D=&hotel.rooms%5B0%5D.chldAge%5B2%5D=&hotel.rooms%5B0%5D.chldAge%5B3%5D=&hotel.rooms%5B0%5D.chldAge%5B4%5D=&hotel.rating=&hotel.hname=&hotel.couponCode=&search=Search" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Compare on Orbitz</a>';
             sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
         return sOut;
     }
