@@ -47,7 +47,7 @@ private
   def fetch_hotel_transactions
     hotel_transactions = HotelReservation.order("#{sort_column} #{sort_direction}")
     if params[:sSearch].present?
-      hotel_transactions = hotel_transactions.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(airline_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
+      hotel_transactions = hotel_transactions.where("LOWER(gds_record_locator) like LOWER(:search) or LOWER(hotel_chain_name) like LOWER(:search)", search: "%#{params[:sSearch]}%")
     end
 
     hotel_transactions = hotel_transactions.where(:reservation_date => @start_date.beginning_of_day..@end_date.end_of_day)
