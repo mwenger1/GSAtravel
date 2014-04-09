@@ -25,10 +25,10 @@ private
         hotel.reservation_date.strftime('%b %d, %Y'),
         hotel.days_in_advance.to_s + " days",
         hotel.hotel_chain_name.titleize,
-        hotel.hotel_city_name,
-        number_to_currency(hotel.daily_rate),
-        number_to_currency(hotel.daily_rate),
         hotel.online_indicator,
+        number_to_currency(hotel.daily_rate),
+        number_to_currency(hotel.daily_rate),
+        hotel.hotel_city_name,
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,
         hotel.hotel_chain_name,
@@ -65,7 +65,7 @@ private
   end
 
   def sort_column
-    columns = %w[gds_record_locator reservation_date days_in_advance airline_name fare_category benchmark_rate total_amount online_indicator]
+    columns = %w[gds_record_locator reservation_date days_in_advance hotel_chain_name online_indicator daily_rate daily_rate total_amount ]
     columns[params[:iSortCol_0].to_i]
   end
 
