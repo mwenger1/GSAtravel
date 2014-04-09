@@ -30,6 +30,13 @@ before_filter :set_date
     end
   end
 
+  def flight_vendor_data
+    respond_to do |format|
+      format.html
+      format.json{ render json: FlightReservation.group(:airline_name).count}
+    end
+  end
+
 
   def overview_data
     respond_to do |format|

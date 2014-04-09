@@ -10,6 +10,7 @@ GSAtravel::Application.routes.draw do
   get "dashboard/overview"
   get "dashboard/transactions"
   get "dashboard/transactions_flight_data"
+  get "dashboard/flight_vendor_data"
   get "dashboard/transactions_hotel_data"
   get "dashboard/transactions_car_rental_data"
   get "dashboard/overview_data"
