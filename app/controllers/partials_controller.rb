@@ -6,4 +6,8 @@ class PartialsController < ApplicationController
   def annotation
     render layout: false
   end
+
+  def generic
+    render layout: false
+  end
 end

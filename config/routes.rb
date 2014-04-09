@@ -19,6 +19,7 @@ GSAtravel::Application.routes.draw do
   get "dashboard/airport_api"
   get "dashboard/partials/fat"  => 'partials#fat'
   get "dashboard/partials/annotation"  => 'partials#annotation'
+  get "dashboard/partials/generic"  => 'partials#generic'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
