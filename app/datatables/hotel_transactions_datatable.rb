@@ -22,7 +22,7 @@ private
     hotel_transactions.map do |hotel|
       [
         hotel.gds_record_locator,
-        hotel.reservation_date.strftime('%b %d, %Y'),
+        hotel.reservation_date.strftime('%m/%d/%y'),
         hotel.days_in_advance.to_s + " days",
         hotel.hotel_city_name,
         hotel.hotel_chain_name.titleize,

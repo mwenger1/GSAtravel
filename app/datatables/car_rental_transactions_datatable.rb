@@ -22,7 +22,7 @@ private
     car_rental_transactions.map do |rental|
       [
         rental.gds_record_locator,
-        rental.car_pick_up_date.strftime('%b %d, %Y'),
+        rental.car_pick_up_date.strftime('%m/%d/%y'),
         rental.days_in_advance.to_s + " days",
         rental.car_pick_up_city,
         rental.car_chain_name.titleize,

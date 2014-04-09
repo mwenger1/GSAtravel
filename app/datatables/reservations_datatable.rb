@@ -22,7 +22,7 @@ private
     flight_reservations.map do |flight|
       [
         flight.gds_record_locator,
-        flight.trip_departure_date.strftime('%b %d, %Y'),
+        flight.trip_departure_date.strftime('%m/%d/%y'),
         flight.days_in_advance.to_s + " days",
         flight.airline_name.titleize,
         flight.shorten_fare_category,
