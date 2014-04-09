@@ -10,65 +10,54 @@
 	            <button style="font-size: 1.6em" type="button" class="btn btn-default flights_amount">By Flights</button>
 	            <button style="font-size: 1.6em" type="button" class="btn btn-default flights_cost">By Cost</button>
         	</div>
-
-
-<div id='chart'>
-<%= render_chart(@vendor_flight_pie, 'chart') %>
-</div>
-<div id='price_piechart'>
-<%= render_chart(@vendor_flight_cost_pie, 'price_piechart') %>
-</div>
-<div id='scatterchart'>
-<%= render_chart(@vendor_flight_scatter_chart, 'scatterchart') %>
-</div>
-
-<div id='barchart'>
-<%= render_chart(@vendor_flight_barchart, 'barchart') %>
-</div>
-    <!-- @vendor_hotel_pie
-    @vendor_car_rental_pie -->
-
-
-
-
-<div id="geochart" style="width: 900px; height: 500px;">
-    <script type='text/javascript'>
-     google.load('visualization', '1', {'packages': ['geochart']});
-     google.setOnLoadCallback(drawMarkersMap);
-
-      function drawMarkersMap() {
-      var data = google.visualization.arrayToDataTable([
-        ['City',   'Population', 'Area Percentage'],
-        ['New York',  65700000, 50],
-        ['San Francisco', 181890000, 27],
-        ['Chicago',  38540000, 23],
-      ]);
-
-      var options = {
-        sizeAxis: { minValue: 0, maxValue: 100 },
-        region: 'US', // Western Europe
-        displayMode: 'markers',
-        colorAxis: {colors: ['#e7711c', '#4374e0']} // orange to blue
-      };
-
-      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
-    };
-    </script>
-</div>
-
-
-
+			<div id='chart'>
+			<%= render_chart(@vendor_flight_pie, 'chart') %>
+			</div>
+			<div id='price_piechart'>
+			<%= render_chart(@vendor_flight_cost_pie, 'price_piechart') %>
+			</div>
 		</div>
 		<div id="pricePerMile" class="chart">
 			<h1>Price Breakdown</h1>
-
+			<div id='scatterchart'>
+				<%= render_chart(@vendor_flight_scatter_chart, 'scatterchart') %>
+			</div>
 		</div>
 		<div id="hotspots" class="chart">
 			<h1>Hotspots</h1>
+
+				<div id="geochart" style="width: 500px; height: 300px;">
+				    <script type='text/javascript'>
+				     google.load('visualization', '1', {'packages': ['geochart']});
+				     google.setOnLoadCallback(drawMarkersMap);
+
+				      function drawMarkersMap() {
+				      var data = google.visualization.arrayToDataTable([
+				        ['City',   'Population', 'Area Percentage'],
+				        ['New York',  65700000, 50],
+				        ['San Francisco', 181890000, 27],
+				        ['Chicago',  38540000, 23],
+				      ]);
+
+				      var options = {
+				        sizeAxis: { minValue: 0, maxValue: 100 },
+				        region: 'US', // Western Europe
+				        displayMode: 'markers',
+				        colorAxis: {colors: ['#e7711c', '#4374e0']} // orange to blue
+				      };
+
+				      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+				      chart.draw(data, options);
+				    };
+				    </script>
+				</div>								
 		</div>
 		<div id="days" class="chart">
 			<h1>Booking in Advance to Travel</h1>
+
+			<div id='barchart'>
+			<%= render_chart(@vendor_flight_barchart, 'barchart') %>
+			</div>
 		</div>
 	</div>
 </div>

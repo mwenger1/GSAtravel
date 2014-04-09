@@ -421,13 +421,20 @@ ready = function() {
         $('#pricePerMile').hide();
         $('#hotspots').hide();
     });
+    $('#chart').show();
     $('#price_piechart').hide();
-    $('#scatterchart').hide();
-    $('#barchart').hide();
-    $('#geochart').hide();
+    $('#scatterchart').show();
+    $('#barchart').show();
+    $('#geochart').show();
     $('#franchise .flights_amount').click(function(){
         $('#chart').show();
         $('#price_piechart').hide();
+        $('#scatterchart').hide();
+        $('#barchart').hide();
+    });
+    $('#franchise .flights_cost').click(function(){
+        $('#chart').hide();
+        $('#price_piechart').show();
         $('#scatterchart').hide();
         $('#barchart').hide();
     });
