@@ -6,8 +6,19 @@
 </div>
 
 <div class="col-xs-7">
-    <div google-chart chart="chart" style="{{cssStyle}}" on-ready="chartReady()"></div>
-    <!-- explicit close of tag seems to be necessary -->
+
+<!-- <div><button>Chart 1</button><button>Chart 2</button></div>
+ -->
+{{report_type}} {{chart_number}}
+
+    <div ng-show="report_type=='vendor' && chart_number==1">Vendor Chart one</div>
+
+    <div ng-show="report_type=='vendor' && chart_number==2">Vendor Chart two</div>
+
+    <div ng-show="report_type=='price_breakdown' && chart_number==1" >Price Breakown Chart one</div>
+
+    <div ng-show="report_type=='price_breakdown' && chart_number==2">Price Breakown Chart two</div>
+
 </div>
 
 
