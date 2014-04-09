@@ -33,7 +33,18 @@ before_filter :set_date
   def flight_vendor_data
     respond_to do |format|
       format.html
-      format.json{ render json: FlightReservation.group(:airline_name).count}
+      format.json{ render json: {
+        "airlinecount"=>FlightReservation.group(:airline_name).count,
+        "airportcodecoutn"=>FlightReservation.group(:origin_airport_code).count,
+        "totalairlinecost"=>FlightReservation.group(:airline_name).sum(:total_amount),
+        "TotalCost"=> {
+                        "flights" => FlightReservation.sum(:total_amount),
+                        "hotels" => HotelReservation.sum(:total_amount),
+                        "car_rentals" => CarRentalReservation.sum(:total_amount)
+                      }
+
+        }
+      }
     end
   end
 
