@@ -32,9 +32,9 @@ private
         rental.car_rental_days,
         number_to_currency(rental.total_amount),
         number_to_currency(rental.total_amount),
-        rental.reservation_date,
-        rental.car_drop_off_date,
-        rental.car_chain_code,
+        rental.reservation_date.strftime('%m/%d/%y'),
+        rental.car_drop_off_date.strftime('%m/%d/%y'),
+        rental.car_chain_code, #13
         rental.car_drop_off_city,
         rental.car_drop_off_state
       ]
