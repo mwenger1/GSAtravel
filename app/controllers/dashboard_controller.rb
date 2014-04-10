@@ -35,9 +35,13 @@ before_filter :set_date
       @start_date = Date.new(2007, 5, 12) #params[:start_date]
       @end_date = Date.new(2010, 5, 12) #params[:end_date]
 @flights_per_airline = (FlightReservation.group(:airline_name).order(:airline_name).count).to_a.unshift(["Airline","Flights"])
+@percentage_per_airline = (FlightReservation.group(:airline_name).order(:airline_name).sum(:total_amount)).to_a.unshift(["Airline","Total Amount"])
+
+
       format.html
       format.json{ render json: {
         "flights_per_airline"=>@flights_per_airline,
+        "percentage_per_airline"=>@percentage_per_airline,
         "destination_airport_count"=>FlightReservation.group(:destination_airport_code).order(:destination_airport_code).count,
         "totalcost_per_airline"=>FlightReservation.group(:airline_name).sum(:total_amount),
         "transaction_type_total_cost"=> {

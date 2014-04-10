@@ -5,6 +5,8 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
 
     $http.get('/dashboard/flight_vendor_data.json').success(function(data) {
         $scope.vendorChart1.data = data['flights_per_airline'];
+        $scope.vendorChart1b.data = data['percentage_per_airline'];
+
     }).error(function(error) {
         console.log('The file did not load');
     });
@@ -26,7 +28,7 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
         ]);
 
     vendorChart1.options = {
-        "title": "Sales per month",
+        "title": "Percentage of Flights per Airline",
         "isStacked": "true",
         "fill": 20,
         "displayExactValues": true,
@@ -37,6 +39,33 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
             "title": "Date"
         }
     };
+
+
+   var vendorChart1b = {};
+    vendorChart1b.type = "PieChart";
+    vendorChart1b.displayed = false;
+    vendorChart1b.data = ([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+    vendorChart1b.options = {
+        "title": "Overall Spending per Airline",
+        "isStacked": "true",
+        "fill": 20,
+        "displayExactValues": true,
+        "vAxis": {
+            "title": "Sales unit", "gridlines": {"count": 10}
+        },
+        "hAxis": {
+            "title": "Date"
+        }
+    };
+
 
 
     var vendorChart2 = {};
@@ -114,6 +143,7 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
 
 
     $scope.vendorChart1 = vendorChart1;
+    $scope.vendorChart1b = vendorChart1b;
     $scope.vendorChart2 = vendorChart2;
     $scope.vendorChart3 = vendorChart3;
     $scope.priceChart1 = priceChart1;
