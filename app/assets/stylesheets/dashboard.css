@@ -136,9 +136,6 @@ table.dataTable tr.even td.sorting_1{
 float: right;
 margin-left: 15px;
 }
-.trendOptions div{
-    padding: 0px 6px;
-}
 .trendOptions h4{
     background: #CED5E8;
     display: inline-block;
@@ -162,7 +159,7 @@ margin-left: 15px;
     padding: 20px;
 }
 .chartContent{
-    padding: 0px 20px;
+    padding: 0px 5px;
 }
 .chartToggle{
     margin: 10px 0px;
@@ -174,7 +171,11 @@ margin-left: 15px;
 }
 .chartType{
     margin-bottom: 20px;
+    float: right;
 }
 .chartType span{
     font-size: 1.2em;
+}
+.toolbar{
+    margin-bottom: 50px
 }
