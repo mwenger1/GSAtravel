@@ -5,29 +5,42 @@
 
 </div>
 
+
+
+
 <div class="col-xs-7">
 
 <div>
-    <button ng-click="updateChartNumber(1)">Chart 1</button>
-    <button ng-click="updateChartNumber(2)">Chart 2</button>
-    <button ng-click="updateChartNumber(3)">Chart 3</button>
+<button ng-click="updateChartNumber('1')">chart 1</button><button ng-click="updateChartNumber('2')">chart 2</button><button ng-click="updateChartNumber('3')">Chart 3</button>
 </div>
+{{vendorChart1.data}}
 
-{{report_type}} {{chart_number}}
+     <div ng-show="report_type=='vendor' && chart_number==1">Vendor Chart one
 
-    <div ng-show="report_type=='vendor' && chart_number==1">Vendor Chart one</div>
+        <div google-chart chart="vendorChart1" style="{{cssStyle}}" on-ready="chartReady()"></div>
+     </div>
 
-    <div ng-show="report_type=='vendor' && chart_number==2">Vendor Chart two</div>
+    <div ng-show="report_type=='vendor' && chart_number==2">Vendor Chart two Graph
+            <div google-chart chart="vendorChart2" style="{{cssStyle}}" on-ready="chartReady()"></div>
+    </div>
 
-    <div ng-show="report_type=='vendor' && chart_number==3">Vendor Chart three</div>
+    <div ng-show="report_type=='vendor' && chart_number==3">Vendor Chart three
+        <div google-chart chart="vendorChart3" style="{{cssStyle}}" on-ready="chartReady()"></div>
+    </div>
 
 
-    <div ng-show="report_type=='price_breakdown' && chart_number==1" >Price Breakown Chart one</div>
+    <div ng-show="report_type=='price_breakdown' && chart_number==1" >Price Breakown Chart one
+        <div google-chart chart="priceChart1" style="{{cssStyle}}" on-ready="chartReady()"></div>
+    </div>
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
 
-    <div ng-show="report_type=='price_breakdown' && chart_number==2">Price Breakown Chart two</div>
+    <div ng-show="report_type=='price_breakdown' && chart_number==2">Price Breakown Chart two
+    </div>
 
+         <div id="calendar_basic" style="width: 900px; height: 500px;"></div>
 
-    <div ng-show="report_type=='hotspots' && chart_number==1" >hotspots Chart one</div>
+    <div ng-show="report_type=='hotspots' && chart_number==1" >hotspots Chart one
+    </div>
 
     <div ng-show="report_type=='hotspots' && chart_number==2">hotspots Chart two</div>
 
