@@ -38,14 +38,14 @@ ready = function() {
     function fnFormatCarRentalDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-            sOut += '<tr><td><strong>Ticket Number:</strong></td><td>' + aData[10] + '</td>';
-            sOut += '<td><strong>Cabin Type:</strong></td><td>' + aData[17] + '</td></tr>';
-            sOut += '<tr><td><strong>Purchase Date:</strong></td><td>' + aData[14] + '</td>';
-            sOut += '<td><strong>Distance:</strong></td><td>' + aData[11] + '</td></tr>';
+            sOut += '<tr><td><strong>Reservation Date:</strong></td><td>' + aData[10] + '</td>';
+            sOut += '<td><strong>Car Chain Code:</strong></td><td>' + aData[17] + '</td></tr>';
+            sOut += '<tr><td><strong>Rental Dates:</strong></td><td>' + aData[14] + ' to ' + aData[14] + '</td>';
+            sOut += '<td><strong>Pickup Location:</strong></td><td>' + aData[11] + '</td></tr>';
             sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td>';
-            sOut += '<td><strong>Cost Per Mile:</strong></td><td>' + aData[18] + '</td></tr>';
+            sOut += '<td><strong>Reutrn Location:</strong></td><td>' + aData[18] + '</td></tr>';
 
-            sOut += '<tr><td><strong>Full Trip Itinerary:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
+            sOut += '<tr><td><strong>Historical Daily Rate:</strong></td><td>' + aData[12] + '</td><td></td></tr>';
             sOut += '</table>';
             sOut += '<a target="_blank" href="http://www.kayak.com/cars/SLC-a31915/2014-06-06/2014-06-10" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Compare on Kayak</a>';
             sOut += '<a href="#" class="btn" style="background-color: #fff; float: right; margin: 10px 15px;box-shadow: 0px 1px 1px grey;">Exclude this Transaction</a>';
