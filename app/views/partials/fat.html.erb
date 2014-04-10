@@ -31,11 +31,15 @@
     <div ng-show="report_type=='price_breakdown' && chart_number==1" >Price Breakown Chart one
         <div google-chart chart="priceChart1" style="{{cssStyle}}" on-ready="chartReady()"></div>
     </div>
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
 
-    <div ng-show="report_type=='price_breakdown' && chart_number==2">Price Breakown Chart two</div>
+    <div ng-show="report_type=='price_breakdown' && chart_number==2">Price Breakown Chart two
+    </div>
 
+         <div id="calendar_basic" style="width: 900px; height: 500px;"></div>
 
-    <div ng-show="report_type=='hotspots' && chart_number==1" >hotspots Chart one</div>
+    <div ng-show="report_type=='hotspots' && chart_number==1" >hotspots Chart one
+    </div>
 
     <div ng-show="report_type=='hotspots' && chart_number==2">hotspots Chart two</div>
 
