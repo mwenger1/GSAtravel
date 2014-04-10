@@ -64,52 +64,6 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", funct
     }
 
 
-
-    $scope.chartSelectionChange = function (chart) {
-        // $scope.chart = chart;
-
-        if (($scope.chart.type === 'Table' && $scope.chart.data.cols.length === 6 && $scope.chart.options.tooltip.isHtml === true) ||
-            ($scope.chart.type != 'Table' && $scope.chart.data.cols.length === 6 && $scope.chart.options.tooltip.isHtml === false)) {
-            $scope.chart.data.cols.pop();
-            delete $scope.chart.data.rows[0].c[5];
-            delete $scope.chart.data.rows[1].c[5];
-            delete $scope.chart.data.rows[2].c[5];
-        }
-
-
-        if ($scope.chart.type === 'Table') {
-
-            $scope.chart.options.tooltip.isHtml = false;
-
-            $scope.chart.data.cols.push({id: "data-id", label: "Date", type: "date"});
-            $scope.chart.data.rows[0].c[5] = {v: "Date(2013,01,05)"};
-            $scope.chart.data.rows[1].c[5] = {v: "Date(2013,02,05)"};
-            $scope.chart.data.rows[2].c[5] = {v: "Date(2013,03,05)"};
-        }
-
-    }
-
-
-    $scope.chartReady = function () {
-        fixGoogleChartsBarsBootstrap();
-    }
-
-    function fixGoogleChartsBarsBootstrap() {
-        // Google charts uses <img height="12px">, which is incompatible with Twitter
-        // * bootstrap in responsive mode, which inserts a css rule for: img { height: auto; }.
-        // *
-        // * The fix is to use inline style width attributes, ie <img style="height: 12px;">.
-        // * BUT we can't change the way Google Charts renders its bars. Nor can we change
-        // * the Twitter bootstrap CSS and remain future proof.
-        // *
-        // * Instead, this function can be called after a Google charts render to "fix" the
-        // * issue by setting the style attributes dynamically.
-
-        $(".google-visualization-table-table img[width]").each(function (index, img) {
-            $(img).css("width", $(img).attr("width")).css("height", $(img).attr("height"));
-        });
-    };
-
 }]);
 
 
