@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", function ($scope) {
-
-    var chart1 = {};
     $scope.report_type = "vendor";
     $scope.chart_number = 1;
 
+    var chart1 = {};
     chart1.type = "PieChart";
     chart1.displayed = false;
     chart1.data = {"cols": [
@@ -53,74 +52,7 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", funct
     };
 
 
-    var formatCollection = [
-        {
-            name: "color",
-            format: [
-                {
-                    columnNum: 4,
-                    formats: [
-                        {
-                            from: 0,
-                            to: 3,
-                            color: "white",
-                            bgcolor: "red"
-                        },
-                        {
-                            from: 3,
-                            to: 5,
-                            color: "white",
-                            fromBgColor: "red",
-                            toBgColor: "blue"
-                        },
-                        {
-                            from: 6,
-                            to: null,
-                            color: "black",
-                            bgcolor: "#33ff33"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            name: "arrow",
-            checked: false,
-            format: [
-                {
-                    columnNum: 1,
-                    base: 19
-                }
-            ]
-        },
-        {
-            name: "date",
-            format: [
-                {
-                    columnNum: 5,
-                    formatType: 'long'
-                }
-            ]
-        },
-        {
-            name: "number",
-            format: [
-                {
-                    columnNum: 4,
-                    prefix: '$'
-                }
-            ]
-        },
-        {
-            name: "bar",
-            format: [
-                {
-                    columnNum: 1,
-                    width: 100
-                }
-            ]
-        }
-    ]
+
 
     chart1.formatters = {};
 
@@ -133,8 +65,8 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", funct
 
 
 
-    $scope.chartSelectionChange = function () {
-
+    $scope.chartSelectionChange = function (chart) {
+        // $scope.chart = chart;
 
         if (($scope.chart.type === 'Table' && $scope.chart.data.cols.length === 6 && $scope.chart.options.tooltip.isHtml === true) ||
             ($scope.chart.type != 'Table' && $scope.chart.data.cols.length === 6 && $scope.chart.options.tooltip.isHtml === false)) {
