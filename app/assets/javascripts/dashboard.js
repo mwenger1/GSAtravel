@@ -38,9 +38,9 @@ ready = function() {
     function fnFormatCarRentalDetails(oTable, tmpTr) {
         var aData = oTable.fnGetData(tmpTr);
             var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="float:left;padding: 5px; border-collapse: separate; border-spacing: 15px 4px;">';
-            sOut += '<tr><td><strong>Reservation Date:</strong></td><td>' + aData[10] + '</td>';
-            sOut += '<td><strong>Car Chain Code:</strong></td><td>' + aData[17] + '</td></tr>';
-            sOut += '<tr><td><strong>Rental Dates:</strong></td><td>' + aData[14] + ' to ' + aData[14] + '</td>';
+            sOut += '<tr><td><strong>Reservation Date:</strong></td><td>' + aData[11] + '</td>';
+            sOut += '<td><strong>Car Chain Code:</strong></td><td>' + aData[13] + '</td></tr>';
+            sOut += '<tr><td><strong>Rental Dates:</strong></td><td>' + aData[3] + ' thru ' + aData[12] + '</td>';
             sOut += '<td><strong>Pickup Location:</strong></td><td>' + aData[11] + '</td></tr>';
             sOut += '<tr><td><strong>Route: </strong></td><td><span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[15] + '</span>  to  <span class="airportCode btn btn-default" data-container="body" data-toggle="popover" data-placement="top" >' + aData[16] + '</span></td>';
             sOut += '<td><strong>Reutrn Location:</strong></td><td>' + aData[18] + '</td></tr>';
