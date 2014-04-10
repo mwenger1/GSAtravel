@@ -89,7 +89,7 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
 
 
    var priceChart1 = {};
-    priceChart1.type = "Geochart";
+    priceChart1.type = "LineChart";
     priceChart1.displayed = false;
     priceChart1.data = ([
         ['Country',   'Population', 'Area Percentage'],
