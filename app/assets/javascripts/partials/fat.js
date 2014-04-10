@@ -88,9 +88,34 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     };
 
 
+   var priceChart1 = {};
+    priceChart1.type = "Geochart";
+    priceChart1.displayed = false;
+    priceChart1.data = ([
+        ['Country',   'Population', 'Area Percentage'],
+        ['France',  65700000, 50],
+        ['Germany', 81890000, 27],
+        ['Poland',  38540000, 23],
+      ]);
+
+    priceChart1.options = {
+        "title": "Sales per month",
+        "isStacked": "true",
+        "fill": 20,
+        "displayExactValues": true,
+        "vAxis": {
+            "title": "Sales unit", "gridlines": {"count": 10}
+        },
+        "hAxis": {
+            "title": "Date"
+        }
+    };
+
+
     $scope.vendorChart1 = vendorChart1;
     $scope.vendorChart2 = vendorChart2;
     $scope.vendorChart3 = vendorChart3;
+    $scope.priceChart1 = priceChart1;
 
     // <option value="AreaChart">AreaChart</option>
     // <option value="PieChart">PieChart</option>
