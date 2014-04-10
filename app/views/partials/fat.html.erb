@@ -6,6 +6,28 @@
 </div>
 
 <div class="col-xs-7">
+     <div ng-show="report_type=='vendor' && chart_number==1">Vendor Chart one</div>
+
+    <div ng-show="report_type=='vendor' && chart_number==2">Vendor Chart two</div>
+
+    <div ng-show="report_type=='vendor' && chart_number==3">Vendor Chart three</div>
+
+
+    <div ng-show="report_type=='price_breakdown' && chart_number==1" >Price Breakown Chart one</div>
+
+    <div ng-show="report_type=='price_breakdown' && chart_number==2">Price Breakown Chart two</div>
+
+
+    <div ng-show="report_type=='hotspots' && chart_number==1" >hotspots Chart one</div>
+
+    <div ng-show="report_type=='hotspots' && chart_number==2">hotspots Chart two</div>
+
+
+    <div ng-show="report_type=='days_prior' && chart_number==1" >days_prior Chart one</div>
+
+    <div ng-show="report_type=='days_prior' && chart_number==2">days_prior Chart two</div>
+
+
     <div google-chart chart="chart" style="{{cssStyle}}" on-ready="chartReady()"></div>
     <!-- explicit close of tag seems to be necessary -->
 </div>

@@ -1,8 +1,26 @@
 
-<div class="btn-group-vertical sectionBox trendOptions">
+<!-- <div class="btn-group-vertical sectionBox trendOptions">
     <input type="radio" name="reportType" id="input1" ng-model="chart.type" ng-change="chartSelectionChange()" value="PieChart"/><label type="button" for="input1" class="btn btn-default">Vendor</label>
     <input type="radio" name="reportType" id="input2" ng-model="chart.type" ng-change="chartSelectionChange()" value="AreaChart"/><label type="button" for="input2" class="btn btn-default">Price Breakdown</label>
     <input type="radio" name="reportType" id="input3" ng-model="chart.type" ng-change="chartSelectionChange()" value="ColumnChart"/><label type="button" for="input3" class="btn btn-default">Hotspots</label>
     <input type="radio" name="reportType" id="input4" ng-model="chart.type" ng-change="chartSelectionChange()" value="LineChart"/><label type="button" for="input4" class="btn btn-default">Booking in Advance</label>
 
 </div>
+ -->
+
+<div class="sectionBox trendOptions">
+    <div class="chartContent">
+       <div ng-click="reportTypeChange('vendor')" id="vendor" >
+           <h1>Vendor</h1>
+       </div>
+       <div ng-click="reportTypeChange('price_breakdown')" id="pricePerMile" >
+           <h1>Price Per Mile</h1>
+       </div>
+       <div ng-click="reportTypeChange('hotspots')" id="hotspots" >
+           <h1>Hotspots</h1>
+       </div>
+       <div ng-click="reportTypeChange('days_prior')" id="days" >
+           <h1>Days Booked Prior to Travel</h1>
+       </div>
+    </div>
+  </div>

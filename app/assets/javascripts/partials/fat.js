@@ -3,6 +3,9 @@
 angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", function ($scope) {
 
     var chart1 = {};
+    $scope.report_type = "vendor";
+    $scope.chart_number = 1;
+
     chart1.type = "PieChart";
     chart1.displayed = false;
     chart1.data = {"cols": [
@@ -124,7 +127,14 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope", funct
     $scope.chart = chart1;
     $scope.cssStyle = "height:600px; width:100%;";
 
+    $scope.reportTypeChange = function (report) {
+        $scope.report_type = report;
+    }
+
+
+
     $scope.chartSelectionChange = function () {
+
 
         if (($scope.chart.type === 'Table' && $scope.chart.data.cols.length === 6 && $scope.chart.options.tooltip.isHtml === true) ||
             ($scope.chart.type != 'Table' && $scope.chart.data.cols.length === 6 && $scope.chart.options.tooltip.isHtml === false)) {
