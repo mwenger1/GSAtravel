@@ -66,36 +66,13 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
    var vendorChart3 = {};
     vendorChart3.type = "BarChart";
     vendorChart3.displayed = false;
-    vendorChart3.data = {"cols": [
-        {id: "month", label: "Month", type: "string"},
-        {id: "laptop-id", label: "Laptop", type: "number"},
-        {id: "desktop-id", label: "Desktop", type: "number"},
-        {id: "server-id", label: "Server", type: "number"},
-        {id: "cost-id", label: "Shipping", type: "number"}
-    ], "rows": [
-        {c: [
-            {v: "January"},
-            {v: 19, f: "42 items"},
-            {v: 12, f: "Ony 12 items"},
-            {v: 7, f: "7 servers"},
-            {v: 4}
-        ]},
-        {c: [
-            {v: "February"},
-            {v: 13},
-            {v: 1, f: "1 unit (Out of stock this month)"},
-            {v: 12},
-            {v: 2}
-        ]},
-        {c: [
-            {v: "March"},
-            {v: 24},
-            {v: 5},
-            {v: 11},
-            {v: 6}
-
-        ]}
-    ]};
+    vendorChart3.data = ([
+        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+         'Western', 'Literature', { role: 'annotation' } ],
+        ['2010', 10, 24, 20, 32, 18, 5, ''],
+        ['2020', 16, 22, 23, 30, 16, 9, ''],
+        ['2030', 28, 19, 29, 30, 12, 13, ''],
+      ]);
 
     vendorChart3.options = {
         "title": "Sales per month",
