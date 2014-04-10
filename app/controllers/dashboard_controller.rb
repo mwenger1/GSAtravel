@@ -71,6 +71,7 @@ before_filter :set_date
   end
 
   def ways_to_save
+    render layout: false
   end
 
   def airport_api
