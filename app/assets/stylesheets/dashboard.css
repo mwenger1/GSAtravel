@@ -179,3 +179,36 @@ margin-left: 15px;
 .toolbar{
     margin-bottom: 50px
 }
+/*PROGRESS BARS*/
+.your_budgets{
+    display: inline;
+    float: left;
+    box-shadow: -4px 5px 11px 3px #ededed;
+    width: 200px;
+    height: 170px;
+    padding: 20px;
+    position: absolute;
+    left: 170px;
+    top: 420px;
+}
+.budget{
+    margin-left: 200px;
+    padding: 20px 0px;
+    width: 510px;
+}
+.percentage{
+    float: right;
+}
+.budget_type{
+    float: left;
+}
+.budget_total{
+    float: right;
+    margin-top: -50px;  
+}
+.total{
+    border-top: 1px solid #ededed;
+}
+.budget_table td{
+    padding: 5px;
+}
