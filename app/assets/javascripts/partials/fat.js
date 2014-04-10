@@ -15,36 +15,14 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     var vendorChart1 = {};
     vendorChart1.type = "PieChart";
     vendorChart1.displayed = false;
-    vendorChart1.data = {"cols": [
-        {id: "month", label: "Month", type: "string"},
-        {id: "laptop-id", label: "Laptop", type: "number"},
-        {id: "desktop-id", label: "Desktop", type: "number"},
-        {id: "server-id", label: "Server", type: "number"},
-        {id: "cost-id", label: "Shipping", type: "number"}
-    ], "rows": [
-        {c: [
-            {v: "January"},
-            {v: 19, f: "42 items"},
-            {v: 12, f: "Ony 12 items"},
-            {v: 7, f: "7 servers"},
-            {v: 4}
-        ]},
-        {c: [
-            {v: "February"},
-            {v: 13},
-            {v: 1, f: "1 unit (Out of stock this month)"},
-            {v: 12},
-            {v: 2}
-        ]},
-        {c: [
-            {v: "March"},
-            {v: 24},
-            {v: 5},
-            {v: 11},
-            {v: 6}
-
-        ]}
-    ]};
+    vendorChart1.data = ([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
 
     vendorChart1.options = {
         "title": "Sales per month",
@@ -63,36 +41,13 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     var vendorChart2 = {};
     vendorChart2.type = "ColumnChart";
     vendorChart2.displayed = false;
-    vendorChart2.data = {"cols": [
-        {id: "month", label: "Month", type: "string"},
-        {id: "laptop-id", label: "Laptop", type: "number"},
-        {id: "desktop-id", label: "Desktop", type: "number"},
-        {id: "server-id", label: "Server", type: "number"},
-        {id: "cost-id", label: "Shipping", type: "number"}
-    ], "rows": [
-        {c: [
-            {v: "January"},
-            {v: 19, f: "42 items"},
-            {v: 12, f: "Ony 12 items"},
-            {v: 7, f: "7 servers"},
-            {v: 4}
-        ]},
-        {c: [
-            {v: "February"},
-            {v: 13},
-            {v: 1, f: "1 unit (Out of stock this month)"},
-            {v: 12},
-            {v: 2}
-        ]},
-        {c: [
-            {v: "March"},
-            {v: 24},
-            {v: 5},
-            {v: 11},
-            {v: 6}
-
-        ]}
-    ]};
+    vendorChart2.data = ([
+    ['Element', 'Density', { role: 'style' }],
+        ['Copper', 8.94, '#b87333'],            // RGB value
+    ['Silver', 10.49, 'silver'],            // English color name
+    ['Gold', 19.30, 'gold'],
+    ['Platinum', 21.45, 'color: #e5e4e2' ], // CSS-style declaration
+      ]);
 
     vendorChart2.options = {
         "title": "Sales per month",
