@@ -34,10 +34,17 @@ before_filter :set_date
     respond_to do |format|
       @start_date = Date.new(2007, 5, 12) #params[:start_date]
       @end_date = Date.new(2010, 5, 12) #params[:end_date]
-
+#FlightReservation.group(:airline_name).order(:airline_name).count,
       format.html
       format.json{ render json: {
-        "flights_per_airline"=>FlightReservation.group(:airline_name).order(:airline_name).count,
+        "flights_per_airline"=>[
+          ['Task', 'Hours per Day'],
+          ['Jet Blue',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ],
         "destination_airport_count"=>FlightReservation.group(:destination_airport_code).order(:destination_airport_code).count,
         "totalcost_per_airline"=>FlightReservation.group(:airline_name).sum(:total_amount),
         "transaction_type_total_cost"=> {
