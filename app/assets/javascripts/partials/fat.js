@@ -3,7 +3,7 @@
 angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http", function ($scope, $http) {
 
     $http.get('/dashboard/flight_vendor_data.json').success(function(data) {
-        $scope.vendorChart1.data = data;
+        $scope.vendorChart1.data = data['flights_per_airline'];
     }).error(function(error) {
         console.log('The file did not load');
     });
