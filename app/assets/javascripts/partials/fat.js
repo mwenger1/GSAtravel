@@ -8,8 +8,8 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
         $scope.vendorChart1b.data = data['percentage_per_airline'];
         $scope.vendorChart2.data = data['flights_per_airline'];
         $scope.vendorChart2b.data = data['percentage_per_airline'];
+        // $scope.vendorChart3.data = data['flights_per_airline'];
 
-    $scope.vendorChart2b = vendorChart2;
 
     }).error(function(error) {
         console.log('The file did not load');
@@ -37,10 +37,10 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
         "fill": 20,
         "displayExactValues": true,
         "vAxis": {
-            "title": "Sales unit", "gridlines": {"count": 10}
+            "title": "Flights", "gridlines": {"count": 10}
         },
         "hAxis": {
-            "title": "Date"
+            "title": "Airline"
         }
     };
 
@@ -78,37 +78,37 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     vendorChart2.data = ([
         ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
          'Western', 'Literature', { role: 'annotation' } ],
-        ['2010', 10, 24, 20, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-        ['2030', 28, 19, 29, 30, 12, 13, ''],
+        ['2011', 10, 24, 20, 32, 18, 5, ''],
+        ['2012', 16, 22, 23, 30, 16, 9, ''],
+        ['2013', 28, 19, 29, 30, 12, 13, ''],
       ]);
 
     vendorChart2.options = {
-        "title": "Sales per month",
+        "title": "Flights per Airline",
         "isStacked": "true",
         "fill": 20,
         "displayExactValues": true,
         "vAxis": {
-            "title": "Sales unit", "gridlines": {"count": 10}
+            "title": "Flights", "gridlines": {"count": 10}
         },
         "hAxis": {
-            "title": "Date"
+            "title": ""
         }
     };
 
     var vendorChart2b = {};
-    vendorChart2b.type = "ColumnChart";
+    vendorChart2b.type = "BarChart";
     vendorChart2b.displayed = false;
     vendorChart2b.data = ([
-        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
-         'Western', 'Literature', { role: 'annotation' } ],
-        ['2010', 10, 24, 20, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-        ['2030', 28, 19, 29, 30, 12, 13, ''],
+        ['American', 'United', 'Delta', 'Fronteir', 'US Airways',
+         'Airtran', 'Alaska', { role: 'annotation' } ],
+        ['2011', 10, 24, 20, 32, 18, 5, ''],
+        ['2012', 16, 22, 23, 30, 16, 9, ''],
+        ['2013', 28, 19, 29, 30, 12, 13, ''],
       ]);
 
     vendorChart2b.options = {
-        "title": "Sales per month",
+        "title": "Flights Per Top Airline",
         "isStacked": "true",
         "fill": 20,
         "displayExactValues": true,
@@ -125,23 +125,23 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     vendorChart3.type = "BarChart";
     vendorChart3.displayed = false;
     vendorChart3.data = ([
-        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
-         'Western', 'Literature', { role: 'annotation' } ],
-        ['2010', 10, 24, 20, 32, 18, 5, ''],
-        ['2020', 16, 22, 23, 30, 16, 9, ''],
-        ['2030', 28, 19, 29, 30, 12, 13, ''],
+        ['American', 'United', 'Delta', 'Fronteir', 'US Airways',
+         'Airtran', 'Alaska', { role: 'annotation' } ],
+        ['2011', 2345, 1543, 950, 820, 780, 50, ''],
+        ['2012', 2500, 1685, 930, 800, 660, 40, ''],
+        ['2013', 3000, 1894, 990, 800, 520, 130, ''],
       ]);
 
     vendorChart3.options = {
-        "title": "Sales per month",
+        "title": "Flights per Top Airlines",
         "isStacked": "true",
         "fill": 20,
         "displayExactValues": true,
         "vAxis": {
-            "title": "Sales unit", "gridlines": {"count": 10}
+            "title": "", "gridlines": {"count": 10}
         },
         "hAxis": {
-            "title": "Date"
+            "title": "Flights"
         }
     };
 
@@ -185,8 +185,9 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     // <option value="Table">Table</option>
     // <option value="BarChart">BarChart</option>
 
-
-    $scope.cssStyle = "height:300px; width:100%;";
+    $scope.cssStyle = "width:600px; height:300px;";
+    $scope.cssStyle1 = "width:300px;";
+    $scope.cssStyle2 = "width:100%; height:500px;";
 
     $scope.reportTypeChange = function (report) {
         $scope.report_type = report;

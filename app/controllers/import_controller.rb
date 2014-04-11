@@ -60,7 +60,7 @@ class ImportController < ApplicationController
     if params[:length] =="short"
         csv = File.read("#{Rails.public_path}/car_reservation_trimmed.csv")
     else
-        csv = File.read("#{Rails.public_path}/car_reservation1.csv")
+        csv = File.read("#{Rails.public_path}/car_reservation.csv")
     end
     encoded_csv = csv.encode!('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
     parsed_csv = CSV.parse(encoded_csv)
