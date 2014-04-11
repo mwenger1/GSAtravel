@@ -86,6 +86,25 @@ before_filter :set_date
 
   end
 
+
+  def calendar_chart
+
+    @flight_map_data = FlightReservation.group(:destination_airport_code).order(:destination_airport_code).count.to_a.unshift(["City","Count"])
+
+
+    # [
+    #     ['Country',   'Population', 'Area Percentage'],
+    #     ['France',  65700000, 50],
+    #     ['Germany', 81890000, 27],
+    #     ['Poland',  38540000, 23],
+    #     ['Italy',  38540000, 23],
+    #   ]
+    render layout: false
+
+  end
+
+
+
   def airport_api
     require 'rest_client'
     @data = RestClient.get "https://airport.api.aero/airport/#{params[:airport_code]}?user_key=d9e2c9a6cad452d0e6f9ee9bd2f5cd0b&callback", {:accept => :json}

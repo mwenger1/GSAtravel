@@ -17,6 +17,8 @@ GSAtravel::Application.routes.draw do
   get "dashboard/budgets"
   get "dashboard/trends"
   get "dashboard/ways_to_save"
+  get "dashboard/calendar_chart"
+
   get "dashboard/airport_api"
   get "dashboard/partials/fat"  => 'partials#fat'
   get "dashboard/partials/annotation"  => 'partials#annotation'
