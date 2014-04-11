@@ -16,27 +16,27 @@
 		<p>car rentals</p>
 	</div>
 </div>
-<div style="clear:both;">
-<div class="importers">
-	<div class="importer importerFlight">
+<div style="clear:both;"></div>
+<div class="test" style="margin-left: 200px;">
+	<div class="importer importerFlight" style="margin-right:50px;">
 		<br>
-		<button class="btn btn-default import-btn"><%= link_to "Run Airline Importer", import_run_airline_path %></button>
+		<button class="btn btn-default import-btn"><%= link_to "Import Airline Data", import_run_airline_path %></button>
 		<br>
-		<button class="btn btn-default import-btn"><%= link_to "Run Short Airline Importer", import_run_airline_path(:length => "short") %>
+		<!-- <button class="btn btn-default import-btn"><%= link_to "Run Short Airline Importer", import_run_airline_path(:length => "short") %> -->
 		<br>
 	</div>
-	<div class="importer importerHotel">
+	<div class="importer importerHotel" style="margin-right:50px;">
 		<br>
-		<button class="btn btn-default import-btn"><%= link_to "Run Hotel Importer", import_run_hotel_path %></button>
+		<button class="btn btn-default import-btn"><%= link_to "Import Hotel Data", import_run_hotel_path %></button>
 		<br>
-		<button class="btn btn-default import-btn"><%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %></button>
+		<!-- <button class="btn btn-default import-btn"><%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %></button> -->
 		<br>
 	</div>
 	<div class="importer importerCar">
 		<br>
-		<button class="btn btn-default import-btn"><%= link_to "Run Car Rental", import_run_car_rental_path %></button>
+		<button class="btn btn-default import-btn"><%= link_to "Import Car Data", import_run_car_rental_path %></button>
 		<br>
-		<button class="btn btn-default import-btn"><%= link_to "Run Short Car Rental", import_run_car_rental_path(:length => "short") %></button>
+		<!-- <button class="btn btn-default import-btn"><%= link_to "Run Short Car Rental", import_run_car_rental_path(:length => "short") %></button> -->
 		<br>
 	</div>
 </div>
