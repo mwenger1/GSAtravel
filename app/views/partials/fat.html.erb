@@ -27,17 +27,16 @@
     </div>
 </div>
 
-     <div ng-show="report_type=='vendor' && chart_number==1">
+     <div ng-show="report_type=='vendor' && chart_number==2">
 
-        <div google-chart chart="vendorChart1" style="{{cssStyle}}" on-ready="chartReady()"></div>
+        <div google-chart chart="vendorChart1" style="{{cssStyle1}}" on-ready="chartReady()"></div>
 
-        <div google-chart chart="vendorChart1b" style="{{cssStyle}}" on-ready="chartReady()"></div>
+        <div google-chart chart="vendorChart1b" style="{{cssStyle1}}" on-ready="chartReady()"></div>
 
      </div>
 
-    <div ng-show="report_type=='vendor' && chart_number==2">
-            <div google-chart chart="vendorChart2" style="{{cssStyle}}" on-ready="chartReady()"></div>
-            <div google-chart chart="vendorChart2b" style="{{cssStyle}}" on-ready="chartReady()"></div>
+    <div ng-show="report_type=='vendor' && chart_number==1">
+            <div google-chart chart="vendorChart2" style="{{cssStyle2}}" on-ready="chartReady()"></div>
     </div>
 
     <div ng-show="report_type=='vendor' && chart_number==3">

@@ -9,7 +9,6 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
         $scope.vendorChart2.data = data['flights_per_airline'];
         $scope.vendorChart2b.data = data['percentage_per_airline'];
 
-    $scope.vendorChart2b = vendorChart2;
 
     }).error(function(error) {
         console.log('The file did not load');
@@ -37,10 +36,10 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
         "fill": 20,
         "displayExactValues": true,
         "vAxis": {
-            "title": "Sales unit", "gridlines": {"count": 10}
+            "title": "Flights", "gridlines": {"count": 10}
         },
         "hAxis": {
-            "title": "Date"
+            "title": "Airline"
         }
     };
 
@@ -84,15 +83,15 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
       ]);
 
     vendorChart2.options = {
-        "title": "Sales per month",
+        "title": "Flights per Airline",
         "isStacked": "true",
         "fill": 20,
         "displayExactValues": true,
         "vAxis": {
-            "title": "Sales unit", "gridlines": {"count": 10}
+            "title": "Flights", "gridlines": {"count": 10}
         },
         "hAxis": {
-            "title": "Date"
+            "title": ""
         }
     };
 
@@ -186,7 +185,8 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     // <option value="BarChart">BarChart</option>
 
 
-    $scope.cssStyle = "height:300px; width:100%;";
+    $scope.cssStyle1 = "width:100%;";
+    $scope.cssStyle2 = "width:100%; height:500px;";
 
     $scope.reportTypeChange = function (report) {
         $scope.report_type = report;
