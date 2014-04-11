@@ -8,16 +8,13 @@
      google.setOnLoadCallback(drawMarkersMap);
 
       function drawMarkersMap() {
-      var data = google.visualization.arrayToDataTable([
-        ['Country',   'Population', 'Area Percentage'],
-        ['France',  65700000, 50],
-        ['Germany', 81890000, 27],
-        ['Poland',  38540000, 23],
-      ]);
+      var data = google.visualization.arrayToDataTable(
+        <%= raw(@flight_map_data) %>
+        );
 
       var options = {
         sizeAxis: { minValue: 0, maxValue: 100 },
-        region: '155', // Western Europe
+        region: 'US', // Western Europe
         displayMode: 'markers',
         colorAxis: {colors: ['#e7711c', '#4374e0']} // orange to blue
       };
