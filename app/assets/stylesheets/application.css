@@ -2639,6 +2639,7 @@ h4{
 	background-color: #CED5E8;
 	margin-bottom: 5px;
 }
+.delete a:hover,
 .import-btn a:hover{
 	text-decoration: none;
 }
@@ -2648,4 +2649,11 @@ h4{
 }
 .importers{
 	text-align: center;
+}
+.delete{
+	text-align: center;
+	margin-top: 120px;
+}
+.delete a{
+	color: #fff;
 }
