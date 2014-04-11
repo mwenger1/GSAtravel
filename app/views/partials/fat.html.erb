@@ -12,7 +12,7 @@
 <div class="col-xs-9">
 
 <div class="toolbar">
-    <div class="btn-group chartType">
+    <div class="btn-group chartType" ng-show="report_type=='vendor'">
         <button ng-click="updateChartNumber('1')" class="btn btn-default">
             <span class="glyphicon glyphicon-adjust"></span>
         </button>
@@ -52,7 +52,7 @@
     </div>
 
     <div ng-show="report_type=='hotspots' && chart_number==1" >
-        <iframe style="width:100%; height:500px;" src="/dashboard/ways_to_save"></iframe>
+        <iframe style="width:100%; height:450px;" src="/dashboard/ways_to_save"></iframe>
 
     </div>
 
