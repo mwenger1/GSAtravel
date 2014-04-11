@@ -144,6 +144,12 @@ margin-left: 15px;
     width: 100%;
     cursor: pointer;
 }
+.trendOptions h4:active{
+    background: #c0c6d6;
+}
+.trendOptions h4:visited{
+    background: #c0c6d6;
+}
 .sectionBox{
     box-shadow: -1px 2px 7px -1px #aaaaaa;
     float: left;
