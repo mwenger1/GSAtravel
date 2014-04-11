@@ -2,6 +2,10 @@
 
 
 angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http", function ($scope, $http) {
+    $(".chartContent h4").click(function(){
+        $(".chartContent h4").removeClass("selected");
+        $(this).addClass("selected");
+    });
 
     $http.get('/dashboard/flight_vendor_data.json').success(function(data) {
         $scope.vendorChart1.data = data['flights_per_airline'];

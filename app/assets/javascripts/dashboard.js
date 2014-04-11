@@ -279,6 +279,16 @@ ready = function() {
             var sDirectionClass;
             sDirectionClass = "clickableTableRow";
             $(nRow).addClass(sDirectionClass);
+            aoColumns: [
+      null,
+      { "sType": "integer" },
+      { "sType": "integer" },
+      { "sType": "integer" },
+      { "sType": "integer" },
+      { "sType": "integer" }
+    ]
+
+
         }
     });
 
@@ -331,12 +341,10 @@ ready = function() {
     /* Table on Dashboard homepage */
     var overviewTable = $('#department_overview').dataTable({
         sPaginationType: "full_numbers",
-        bServerSide: true,
         bJQueryUI: false,
         bFilter: false,
         bPaginate: false,
         bInfo: false,
-        sAjaxSource: $('#department_overview').data('source'),
     });
 
     $('#reportrange').daterangepicker({
@@ -417,6 +425,8 @@ ready = function() {
         $('#pricePerMile').hide();
         $('#hotspots').hide();
     });
+
+
 
 };
 
