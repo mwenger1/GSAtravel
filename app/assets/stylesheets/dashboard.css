@@ -5,7 +5,9 @@
 .dataTables_wrapper{
     padding: 15px;
 }
-
+iframe{
+    border: none;
+}
 .footer{
     background-color:#142C6C;
     height:30px;
@@ -210,7 +212,7 @@ margin-left: 15px;
 }
 .budget_total{
     float: right;
-    margin-top: -50px;  
+    margin-top: -50px;
 }
 .total{
     border-top: 1px solid #ededed;

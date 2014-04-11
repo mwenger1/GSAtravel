@@ -36,11 +36,14 @@
          </div>
 
         <div ng-show="report_type=='vendor' && chart_number==2">
-                <div google-chart chart="vendorChart2" style="width:900px; {{cssStyle}}" on-ready="chartReady()"></div>
+                <!-- <div google-chart chart="vendorChart2" style="width:900px; {{cssStyle}}" on-ready="chartReady()"></div> -->
+                <%= image_tag('flights_per_airline.jpg') %>
         </div>
 
         <div ng-show="report_type=='vendor' && chart_number==3">
-            <div google-chart chart="vendorChart3" style="{{cssStyle}}" on-ready="chartReady()"></div>
+            <!-- <div google-chart chart="vendorChart3" style="{{cssStyle}}" on-ready="chartReady()"></div> -->
+                <%= image_tag('flight_bar_charts.jpg') %>
+
         </div>
 
 
@@ -67,7 +70,7 @@
     </div>
 </div>
  <div ng-show="report_type=='days_prior' && chart_number==1" style="margin-top:40px;">
-        <iframe style="width:1000px; height:500px;" src="/dashboard/calendar_chart"></iframe>
+        <iframe style="width:1000px; height:750px;" src="/dashboard/calendar_chart"></iframe>
     </div>
 
 
