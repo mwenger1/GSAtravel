@@ -8,6 +8,9 @@
 iframe{
     border: none;
 }
+.chartContent h4.selected{
+ background-color:#DCDCDC !important;
+}
 .footer{
     background-color:#142C6C;
     height:30px;

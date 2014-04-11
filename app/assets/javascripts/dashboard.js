@@ -426,6 +426,8 @@ ready = function() {
         $('#hotspots').hide();
     });
 
+
+
 };
 
 
