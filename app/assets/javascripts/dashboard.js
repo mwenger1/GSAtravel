@@ -279,6 +279,16 @@ ready = function() {
             var sDirectionClass;
             sDirectionClass = "clickableTableRow";
             $(nRow).addClass(sDirectionClass);
+            aoColumns: [
+      null,
+      { "sType": "integer" },
+      { "sType": "integer" },
+      { "sType": "integer" },
+      { "sType": "integer" },
+      { "sType": "integer" }
+    ]
+
+
         }
     });
 
