@@ -136,18 +136,22 @@ table.dataTable tr.even td.sorting_1{
 float: right;
 margin-left: 15px;
 }
-.trendOptions div{
-    padding: 0px 6px;
-}
 .trendOptions h4{
     background: #CED5E8;
     display: inline-block;
     padding: 4px 24px 4px 10px;
     margin: 2px 0;
-    width: 100%
+    width: 100%;
+    cursor: pointer;
+}
+.trendOptions h4:active{
+    background: #c0c6d6;
+}
+.trendOptions h4:visited{
+    background: #c0c6d6;
 }
 .sectionBox{
-    box-shadow: -4px 7px 17px 0px #aaaaaa;
+    box-shadow: -1px 2px 7px -1px #aaaaaa;
     float: left;
     display: inline;
     padding: 10px 5px;
@@ -159,4 +163,61 @@ margin-left: 15px;
 .chart{
     display:none;
     padding: 20px;
+}
+.chartContent{
+    padding: 0px 5px;
+}
+.chartToggle{
+    margin: 10px 0px;
+}
+.btn-group .btn{
+    font-family: BebasNeue;
+    font-size: 1.6em;
+    letter-spacing: 0.03em;
+}
+.chartType{
+    margin-bottom: 20px;
+    float: right;
+}
+.chartType span{
+    font-size: 1.2em;
+}
+.toolbar{
+    margin-bottom: 50px
+}
+/*PROGRESS BARS*/
+.your_budgets{
+    display: inline;
+    float: left;
+    box-shadow: -4px 5px 11px 3px #ededed;
+    width: 200px;
+    height: 170px;
+    padding: 20px;
+    position: absolute;
+    left: 170px;
+    top: 420px;
+}
+.budget{
+    margin-left: 200px;
+    padding: 20px 0px;
+    width: 510px;
+}
+.percentage{
+    float: right;
+}
+.budget_type{
+    float: left;
+}
+.budget_total{
+    float: right;
+    margin-top: -50px;  
+}
+.total{
+    border-top: 1px solid #ededed;
+}
+.budget_table td{
+    padding: 5px;
+}
+.months{
+    margin-bottom: 20px;
 }

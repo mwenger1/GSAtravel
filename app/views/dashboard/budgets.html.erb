@@ -1,2 +1,66 @@
-<h1>Dashboard#budgets</h1>
-<p>Find me in app/views/dashboard/budgets.html.erb</p>
+ <div class="row">
+	 <div class="col-xs-12" style="text-align: center;">
+		 <h1>Budgets</h1>
+		 <hr/>
+	 </div>
+ </div>
+<div class="col-xs-12" style="text-align: center;">
+	<div class="btn-group months">
+	    <button class="btn btn-default" ng-click="updateChartNumber(3)">January</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(1)">February</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">March</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">April</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">May</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">June</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">July</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">August</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">September</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">October</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">November</button>
+	    <button class="btn btn-default" ng-click="updateChartNumber(2)">December</button>
+	</div>
+</div>
+<div class="your_budgets">
+	<h2>Your budget</h2>
+	<hr>
+	<table class="budget_table">
+		<tbody>
+			<tr>
+				<td>Budget:</td>
+				<td>$600,000</td>
+			</tr>
+			<tr>
+				<td>Spending:</td>
+				<td>$400,000</td>
+			</tr>
+			<tr class="total">
+				<td>Left this year:</td>
+				<td>$200,00</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
+<div class="budgets">
+	<div class="budget green">
+		<p class="budget_type">Flights</p><p class="percentage">10%</p>
+		<%= image_tag "progress_bar_green.png" %>
+	</div>
+	<div class="budget_total">
+		<p>$45,763 out of $45,7630</p>
+	</div>
+	<div class="budget green">
+		<p class="budget_type">Hotels</p><p class="percentage">90%</p>
+		<%= image_tag "progress_bar_yellow.png" %>
+	</div>
+	<div class="budget_total">
+		<p>$45,763 out of $45,7630</p>
+	</div>
+	<div class="budget green">
+		<p class="budget_type">Car Rentals</p><p class="percentage">100%</p>
+		<%= image_tag "progress_bar_red.png" %>
+	</div>
+	<div class="budget_total">
+		<p>$45,763 out of $45,7630</p>
+	</div>
+</div>
