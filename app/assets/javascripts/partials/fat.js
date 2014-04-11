@@ -6,6 +6,10 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     $http.get('/dashboard/flight_vendor_data.json').success(function(data) {
         $scope.vendorChart1.data = data['flights_per_airline'];
         $scope.vendorChart1b.data = data['percentage_per_airline'];
+        $scope.vendorChart2.data = data['flights_per_airline'];
+        $scope.vendorChart2b.data = data['percentage_per_airline'];
+
+    $scope.vendorChart2b = vendorChart2;
 
     }).error(function(error) {
         console.log('The file did not load');
@@ -72,14 +76,38 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     vendorChart2.type = "ColumnChart";
     vendorChart2.displayed = false;
     vendorChart2.data = ([
-    ['Element', 'Density', { role: 'style' }],
-        ['Copper', 8.94, '#b87333'],            // RGB value
-    ['Silver', 10.49, 'silver'],            // English color name
-    ['Gold', 19.30, 'gold'],
-    ['Platinum', 21.45, 'color: #e5e4e2' ], // CSS-style declaration
+        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+         'Western', 'Literature', { role: 'annotation' } ],
+        ['2010', 10, 24, 20, 32, 18, 5, ''],
+        ['2020', 16, 22, 23, 30, 16, 9, ''],
+        ['2030', 28, 19, 29, 30, 12, 13, ''],
       ]);
 
     vendorChart2.options = {
+        "title": "Sales per month",
+        "isStacked": "true",
+        "fill": 20,
+        "displayExactValues": true,
+        "vAxis": {
+            "title": "Sales unit", "gridlines": {"count": 10}
+        },
+        "hAxis": {
+            "title": "Date"
+        }
+    };
+
+    var vendorChart2b = {};
+    vendorChart2b.type = "ColumnChart";
+    vendorChart2b.displayed = false;
+    vendorChart2b.data = ([
+        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+         'Western', 'Literature', { role: 'annotation' } ],
+        ['2010', 10, 24, 20, 32, 18, 5, ''],
+        ['2020', 16, 22, 23, 30, 16, 9, ''],
+        ['2030', 28, 19, 29, 30, 12, 13, ''],
+      ]);
+
+    vendorChart2b.options = {
         "title": "Sales per month",
         "isStacked": "true",
         "fill": 20,
@@ -145,6 +173,8 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     $scope.vendorChart1 = vendorChart1;
     $scope.vendorChart1b = vendorChart1b;
     $scope.vendorChart2 = vendorChart2;
+    $scope.vendorChart2b = vendorChart2b;
+
     $scope.vendorChart3 = vendorChart3;
     $scope.priceChart1 = priceChart1;
 
