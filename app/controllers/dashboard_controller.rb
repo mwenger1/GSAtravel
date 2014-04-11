@@ -89,16 +89,25 @@ before_filter :set_date
 
   def calendar_chart
 
-    @flight_map_data = FlightReservation.group(:destination_airport_code).order(:destination_airport_code).count.to_a.unshift(["City","Count"])
+    @flight_calendar_data = "[
+         [ new Date(2012, 3, 13), 37032 ],
+          [ new Date(2012, 3, 14), 38024 ],
+          [ new Date(2012, 3, 15), 38024 ],
+          [ new Date(2012, 3, 16), 38108 ],
+          [ new Date(2012, 4, 16), 38108 ],
+          [ new Date(2012, 5, 16), 38108 ],
 
+          [ new Date(2012, 3, 17), 38229 ],
+          [ new Date(2013, 9, 4), 38177 ],
+          [ new Date(2013, 9, 5), 38705 ],
+          [ new Date(2013, 9, 12), 38210 ],
+          [ new Date(2013, 9, 13), 38029 ],
+          [ new Date(2013, 9, 19), 38823 ],
+          [ new Date(2013, 9, 23), 38345 ],
+          [ new Date(2013, 9, 24), 38436 ],
+          [ new Date(2013, 9, 30), 38447 ]
+        ]"
 
-    # [
-    #     ['Country',   'Population', 'Area Percentage'],
-    #     ['France',  65700000, 50],
-    #     ['Germany', 81890000, 27],
-    #     ['Poland',  38540000, 23],
-    #     ['Italy',  38540000, 23],
-    #   ]
     render layout: false
 
   end
