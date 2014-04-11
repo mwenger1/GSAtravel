@@ -185,8 +185,8 @@ angular.module('google-chart-sample').controller("FatChartCtrl",["$scope","$http
     // <option value="Table">Table</option>
     // <option value="BarChart">BarChart</option>
 
-
-    $scope.cssStyle1 = "width:100%;";
+    $scope.cssStyle = "width:600px;";
+    $scope.cssStyle1 = "width:300px;";
     $scope.cssStyle2 = "width:100%; height:500px;";
 
     $scope.reportTypeChange = function (report) {
