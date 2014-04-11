@@ -1,23 +1,44 @@
-<h1>Importer Console</h1>
-
-<p>There are <%= @flight_transactions %> flight transactions.</p>
-<p>There are <%= @hotel_transactions %> hotel transactions</p>
-<p>There are <%= @car_rental_transactions %> car transactions</p>
-<br>
-<%= link_to "Run Hotel Importer", import_run_hotel_path %>
-<br>
-<%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %>
-<br>
-<br>
-<%= link_to "Run Airline Importer", import_run_airline_path %>
-<br>
-<%= link_to "Run Short Airline Importer", import_run_airline_path(:length => "short") %>
-<br>
-<br>
-<%= link_to "Run Car Rental", import_run_car_rental_path %>
-<br>
-<%= link_to "Run Short Car Rental", import_run_car_rental_path(:length => "short") %>
-
-<br>
+<div class="col-xs-12" style="text-align: center;">
+		 <h1>Importer Console</h1>
+		 <hr>
+	 </div>
+<div class="importerStat">
+	<div class="stat flight_transactions">
+		<span><%= @flight_transactions %></span> 
+		<p>flight bookings</p>
+	</div>
+	<div class="stat hotel_transactions">
+		<span><%= @hotel_transactions %></span> 
+		<p>hotels reservations</p>
+	</div>
+	<div class="stat car_rental_transactions">
+		<span><%= @car_rental_transactions %></span> 
+		<p>car rentals</p>
+	</div>
+</div>
+<div style="clear:both;">
+<div class="importers">
+	<div class="importer importerFlight">
+		<br>
+		<button class="btn btn-default import-btn"><%= link_to "Run Airline Importer", import_run_airline_path %></button>
+		<br>
+		<button class="btn btn-default import-btn"><%= link_to "Run Short Airline Importer", import_run_airline_path(:length => "short") %>
+		<br>
+	</div>
+	<div class="importer importerHotel">
+		<br>
+		<button class="btn btn-default import-btn"><%= link_to "Run Hotel Importer", import_run_hotel_path %></button>
+		<br>
+		<button class="btn btn-default import-btn"><%= link_to "Run Short Hotel Importer", import_run_hotel_path(:length => "short") %></button>
+		<br>
+	</div>
+	<div class="importer importerCar">
+		<br>
+		<button class="btn btn-default import-btn"><%= link_to "Run Car Rental", import_run_car_rental_path %></button>
+		<br>
+		<button class="btn btn-default import-btn"><%= link_to "Run Short Car Rental", import_run_car_rental_path(:length => "short") %></button>
+		<br>
+	</div>
+</div>
 <br>
 <%= link_to "Delete All Data", import_delete_all_path %>

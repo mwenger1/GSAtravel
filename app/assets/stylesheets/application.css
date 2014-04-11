@@ -2621,3 +2621,31 @@ h4{
 	font-size: 1.2em;
 	line-height: 1.4em;
 }
+.importers,
+.importerStat{
+	margin: 0 0 0 160px;
+}
+.stat{
+	background: #ededed;
+	float: left;
+	margin-right: 20px;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 1.1em;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+.import-btn{
+	background-color: #CED5E8;
+	margin-bottom: 5px;
+}
+.import-btn a:hover{
+	text-decoration: none;
+}
+.importer{
+	float: left;
+	margin-right: 20px;
+}
+.importers{
+	text-align: center;
+}
